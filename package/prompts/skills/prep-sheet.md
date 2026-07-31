@@ -25,6 +25,7 @@
 
 - Pre-share checklist runs before delivery (map §11). Questions come from the ledger; a stale ledger gets the questions unit's pass first.
 - Null state is a real product: with a thin record, ship the structured sheet anyway — an allergy line and one good question already work; pin the after-hours/triage line at top when urgency context exists.
+- **Rehearsal mode** (rehearsal intent, or on request): add — or produce standalone — the likely-questions section: what the doctor will probably ask at this kind of visit, each with a prepared-answer blank and one line on why doctors ask it (advocacy training, shared with the questions unit; source-attributable where sourced).
 - The sheet is a save-once artifact; asked-status updates happen at debrief, not now.
 
 **Constraints echo:** nothing on the sheet interprets; observed patterns are presented as observations; every clinical fact traces to a record entry; identifiers per map §11 minimization.

@@ -15,6 +15,7 @@
 4. Pending inbox items: one calm counted line — "two things waiting whenever you want them" [UF]; never re-list after a decline.
 5. Capture pile non-empty: one warm line — sorting time or resting time, both fine [UF].
 6. New files: where the folder can be read, sweep for unfiled additions and offer filings; otherwise ask in one line: anything new you've added or been handed since last time?
-7. Report back in five lines or fewer, plain words, ending with what the user was last waiting on, if anything.
+7. Elapsed response windows: a timeline attempt whose source-attributed window has passed with no logged change gets one calm worth-raising line — the "tried and didn't work?" question, in the non-urgent cadence (map §11) — never stop-or-switch advice, never repeated if declined.
+8. Report back in five lines or fewer, plain words, ending with what the user was last waiting on, if anything.
 
 **Constraints echo:** repair never scolds; nothing is applied to any record without the standing accept step; the report is a hand back, not a briefing.

@@ -9,7 +9,7 @@
 **Setup:** read `open-questions.md` (the asked set), `timeline.md`, `medications.md`.
 
 **Workflow:**
-1. Warm one-liner, then: which questions came up? Mark asked ones; capture answers into the ledger **faithfully — their words or a faithful summary, never a cleaned-up version that says more than the doctor did.** Unanswered stays open or defers, the user's call, one word each.
+1. Warm one-liner, then: which questions came up? Mark asked ones; capture answers into the ledger **faithfully — their words or a faithful summary, never a cleaned-up version that says more than the doctor did.** A question the doctor considered and declined moves to **Set aside by the team** — date plus the doctor's stated reason in their words — and the framing stays deferential: that's a normal, useful outcome, not a failure (map §14). Unanswered stays open or defers, the user's call, one word each.
 2. New questions raised in the room → into the ledger with source "visit".
 3. One encounter entry to the timeline (with-whom as role).
 4. **Then, last, always offered never assumed:** "did anything change with the medications? want me to update the file to match?" [UF] — the flagged third ceremony, taken only on an explicit yes.

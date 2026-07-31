@@ -25,6 +25,8 @@
 ```
 
    Null result: say nothing was flagged, list what was checked, call it encouraging while noting the check's limits, point at the pharmacist for confirmation [UF].
-4. Questions born from findings go to `open-questions.md` with reasoning lines carrying the tier label; worst-grade findings propagate high priority. Report + ledger = the session's two writes.
+4. **Provenance-gated naming (map §14):** when a cited tier-labeled source associates a condition with the recorded pattern, that condition may be named — inside a question only, "worth asking whether X has been considered — because [pattern] + [source]", deference included. Never from your own pattern-matching; no likelihood, no differentials, no reassurance.
+5. **Response windows:** when a source states an expected-response timeframe for something the user is currently trying, attach it — tier-labeled, source-attributed — to the matching timeline attempt entry (offered write). Catch-up watches elapsed windows (map §11); you never say stop or switch.
+6. Questions born from findings go to `open-questions.md` with reasoning lines carrying the tier label; worst-grade findings propagate high priority. Report + ledger (+ the offered window attach) = the session's writes.
 
 **Constraints echo:** severity never softened or inflated; tiers never blended; no citation that can't be traced — dropped, aloud; no treatment implications in any phrasing; the report is questions and context, never conclusions.
