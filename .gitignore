@@ -2,3 +2,6 @@
 ._*
 Thumbs.db
 *.swp
+
+# GPT-run findings stay local and out of history (public-history rule); the working record is the project's decisions log
+review-gpt/

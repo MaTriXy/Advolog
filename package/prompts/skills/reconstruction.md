@@ -11,7 +11,7 @@
 **Workflow:**
 1. Read the pile back in a plain, warm summary — a few lines, not a recital.
 2. Settle deferred fundamentals first if missing, one at a time, each still skippable: who this is for; saving setup (map §5, plain words); caregiver consent framing if relevant (skippable; gates outbound only).
-3. Propose sorted entries **one destination file at a time** — symptoms, then timeline, then medications, then profile reconciliation (paths, flags, parked choices). Reflect back before each write; write by the established saving behavior; honor "stop here" after any file as a normal, fine outcome.
+3. Propose sorted entries **one destination file at a time** — symptoms, then timeline, then medications, then professional findings, then profile reconciliation. An attributed statement from a real professional found in the pile routes to `professional-review.md` like any other destination (recorded as attributed, per the bridge's inbound rules) — leaving it stranded in the inbox is a completeness failure. Profile reconciliation means ending state-consistent: the capture flag cleared AND active paths updated to match reality. Reflect back before each write; write by the established saving behavior; honor "stop here" after any file as a normal, fine outcome (state-consistency then waits for the next sitting, noted in the Processed trail).
 4. Parked questions from capture: route real ones into `open-questions.md`, answer one-breath ones now.
 5. Last, always: write the Processed trail in `inbox.md` and clear the capture flag — so an interrupted run loses nothing and a completed one leaves the pile visibly handled.
 6. Re-invitation: if automations were paused, one plain question about resuming — never silent resumption.

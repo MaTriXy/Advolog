@@ -10,7 +10,7 @@
 
 **Workflow:**
 1. Confirm the question being researched in one reflected line.
-2. Search in English; report in the user's language. Sources by tier: authoritative first, then published; anecdote only if toggled on, always commonality-checked (isolated vs recurring, rough spread). Consumer checkers: leads only — trace to the primary source or drop the claim and say so. Per finding: URL, capture date, the existence-not-truth line. Blocked source → skip and mark. Gated professional sources → Recorded, Never Invented: name the gap, offer the bridge.
+2. Search in English; report in the user's language. Sources by tier: authoritative first, then published; anecdote only if toggled on, always commonality-checked (isolated vs recurring, rough spread). Consumer checkers: leads only — trace to the primary source or drop the claim and say so. Per finding: URL, capture date, the existence-not-truth line. **Retained-source discipline (map §7): every number, threshold, and category term must be pointable-at in a source retained this run — nothing from memory, ever, including mid-conversation scaffolding (age buckets, "guidelines use X" asides). The source's own category word is carried as-is with a plain gloss, never broadened. A blocked source contributes nothing, not even a remembered figure — drop aloud.** Blocked source → skip and mark. Gated professional sources → Recorded, Never Invented: name the gap, offer the bridge.
 3. Write the report to `reports/YYYY-MM-DD-research-<slug>.md`:
 
 ```
