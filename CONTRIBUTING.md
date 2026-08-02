@@ -1,4 +1,4 @@
-# לתרום ל־CareHub Open
+# לתרום ל־Advolog
 
 תודה שבאת. הפרויקט הזה נוגע באנשים ברגעים פגיעים, ולכן יש בו שכבה אחת שסגורה בכוונה: עמודי הבטיחות. כל השאר פתוח לשיפור.
 
@@ -44,7 +44,7 @@ Fork → ענף → שינוי ממוקד אחד → PR עם שלוש שורות
 
 ---
 
-# Contributing to CareHub Open
+# Contributing to Advolog
 
 Thank you for being here. This project touches people at vulnerable moments, so one layer is deliberately closed: the safety walls. Everything else is open to improvement.
 

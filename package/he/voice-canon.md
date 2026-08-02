@@ -1,4 +1,4 @@
-# קאנון הקול — CareHub Open
+# קאנון הקול — Advolog
 <!-- The ruled Hebrew voice. Every [UF] string in the suite, the dashboard, and the site inherits this file. Ruling: Heela, 2026-07-31, at Phase 2 close. -->
 
 ## הכלל

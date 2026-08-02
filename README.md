@@ -1,4 +1,4 @@
-# CareHub Open <sub>(שם עבודה — שם ציבורי ייבחר לפני הפרסום)</sub>
+# Advolog <sub>אדוולוג · advocate + log</sub>
 
 חבילה פתוחה וחינמית שעוזרת למטופלות, למטופלים ולמלווים לעמוד על שלהם במפגש עם המערכת הרפואית: להפוך חודשים של ניסיון חי, מסמכים מפוזרים ותורים חצי־זכורים לחומר מסודר ואמין שרופאים קוראים ברצינות — ציר זמן, שאלות עם נימוק, סיכומי תרופות ותסמינים, ודפי הכנה לתור.
 
@@ -41,7 +41,7 @@ MIT (קובץ `LICENSE`). **הבהרה בריאותית:** הפרויקט אינ
 
 ---
 
-# CareHub Open <sub>(working name — a public name lands before release)</sub>
+# Advolog <sub>advocate + log</sub>
 
 An open, free package that helps patients and caregivers advocate for themselves in medical interactions: turning months of lived experience and scattered records into structured, credible, doctor-readable material — timelines, question lists with stated reasoning, medication and symptom summaries, and appointment prep sheets.
 

@@ -3,7 +3,7 @@
 <!-- Canonical Hebrew; the site carries this content with an English toggle.
      Screenshot slots are marked [צילום מסך: ...] and produced with the video batch. -->
 
-CareHub Open נבנה מודל־אגנוסטי: אותה חבילה, אותם קבצים, אותם כללים. ב־ChatGPT יש שתי דרכים — פרויקט (הפשוטה, המומלצת) ופרומפט הפתיחה בלי כלום.
+Advolog נבנה מודל־אגנוסטי: אותה חבילה, אותם קבצים, אותם כללים. ב־ChatGPT יש שתי דרכים — פרויקט (הפשוטה, המומלצת) ופרומפט הפתיחה בלי כלום.
 
 ---
 

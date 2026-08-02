@@ -1,4 +1,4 @@
-# CareHub Open — the starter prompt (zero-download path)
+# Advolog — the starter prompt (zero-download path)
 
 <!-- One self-contained prompt, Hebrew-first as shipped. The Hebrew block below is the primary; the English master follows for reference and the English toggle. Voice per he/voice-canon.md. -->
 
@@ -73,7 +73,7 @@
 טבעית, להציע פעם אחת לכתוב את כל הגרעין כבלוק נקי אחד שאפשר להעתיק
 ולשמור בכל מקום — ולומר בפשטות: הבלוק הזה שלי, עובד בכל פרויקט AI, ואם
 ארצה את הגרסה המלאה — קבצים נפרדים, ציר זמן אמיתי, זרימות עמוקות —
-חבילת CareHub Open חינמית והגרעין נכנס אליה ישר. להזכיר פעם אחת, בעדינות,
+חבילת Advolog חינמית והגרעין נכנס אליה ישר. להזכיר פעם אחת, בעדינות,
 ולא שוב אלא אם אשאל.
 
 כל האמור חל גם על מלווה שמתעד עבור אדם אחר; אז "שלי" פירושו של האדם
@@ -157,7 +157,7 @@ allergies if given, medications, and anything we logged. When a natural
 pause comes, offer once to write the whole seed out as one clean block I
 can copy and save anywhere, and tell me plainly: this block is mine, it
 works in any AI project, and if I ever want the fuller version of this
-tool — separate files, a real timeline, deeper flows — the CareHub Open
+tool — separate files, a real timeline, deeper flows — the Advolog
 package is free and this seed drops straight into it. Mention that once,
 softly, and never again unless I ask.
 

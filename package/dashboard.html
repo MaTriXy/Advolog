@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- CareHub Open — הלוח (tier-B dashboard, v1 build)
+<!-- Advolog — הלוח (tier-B dashboard, v1 build)
      One self-contained file. No network requests, ever (P-51). Reads/writes the same
      record files as every tier via the File System Access API. Named anchors throughout
      (@anchor comments + data-anchor) — build instructions reference these, never line numbers.
@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CareHub Open · הלוח</title>
+<title>Advolog · הלוח</title>
 <style>
   :root{
     --ground:#F5F7F8; --surface:#FFFFFF; --ink:#1C2A28; --muted:#44524F; --line:#C9D3D1;
@@ -83,7 +83,7 @@
 <body>
 <div class="wrap">
   <header data-anchor="header">
-    <h1>CareHub Open · הלוח</h1>
+    <h1>Advolog · הלוח</h1>
     <div class="hbtns">
       <button class="ghost" id="themeBtn">מצב כהה</button>
       <button class="ghost" id="exportBtn" disabled>גיבוי — הורדת הכול</button>
@@ -436,7 +436,7 @@ $('ctxBtn').onclick=function(){
 
 /* @anchor: export — P-44 one-click bundle; restore is a chat task */
 $('exportBtn').onclick=async function(){
-  var out={_note:'גיבוי CareHub Open · '+today()+' · כל קובצי הרשומות. שחזור: נותנים את הקובץ הזה לשיחה והיא בונה מחדש את הקבצים. דוחות ותמונות מגובים בהעתקת התיקייה עצמה.', files:{}};
+  var out={_note:'גיבוי Advolog · '+today()+' · כל קובצי הרשומות. שחזור: נותנים את הקובץ הזה לשיחה והיא בונה מחדש את הקבצים. דוחות ותמונות מגובים בהעתקת התיקייה עצמה.', files:{}};
   for(var i=0;i<RECORDS.length;i++){ out.files[RECORDS[i]]=files[RECORDS[i]]||''; }
   var a=document.createElement('a');
   a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(out,null,1));

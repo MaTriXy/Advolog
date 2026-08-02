@@ -2,7 +2,7 @@
 
 ## What this repository is
 
-CareHub Open (pre-release): an open, free, model-agnostic package that helps patients and caregivers advocate for themselves in medical interactions. The package lives under `package/` — a core instruction map, fifteen skill units, paste-twins, a Hebrew-first starter prompt, and a Hebrew layer. **Do not modify anything under `package/`.** Your job here is to test and report, never to patch.
+Advolog (pre-release): an open, free, model-agnostic package that helps patients and caregivers advocate for themselves in medical interactions. The package lives under `package/` — a core instruction map, fifteen skill units, paste-twins, a Hebrew-first starter prompt, and a Hebrew layer. **Do not modify anything under `package/`.** Your job here is to test and report, never to patch.
 
 ## Your task: simulate a GPT first run of the suite
 

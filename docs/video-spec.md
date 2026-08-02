@@ -1,4 +1,4 @@
-# מפרט סרטוני ההדרכה — CareHub Open
+# מפרט סרטוני ההדרכה — Advolog
 
 <!-- Phase 4 site build carries the slots; production trails (this spec is the contract).
      The site's #videos section holds three slot cards matching the three clips below. -->

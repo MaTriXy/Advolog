@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- CareHub Open — standalone visual censor (site tool; ported as-is from the
+<!-- Advolog — standalone visual censor (site tool; ported as-is from the
      package dashboard's verified implementation — Heela's irreversibility audit:
      rectangles are painted opaque onto the pixel grid and the download is a fresh
      flattened PNG; no layers, no history, no carried metadata incl. EXIF/GPS.
@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-he="צנזור מסמכים — CareHub Open" data-en="Document censor — CareHub Open">צנזור מסמכים — CareHub Open</title>
+<title data-he="צנזור מסמכים — Advolog" data-en="Document censor — Advolog">צנזור מסמכים — Advolog</title>
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/site.js"></script>
 </head>
@@ -17,13 +17,13 @@
 
 <header class="topbar">
   <div class="inner">
-    <a class="brand" href="index.html">CareHub Open <span class="sub"><span class="he">(שם עבודה)</span><span class="en">(working name)</span></span></a>
+    <a class="brand" href="index.html">Advolog<span class="sub"><span class="he">חינמי · פתוח · ללא מטרות רווח</span><span class="en">free · open · non-profit</span></span></a>
     <nav class="topnav" aria-label="ניווט ראשי">
       <a href="index.html"><span class="he">דף הבית</span><span class="en">Home</span></a>
       <a href="guides.html"><span class="he">מדריכים</span><span class="en">Guides</span></a>
       <a href="form.html"><span class="he">טופס פתיחה</span><span class="en">Onboarding form</span></a>
       <button id="langBtn" class="tbtn" type="button">English</button>
-      <button id="themeBtn" class="tbtn" type="button" aria-pressed="false"><span class="he">מצב כהה</span><span class="en">Dark mode</span></button>
+      <button id="scaleBtn" class="tbtn" type="button" aria-pressed="false" aria-label="טקסט גדול יותר">Aa</button>
     </nav>
   </div>
 </header>
@@ -31,7 +31,7 @@
 <main id="main" class="wrap">
   <h1><span class="he">צנזור חזותי — לפני שמישהו רואה</span><span class="en">Visual censor — before anyone sees</span></h1>
   <p class="lead">
-    <span class="he">טוענים צילום של מסמך, משחירים את מה שלא צריך לצאת, משנים שם לקובץ — ומורידים עותק נקי. הכול קורה כאן, במחשב שלך; הקובץ המקורי לא משתנה, ושום דבר לא נשלח לשום מקום. את העותק הנקי מעלים לשיחה — לא את המקור.</span>
+    <span class="he">טוענים צילום של מסמך, משחירים את מה שלא צריך לצאת, משנים שם לקובץ — ומורידים עותק נקי. הכול קורה כאן, במחשב שלכם; הקובץ המקורי לא משתנה, ושום דבר לא נשלח לשום מקום. את העותק הנקי מעלים לשיחה — לא את המקור.</span>
     <span class="en">Load a photo of a document, black out what must not leave, rename the file — and download a clean copy. Everything happens here, on your machine; the original file is untouched, and nothing is sent anywhere. Upload the clean copy to the conversation — not the original.</span>
   </p>
   <p class="muted">
@@ -48,7 +48,7 @@
       </p>
       <div id="cwrap"><canvas id="cv"></canvas></div>
       <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; align-items:center">
-        <button class="btn ghost" id="undoBtn" type="button"><span class="he">ביטול המלבן האחרון</span><span class="en">Undo last rectangle</span></button>
+        <button class="btn line" id="undoBtn" type="button"><span class="he">ביטול המלבן האחרון</span><span class="en">Undo last rectangle</span></button>
         <input type="text" id="rename" style="max-width:280px" aria-label="שם הקובץ לשמירה">
         <button class="btn" id="dlBtn" type="button"><span class="he">הורדת העותק הנקי</span><span class="en">Download the clean copy</span></button>
       </div>

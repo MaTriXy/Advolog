@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- CareHub Open — onboarding form (scope item 9; Phase 4 site asset).
+<!-- Advolog — onboarding form (scope item 9; Phase 4 site asset).
      Fill → ONE copy block → pasted as the first message; the interview parses it
      as a structured opening (P-31 fork) and asks only about true gaps.
      Fields mirror the interview's routing slots ONLY (S1/S2/S2b/S3/S5/S6/language
@@ -10,7 +10,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-he="טופס פתיחה — CareHub Open" data-en="Onboarding form — CareHub Open">טופס פתיחה — CareHub Open</title>
+<title data-he="טופס פתיחה — Advolog" data-en="Onboarding form — Advolog">טופס פתיחה — Advolog</title>
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/site.js"></script>
 </head>
@@ -19,13 +19,13 @@
 
 <header class="topbar">
   <div class="inner">
-    <a class="brand" href="index.html">CareHub Open <span class="sub"><span class="he">(שם עבודה)</span><span class="en">(working name)</span></span></a>
+    <a class="brand" href="index.html">Advolog<span class="sub"><span class="he">חינמי · פתוח · ללא מטרות רווח</span><span class="en">free · open · non-profit</span></span></a>
     <nav class="topnav" aria-label="ניווט ראשי">
       <a href="index.html"><span class="he">דף הבית</span><span class="en">Home</span></a>
       <a href="guides.html"><span class="he">מדריכים</span><span class="en">Guides</span></a>
       <a href="censor.html"><span class="he">צנזור מסמכים</span><span class="en">Document censor</span></a>
       <button id="langBtn" class="tbtn" type="button">English</button>
-      <button id="themeBtn" class="tbtn" type="button" aria-pressed="false"><span class="he">מצב כהה</span><span class="en">Dark mode</span></button>
+      <button id="scaleBtn" class="tbtn" type="button" aria-pressed="false" aria-label="טקסט גדול יותר">Aa</button>
     </nav>
   </div>
 </header>
@@ -33,7 +33,7 @@
 <main id="main" class="wrap">
   <h1><span class="he">טופס פתיחה</span><span class="en">Onboarding form</span></h1>
   <p class="lead">
-    <span class="he">מעדיפים למלא במקום להתראיין? ממלאים כאן מה שנוח (הכול לא חובה), מעתיקים בלוק אחד, ומדביקים אותו כהודעה הראשונה בשיחה — יחד עם <a href="index.html#starter">פרומפט הפתיחה</a> או בפרויקט מותקן. השיחה תמשיך משם בלי לשאול שוב את מה שכבר ענית.</span>
+    <span class="he">מעדיפים למלא במקום להתראיין? ממלאים כאן מה שנוח (הכול לא חובה), מעתיקים בלוק אחד, ומדביקים אותו כהודעה הראשונה בשיחה — יחד עם <a href="index.html#starter">פרומפט הפתיחה</a> או בפרויקט מותקן. השיחה תמשיך משם בלי לשאול שוב את מה שכבר עניתם.</span>
     <span class="en">Prefer filling a form to being interviewed? Fill what feels comfortable (everything optional), copy one block, and paste it as the first message of the conversation — together with <a href="index.html#starter">the starter prompt</a> or in an installed project. The conversation continues from there without re-asking what you answered.</span>
   </p>
   <p class="notice">
@@ -49,7 +49,7 @@
       <label class="radio"><input type="radio" name="who" value="" checked><span class="muted"><span class="he">לדלג</span><span class="en">Skip</span></span></label>
     </fieldset>
 
-    <label for="story"><span class="he">מה קורה? במילים שלך</span><span class="en">What is going on? In your own words</span></label>
+    <label for="story"><span class="he">מה קורה? במילים שלכם</span><span class="en">What is going on? In your own words</span></label>
     <p class="hint"><span class="he">כמה מילים או כמה שורות — מה שיש. אפשר גם להשאיר ריק ולספר בשיחה.</span><span class="en">A few words or a few lines — whatever there is. Leaving it empty and telling the conversation works too.</span></p>
     <textarea id="story" name="story"></textarea>
 
@@ -85,7 +85,7 @@
     </fieldset>
 
     <fieldset>
-      <legend><span class="he">איך ללוות אותך?</span><span class="en">How should the assistant accompany you?</span></legend>
+      <legend><span class="he">איך ללוות אתכם?</span><span class="en">How should the assistant accompany you?</span></legend>
       <label class="radio"><input type="radio" name="guide" value="suggest"><span><span class="he">להציע צעד הבא כשמתאים (רוב האנשים מתחילים כך)</span><span class="en">Suggest a next step when fitting (most people start here)</span></span></label>
       <label class="radio"><input type="radio" name="guide" value="quiet"><span><span class="he">לשמור על שקט אלא אם אבקש</span><span class="en">Stay quiet unless asked</span></span></label>
       <label class="radio"><input type="radio" name="guide" value="" checked><span class="muted"><span class="he">לדלג</span><span class="en">Skip</span></span></label>
@@ -124,7 +124,7 @@
 (function(){
   var L = {
     he: {
-      head: "◇ טופס פתיחה · CareHub Open",
+      head: "◇ טופס פתיחה · Advolog",
       who: "עבור מי", who_self: "בשבילי", who_other: "עבור אדם שאני מלווה",
       story: "המצב בקצרה",
       shape: "איפה זה עומד", shape_seeking: "עדיין מחפשים תשובות", shape_managing: "מנהלים מצב מוכר לאורך זמן", shape_cant: "אי אפשר לסדר עכשיו — רק לאסוף",
@@ -136,7 +136,7 @@
       tail: "זה טופס פתיחה מלא. לקרוא אותו כתשובות הריאיון, לשקף בקצרה מה הובן, ולשאול רק על פערים אמיתיים."
     },
     en: {
-      head: "◇ Onboarding form · CareHub Open",
+      head: "◇ Onboarding form · Advolog",
       who: "For whom", who_self: "For myself", who_other: "For someone I care for",
       story: "The situation in short",
       shape: "Where things stand", shape_seeking: "Still looking for answers", shape_managing: "Managing a known long-term situation", shape_cant: "Cannot organize right now — just collect",

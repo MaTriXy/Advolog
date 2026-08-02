@@ -1,29 +1,33 @@
 <!doctype html>
 <!--
-  CareHub Open — landing (GitHub Pages root).
-  ══════════════════════════════════════════════════════════════════════
-  COPY PROVENANCE, honestly: the landing-page stream's locked Hebrew+English
-  copy did not reach the Phase 4 build session (same failure mode as the
-  Phase 3 canon-moments paste). Every string below is SCAFFOLD built from
-  the documented decisions (goal framework §1-2/§10, ruled tier labels,
-  install-time privacy ruling, path names, voice canon ג for site chrome)
-  — structured for a line-for-line swap when the locked copy arrives.
-  Nothing here claims to BE the locked copy.
-  Boundary stops live at these anchors:
-    · SCAFFOLD-H1 (hero H1 — Heela picks the locked line)
-    · FOR-DOCTORS BEGIN/END (section in/out — her call)
-    · COFFEE (assets/site.js CHO.COFFEE_URL — confirm link or keep hidden)
-    · PERSONAL-LINE (footer slot — her words only, stays hidden until then)
-  Pre-launch flips at publish: assets/site.js CHO.REPO_URL + CONTACT_EMAIL,
-  the DRAFT BAR below, .github/ISSUE_TEMPLATE/config.yml contact URL.
-  ══════════════════════════════════════════════════════════════════════
+  Advolog — landing (GitHub Pages root).
+  ══════════════════════════════════════════════════════════════════
+  COPY: locked, from landing-locked/landing-copy-he.md (default) and
+  landing-copy-v1.md (EN). Line-for-line; the ONLY deviations are the
+  reconcile items Heela authorized, each logged in decisions.md:
+    · tier labels → the ruled set («מקורות רשמיים · פרסומים מדעיים ·
+      דיווחי מטופלים» / official sources · scientific publications ·
+      patient reports) in the demo footnote+tag, the FAQ, and the one
+      "won't do" line that names tiers (third instance flagged, not silent)
+    · starter placeholder → the real tested block (byte-verbatim)
+    · license footer placeholder → MIT (decided)
+    · coffee-cup glyph stripped from the footer line (design brief rejected-list: no emoji)
+    · demo A = real transcript of the canonical Noa run (landing-notes)
+  Structure follows the Hebrew file's section order (default language);
+  the "won't do" rows keep each language's own locked order.
+  «לרופאים» built from the landing-notes spec at Heela's direction.
+  Chrome additions (not copy): nav toggles, footer links to the form,
+  censor, and guides pages, and the #wont anchor under the hero line.
+  Pre-launch flips: assets/site.js ADV.{REPO_URL,CONTACT_EMAIL,COFFEE_URL},
+  the draft bar below, .github/ISSUE_TEMPLATE/config.yml contact URL.
+  ══════════════════════════════════════════════════════════════════
 -->
 <html lang="he" dir="rtl" data-lang="he">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-he="CareHub Open — הסיפור הרפואי שלך, מסודר" data-en="CareHub Open — your medical story, organized">CareHub Open</title>
-<meta name="description" content="חבילה פתוחה וחינמית שהופכת ניסיון רפואי חי לחומר מסודר ואמין לצוות המטפל — שאלות עם נימוק, ציר זמן, דפי הכנה לתור.">
+<title data-he="Advolog — אתם חיים עם זה חודשים. לרופא יש חמש דקות." data-en="Advolog — Months of living with it. Five minutes to explain it.">Advolog</title>
+<meta name="description" content="Advolog — ערכה חינמית ופתוחה שהופכת תסמינים, מסמכים וזיכרונות מתורים לחומר ברור ואמין שרופא קורא בשתי דקות. בלי אבחנות, בלי המלצות טיפול, בלי שרת.">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/site.js"></script>
 </head>
@@ -31,119 +35,381 @@
 <a class="skip" href="#main"><span class="he">דילוג לתוכן</span><span class="en">Skip to content</span></a>
 
 <!-- DRAFT BAR — remove at Phase 6 launch -->
-<div style="background:var(--amber-bg); color:var(--amber); text-align:center; padding:6px 10px; font-size:14px;">
+<div class="mono" style="background:var(--brass); color:var(--ink); text-align:center; padding:6px 10px;">
   <span class="he">טיוטת עבודה — האתר טרם פורסם</span><span class="en">Working draft — not yet published</span>
 </div>
 
 <header class="topbar">
   <div class="inner">
-    <a class="brand" href="index.html">CareHub Open <span class="sub"><span class="he">(שם עבודה)</span><span class="en">(working name)</span></span></a>
+    <a class="brand" href="index.html">Advolog<span class="sub"><span class="he">חינמי · פתוח · ללא מטרות רווח</span><span class="en">free · open · non-profit</span></span></a>
     <nav class="topnav" aria-label="ניווט ראשי">
-      <a href="guides.html"><span class="he">מדריכי התקנה</span><span class="en">Setup guides</span></a>
-      <a href="form.html"><span class="he">טופס פתיחה</span><span class="en">Onboarding form</span></a>
-      <a href="censor.html"><span class="he">צנזור מסמכים</span><span class="en">Document censor</span></a>
-      <a href="#faq"><span class="he">שאלות</span><span class="en">FAQ</span></a>
-      <a href="#report"><span class="he">דיווח על תקלה</span><span class="en">Report a problem</span></a>
+      <a href="#does"><span class="he">מה זה עושה</span><span class="en">What it does</span></a>
+      <a href="#wont"><span class="he">מה זה לא יעשה</span><span class="en">What it won't do</span></a>
+      <a href="#how"><span class="he">איך זה עובד</span><span class="en">How it works</span></a>
+      <a href="#demo"><span class="he">דוגמה</span><span class="en">See it</span></a>
+      <a href="#faq"><span class="he">שאלות</span><span class="en">Questions</span></a>
+      <a href="#get"><span class="he">להורדה</span><span class="en">Get it</span></a>
       <button id="langBtn" class="tbtn" type="button">English</button>
-      <button id="themeBtn" class="tbtn" type="button" aria-pressed="false"><span class="he">מצב כהה</span><span class="en">Dark mode</span></button>
+      <button id="scaleBtn" class="tbtn" type="button" aria-pressed="false" aria-label="טקסט גדול יותר">Aa</button>
     </nav>
   </div>
 </header>
 
-<main id="main" class="wrap">
+<main id="main">
 
-  <!-- ═══ HERO ═══ -->
-  <section class="hero">
-    <!-- SCAFFOLD-H1: placeholder until Heela picks the locked hero line -->
-    <h1><span class="he">הסיפור הרפואי שלך, מסודר — ושייך לך.</span><span class="en">Your medical story, organized — and yours.</span></h1>
-    <p class="lead">
-      <span class="he">לרופאים יש חמש דקות. לך יש חודשים של ניסיון אמיתי — בלי דרך להגיש אותו. החבילה הזאת הופכת את מה שעברת לחומר מסודר ואמין: ציר זמן, שאלות עם נימוק, דף הכנה לתור. בחינם, בקוד פתוח, בתוך חשבון ה־AI שכבר יש לך.</span>
-      <span class="en">Doctors have five minutes. You have months of real experience — and no way to hand it over. This package turns what you have lived through into organized, credible material: a timeline, questions with stated reasoning, an appointment prep sheet. Free, open source, inside the AI account you already have.</span>
-    </p>
-    <div class="ctas">
-      <a class="btn" href="#starter"><span class="he">להתחיל עכשיו, בלי להוריד כלום</span><span class="en">Start now, nothing to download</span></a>
-      <a class="btn ghost" href="#install"><span class="he">החבילה המלאה</span><span class="en">The full package</span></a>
-    </div>
-    <p class="muted small">
-      <span class="he">בלי חשבון חדש, בלי שרת, בלי איסוף נתונים. עובד ב־Claude וב־ChatGPT.</span>
-      <span class="en">No new account, no server, no data collection. Works in Claude and ChatGPT.</span>
-    </p>
-  </section>
-
-  <!-- ═══ WHAT THIS IS / IS NOT ═══ -->
-  <section id="what">
-    <h2><span class="he">מה זה — ומה זה לא</span><span class="en">What this is — and is not</span></h2>
-    <p>
-      <span class="he">זו חבילת הנחיות פתוחה לעוזר AI שכבר יש לך. היא הופכת ניסיון חי, מסמכים מפוזרים ותורים חצי־זכורים לתיעוד ששייך לך ולשאלות שרופאים לוקחים ברצינות. היא לא מאבחנת, לא ממליצה על טיפול, לא שירות חירום ולא תחליף לרופא — כל תוצר שלה הוא שאלות והקשר לצוות המטפל, אף פעם לא מסקנות. היא מוסיפה סדר למפגש הרפואי, מהצד שלך.</span>
-      <span class="en">This is an open instruction package for the AI assistant you already use. It turns lived experience, scattered documents, and half-remembered visits into a record you own and questions doctors take seriously. It does not diagnose, does not recommend treatment, is not a crisis service, and does not replace your doctor — everything it produces is questions and context for your care team, never conclusions. It adds structure to the medical interaction, from your side.</span>
-    </p>
-    <div class="tiers" aria-label="רובדי הראיות">
-      <span class="tier"><span class="he">מקורות רשמיים</span><span class="en">Official sources</span></span>
-      <span class="tier"><span class="he">פרסומים מדעיים</span><span class="en">Scientific publications</span></span>
-      <span class="tier"><span class="he">דיווחי מטופלים</span><span class="en">Patient reports</span></span>
-    </div>
-    <p class="muted">
-      <span class="he">כל טענה ממחקר מסומנת לפי הרובד שלה, והרבדים לעולם לא מתערבבים. מקור שאי אפשר לאמת — מושמט, בקול רם.</span>
-      <span class="en">Every researched claim is labeled by tier, and the tiers never blend. An unverifiable source is dropped, out loud.</span>
-    </p>
-  </section>
-
-  <!-- ═══ HOW IT WORKS ═══ -->
-  <section id="how">
-    <h2><span class="he">איך זה עובד</span><span class="en">How it works</span></h2>
-    <div class="cards3">
-      <div class="panel">
-        <h3><span class="he">1 · מתחילים לדבר</span><span class="en">1 · Start talking</span></h3>
-        <p><span class="he">מדביקים פרומפט אחד, או מתקינים את החבילה בפרויקט. ריאיון קצר וחם — שאלה אחת בכל פעם, הכול אפשר לדלג.</span>
-        <span class="en">Paste one prompt, or install the package in a project. A short, warm interview — one question at a time, everything skippable.</span></p>
-      </div>
-      <div class="panel">
-        <h3><span class="he">2 · הסיפור נאסף</span><span class="en">2 · The story collects</span></h3>
-        <p><span class="he">תסמינים, ניסיונות טיפול, ביקורים — נרשמים בקבצים פשוטים ששייכים לך, אצלך במחשב. גם כשאין כוח לסדר, הכול נקלט ומחכה.</span>
-        <span class="en">Symptoms, treatment attempts, visits — recorded in plain files that belong to you, on your machine. Even when there is no energy to organize, everything is captured and waits.</span></p>
-      </div>
-      <div class="panel">
-        <h3><span class="he">3 · מגיעים מוכנים</span><span class="en">3 · Arrive prepared</span></h3>
-        <p><span class="he">לפני תור: דף הכנה של עמוד אחד. שאלות עם נימוק, תרופות, מה השתנה — מסמך שרופא קורא בשתי דקות ולוקח ברצינות.</span>
-        <span class="en">Before a visit: a one-page prep sheet. Questions with reasoning, medications, what changed — a document a doctor reads in two minutes and takes seriously.</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ TWO INSTALL PATHS — equal weight ═══ -->
-  <section id="install">
-    <h2><span class="he">שתי דרכים להתחיל — שתיהן מלאות</span><span class="en">Two ways to start — both complete</span></h2>
-    <div class="cards">
-      <div class="panel">
-        <h3><span class="he">בלי להוריד כלום</span><span class="en">Nothing to download</span></h3>
-        <p><span class="he">מעתיקים את פרומפט הפתיחה שלמטה, מדביקים בשיחה חדשה ב־Claude או ב־ChatGPT — וזהו. גרסה קלה ושלמה: ריאיון, איסוף, הכנה לתור. בלי קבצים בכלל.</span>
-        <span class="en">Copy the starter prompt below, paste it into a new Claude or ChatGPT conversation — that is all. A light, complete version: interview, capture, appointment prep. No files at all.</span></p>
-        <p><a class="btn" href="#starter"><span class="he">אל הפרומפט</span><span class="en">To the prompt</span></a></p>
-      </div>
-      <div class="panel">
-        <h3><span class="he">החבילה המלאה</span><span class="en">The full package</span></h3>
-        <p><span class="he">תיקייה עם כל היכולות: רשומות כקבצים שלך, חמישה מסלולים, מחקר עם רובדי ראיות, הלוח המקומי, השכבה הישראלית. ההתקנה מוסברת צעד־צעד במדריכים.</span>
-        <span class="en">A folder with everything: records as your own files, five paths, research with evidence tiers, the local dashboard, the Israeli-system layer. Setup is explained step by step in the guides.</span></p>
-        <p>
-          <a class="btn" href="carehub-open-package.zip" download><span class="he">הורדת החבילה (zip)</span><span class="en">Download the package (zip)</span></a>
-          <a class="btn ghost" href="guides.html"><span class="he">מדריכי ההתקנה</span><span class="en">Setup guides</span></a>
+  <!-- ═══ HERO (dark, locked) ═══ -->
+  <div class="dark hero">
+    <div class="heroart"><svg viewBox="0 0 1440 760" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<rect width="1440" height="760" fill="#16140F"/>
+<path d="M -40 47.4 L -16 40.3 L 8 28.9 L 32 14.6 L 56 -0.6 L 80 -14.8 L 104 -26.4 L 128 -34.7 L 152 -40.0 L 176 -43.1 L 200 -45.4 L 224 -47.9 L 248 -51.4 L 272 -55.6 L 296 -59.7 L 320 -62.6 L 344 -62.8 L 368 -59.7 L 392 -53.3 L 416 -44.6 L 440 -35.0 L 464 -26.6 L 488 -21.1 L 512 -19.4 L 536 -21.7 L 560 -27.1 L 584 -33.9 L 608 -40.3 L 632 -44.4 L 656 -45.3 L 680 -42.8 L 704 -37.7 L 728 -31.1 L 752 -24.4 L 776 -18.8 L 800 -14.4 L 824 -10.9 L 848 -7.3 L 872 -2.4 L 896 4.8 L 920 14.7 L 944 26.8 L 968 39.6 L 992 51.4 L 1016 60.1 L 1040 64.3 L 1064 63.4 L 1088 57.8 L 1112 48.7 L 1136 38.0 L 1160 27.6 L 1184 18.9 L 1208 12.8 L 1232 9.1 L 1256 6.7 L 1280 4.5 L 1304 1.4 L 1328 -3.3 L 1352 -9.3 L 1376 -15.8 L 1400 -21.4 L 1424 -24.9 L 1448 -25.5 L 1472 -22.9" stroke="#C9A24B" stroke-opacity="0.35" stroke-width="1.1" fill="none"/>
+<path d="M -40 31.4 L -16 35.7 L 8 40.5 L 32 44.7 L 56 47.0 L 80 46.6 L 104 42.9 L 128 36.2 L 152 27.0 L 176 16.6 L 200 6.2 L 224 -3.1 L 248 -10.7 L 272 -16.2 L 296 -20.0 L 320 -22.7 L 344 -25.4 L 368 -28.7 L 392 -33.3 L 416 -39.0 L 440 -45.5 L 464 -51.7 L 488 -56.7 L 512 -59.3 L 536 -58.8 L 560 -55.0 L 584 -48.3 L 608 -39.5 L 632 -30.0 L 656 -21.1 L 680 -13.7 L 704 -8.7 L 728 -6.0 L 752 -5.3 L 776 -5.6 L 800 -6.1 L 824 -5.7 L 848 -3.9 L 872 -0.6 L 896 3.7 L 920 8.3 L 944 12.2 L 968 14.5 L 992 14.6 L 1016 12.5 L 1040 8.6 L 1064 4.0 L 1088 -0.1 L 1112 -2.5 L 1136 -2.3 L 1160 0.8 L 1184 6.8 L 1208 14.9 L 1232 24.1 L 1256 33.0 L 1280 40.6 L 1304 46.3 L 1328 49.9 L 1352 51.7 L 1376 52.5 L 1400 53.2 L 1424 54.6 L 1448 57.1 L 1472 60.9" stroke="#F1EDE2" stroke-opacity="0.32" stroke-width="0.8" fill="none"/>
+<path d="M -40 8.1 L -16 10.1 L 8 11.7 L 32 11.8 L 56 10.4 L 80 8.0 L 104 5.4 L 128 3.5 L 152 2.6 L 176 2.5 L 200 2.4 L 224 1.3 L 248 -1.7 L 272 -7.0 L 296 -14.2 L 320 -22.0 L 344 -28.6 L 368 -32.0 L 392 -30.6 L 416 -24.0 L 440 -12.4 L 464 2.5 L 488 18.6 L 512 33.4 L 536 45.0 L 560 52.3 L 584 55.3 L 608 54.8 L 632 52.5 L 656 49.9 L 680 48.2 L 704 48.0 L 728 49.1 L 752 50.9 L 776 52.3 L 800 52.9 L 824 52.4 L 848 51.4 L 872 50.7 L 896 51.4 L 920 54.2 L 944 59.2 L 968 65.5 L 992 71.5 L 1016 75.5 L 1040 75.5 L 1064 70.6 L 1088 60.5 L 1112 46.4 L 1136 30.2 L 1160 14.2 L 1184 0.7 L 1208 -8.7 L 1232 -13.4 L 1256 -13.9 L 1280 -11.5 L 1304 -7.9 L 1328 -4.6 L 1352 -2.5 L 1376 -1.9 L 1400 -2.4 L 1424 -3.1 L 1448 -3.2 L 1472 -2.2" stroke="#F1EDE2" stroke-opacity="0.29" stroke-width="0.8" fill="none"/>
+<path d="M -40 67.6 L -16 67.9 L 8 69.4 L 32 71.9 L 56 74.7 L 80 76.8 L 104 76.8 L 128 73.7 L 152 66.8 L 176 56.3 L 200 42.9 L 224 28.1 L 248 13.7 L 272 1.8 L 296 -6.2 L 320 -9.5 L 344 -8.0 L 368 -2.6 L 392 5.2 L 416 13.7 L 440 21.0 L 464 26.0 L 488 28.1 L 512 27.4 L 536 24.8 L 560 21.2 L 584 18.0 L 608 15.9 L 632 15.6 L 656 17.0 L 680 19.8 L 704 23.5 L 728 27.6 L 752 31.9 L 776 36.3 L 800 41.2 L 824 47.2 L 848 54.5 L 872 63.3 L 896 73.1 L 920 83.2 L 944 92.1 L 968 98.6 L 992 101.5 L 1016 100.1 L 1040 94.5 L 1064 85.5 L 1088 74.6 L 1112 63.6 L 1136 54.5 L 1160 48.5 L 1184 46.5 L 1208 48.2 L 1232 52.8 L 1256 58.6 L 1280 63.9 L 1304 67.2 L 1328 67.4 L 1352 63.9 L 1376 57.3 L 1400 48.3 L 1424 38.3 L 1448 28.3 L 1472 19.5" stroke="#C9A24B" stroke-opacity="0.26" stroke-width="1.1" fill="none"/>
+<path d="M -40 63.4 L -16 62.7 L 8 62.8 L 32 62.3 L 56 59.6 L 80 53.5 L 104 43.8 L 128 31.9 L 152 19.7 L 176 9.8 L 200 4.1 L 224 3.6 L 248 7.7 L 272 15.1 L 296 23.7 L 320 31.6 L 344 37.9 L 368 42.8 L 392 47.0 L 416 52.0 L 440 58.5 L 464 66.5 L 488 75.2 L 512 82.8 L 536 87.6 L 560 88.5 L 584 85.4 L 608 79.7 L 632 73.3 L 656 68.7 L 680 67.6 L 704 70.6 L 728 76.9 L 752 84.8 L 776 92.3 L 800 97.6 L 824 100.1 L 848 99.8 L 872 98.1 L 896 96.2 L 920 95.1 L 944 94.8 L 968 94.4 L 992 92.3 L 1016 87.1 L 1040 78.0 L 1064 65.3 L 1088 50.8 L 1112 36.7 L 1136 25.4 L 1160 18.6 L 1184 16.8 L 1208 19.1 L 1232 23.7 L 1256 28.6 L 1280 32.2 L 1304 33.9 L 1328 34.2 L 1352 34.2 L 1376 35.3 L 1400 38.3 L 1424 43.0 L 1448 48.3 L 1472 52.6" stroke="#F1EDE2" stroke-opacity="0.23" stroke-width="0.8" fill="none"/>
+<path d="M -40 129.2 L -16 128.2 L 8 124.1 L 32 116.9 L 56 107.5 L 80 97.2 L 104 87.7 L 128 80.2 L 152 75.4 L 176 73.5 L 200 73.6 L 224 74.8 L 248 75.8 L 272 75.8 L 296 74.5 L 320 72.1 L 344 69.4 L 368 67.5 L 392 67.1 L 416 68.6 L 440 71.5 L 464 74.9 L 488 77.6 L 512 78.3 L 536 76.1 L 560 70.9 L 584 63.2 L 608 54.2 L 632 45.4 L 656 38.2 L 680 33.6 L 704 31.8 L 728 32.5 L 752 34.6 L 776 37.1 L 800 39.1 L 824 40.2 L 848 40.7 L 872 41.3 L 896 42.9 L 920 46.4 L 944 52.4 L 968 60.5 L 992 69.9 L 1016 79.2 L 1040 86.9 L 1064 92.0 L 1088 93.8 L 1112 92.5 L 1136 89.1 L 1160 85.0 L 1184 81.4 L 1208 79.5 L 1232 79.6 L 1256 81.6 L 1280 84.6 L 1304 87.7 L 1328 89.9 L 1352 90.9 L 1376 90.7 L 1400 90.2 L 1424 90.4 L 1448 92.3 L 1472 96.6" stroke="#F1EDE2" stroke-opacity="0.21" stroke-width="0.8" fill="none"/>
+<path d="M -40 52.5 L -16 54.3 L 8 59.6 L 32 68.2 L 56 79.2 L 80 91.5 L 104 103.7 L 128 114.2 L 152 122.1 L 176 126.6 L 200 127.7 L 224 126.0 L 248 122.2 L 272 117.7 L 296 113.5 L 320 110.6 L 344 109.6 L 368 110.6 L 392 113.3 L 416 117.0 L 440 120.9 L 464 124.3 L 488 126.5 L 512 127.3 L 536 126.6 L 560 124.5 L 584 121.4 L 608 117.6 L 632 113.3 L 656 108.6 L 680 103.5 L 704 97.9 L 728 91.5 L 752 84.4 L 776 76.9 L 800 69.4 L 824 62.5 L 848 57.2 L 872 54.0 L 896 53.7 L 920 56.2 L 944 61.5 L 968 68.7 L 992 76.8 L 1016 84.5 L 1040 90.8 L 1064 94.7 L 1088 95.7 L 1112 94.1 L 1136 90.5 L 1160 86.0 L 1184 81.8 L 1208 79.2 L 1232 79.3 L 1256 82.4 L 1280 88.6 L 1304 97.2 L 1328 107.3 L 1352 117.7 L 1376 127.1 L 1400 134.6 L 1424 139.5 L 1448 141.6 L 1472 141.2" stroke="#C9A24B" stroke-opacity="0.18" stroke-width="1.1" fill="none"/>
+<path d="M -40 120.4 L -16 119.9 L 8 116.5 L 32 109.9 L 56 101.0 L 80 91.4 L 104 82.9 L 128 77.0 L 152 74.3 L 176 74.8 L 200 77.6 L 224 81.3 L 248 85.0 L 272 88.2 L 296 91.1 L 320 94.6 L 344 99.5 L 368 106.6 L 392 115.8 L 416 126.3 L 440 136.4 L 464 144.6 L 488 149.5 L 512 150.5 L 536 148.0 L 560 143.2 L 584 137.8 L 608 133.4 L 632 131.0 L 656 130.5 L 680 131.4 L 704 132.6 L 728 132.8 L 752 131.5 L 776 128.9 L 800 125.6 L 824 122.8 L 848 121.4 L 872 121.9 L 896 123.8 L 920 125.9 L 944 126.9 L 968 125.2 L 992 120.2 L 1016 112.2 L 1040 102.2 L 1064 92.0 L 1088 83.3 L 1112 77.4 L 1136 74.8 L 1160 75.0 L 1184 77.1 L 1208 79.9 L 1232 82.4 L 1256 84.6 L 1280 86.8 L 1304 90.0 L 1328 95.1 L 1352 102.6 L 1376 112.2 L 1400 122.7 L 1424 132.6 L 1448 140.2 L 1472 144.3" stroke="#F1EDE2" stroke-opacity="0.16" stroke-width="0.8" fill="none"/>
+<path d="M -40 151.4 L -16 154.2 L 8 157.9 L 32 162.2 L 56 166.4 L 80 169.7 L 104 171.0 L 128 170.0 L 152 166.1 L 176 159.6 L 200 151.1 L 224 141.6 L 248 132.1 L 272 123.6 L 296 116.9 L 320 112.3 L 344 109.8 L 368 108.9 L 392 109.0 L 416 109.4 L 440 109.8 L 464 109.7 L 488 109.4 L 512 109.1 L 536 109.2 L 560 110.3 L 584 112.4 L 608 115.5 L 632 119.3 L 656 123.0 L 680 126.1 L 704 127.9 L 728 128.0 L 752 126.5 L 776 123.8 L 800 120.6 L 824 117.9 L 848 116.7 L 872 117.5 L 896 120.8 L 920 126.4 L 944 133.7 L 968 141.8 L 992 149.8 L 1016 156.8 L 1040 162.2 L 1064 165.7 L 1088 167.4 L 1112 167.7 L 1136 167.2 L 1160 166.3 L 1184 165.3 L 1208 164.3 L 1232 163.0 L 1256 161.0 L 1280 157.8 L 1304 153.2 L 1328 147.0 L 1352 139.7 L 1376 131.8 L 1400 124.2 L 1424 117.9 L 1448 113.5 L 1472 111.5" stroke="#F1EDE2" stroke-opacity="0.14" stroke-width="0.8" fill="none"/>
+<path d="M -40 128.7 L -16 126.9 L 8 124.5 L 32 121.5 L 56 118.3 L 80 115.9 L 104 115.1 L 128 116.8 L 152 121.2 L 176 127.9 L 200 136.1 L 224 144.4 L 248 151.4 L 272 156.0 L 296 157.9 L 320 157.2 L 344 154.9 L 368 152.1 L 392 149.8 L 416 148.9 L 440 149.6 L 464 151.6 L 488 154.2 L 512 156.8 L 536 158.9 L 560 160.3 L 584 161.5 L 608 163.1 L 632 165.7 L 656 169.7 L 680 175.0 L 704 180.9 L 728 186.3 L 752 190.0 L 776 190.9 L 800 188.8 L 824 183.7 L 848 176.5 L 872 168.6 L 896 161.4 L 920 155.8 L 944 152.5 L 968 151.4 L 992 151.7 L 1016 152.6 L 1040 153.2 L 1064 153.0 L 1088 152.0 L 1112 150.4 L 1136 148.8 L 1160 147.9 L 1184 147.9 L 1208 148.5 L 1232 149.1 L 1256 148.9 L 1280 146.9 L 1304 142.7 L 1328 136.5 L 1352 129.1 L 1376 121.5 L 1400 115.3 L 1424 111.6 L 1448 110.9 L 1472 113.4" stroke="#C9A24B" stroke-opacity="0.12" stroke-width="1.1" fill="none"/>
+<path d="M -40 158.1 L -16 158.6 L 8 160.1 L 32 162.1 L 56 164.4 L 80 166.7 L 104 168.8 L 128 171.1 L 152 173.8 L 176 177.2 L 200 181.5 L 224 186.7 L 248 192.2 L 272 197.4 L 296 201.4 L 320 203.4 L 344 202.9 L 368 199.7 L 392 194.2 L 416 187.4 L 440 180.4 L 464 174.3 L 488 170.1 L 512 168.2 L 536 168.7 L 560 170.9 L 584 173.9 L 608 176.8 L 632 178.6 L 656 178.6 L 680 176.8 L 704 173.3 L 728 168.7 L 752 163.7 L 776 158.9 L 800 154.7 L 824 151.3 L 848 148.5 L 872 146.2 L 896 144.0 L 920 142.1 L 944 140.4 L 968 139.4 L 992 139.6 L 1016 141.4 L 1040 144.9 L 1064 150.1 L 1088 156.4 L 1112 162.9 L 1136 168.7 L 1160 172.8 L 1184 174.8 L 1208 174.3 L 1232 171.9 L 1256 168.5 L 1280 165.0 L 1304 162.7 L 1328 162.3 L 1352 164.4 L 1376 168.7 L 1400 174.8 L 1424 181.6 L 1448 188.1 L 1472 193.5" stroke="#F1EDE2" stroke-opacity="0.10" stroke-width="0.8" fill="none"/>
+<path d="M -40 180.0 L -16 178.4 L 8 176.5 L 32 175.2 L 56 175.2 L 80 176.7 L 104 179.1 L 128 181.7 L 152 183.6 L 176 184.2 L 200 183.4 L 224 181.6 L 248 179.9 L 272 179.3 L 296 180.4 L 320 183.5 L 344 187.9 L 368 192.9 L 392 197.3 L 416 200.5 L 440 202.1 L 464 202.6 L 488 202.7 L 512 203.2 L 536 204.8 L 560 207.5 L 584 210.8 L 608 213.7 L 632 215.1 L 656 214.5 L 680 211.6 L 704 206.9 L 728 201.3 L 752 195.9 L 776 191.5 L 800 188.3 L 824 186.1 L 848 184.1 L 872 181.5 L 896 177.7 L 920 172.8 L 944 167.1 L 968 161.8 L 992 157.9 L 1016 156.0 L 1040 156.6 L 1064 159.0 L 1088 162.4 L 1112 165.9 L 1136 168.5 L 1160 170.0 L 1184 170.8 L 1208 171.5 L 1232 173.1 L 1256 176.0 L 1280 180.5 L 1304 186.0 L 1328 191.5 L 1352 196.0 L 1376 198.7 L 1400 199.3 L 1424 198.4 L 1448 196.7 L 1472 195.3" stroke="#F1EDE2" stroke-opacity="0.09" stroke-width="0.8" fill="none"/>
+<path d="M -40 211.7 L -16 210.7 L 8 210.0 L 32 209.7 L 56 209.6 L 80 209.4 L 104 208.8 L 128 207.4 L 152 204.8 L 176 201.0 L 200 196.2 L 224 190.8 L 248 185.3 L 272 180.6 L 296 177.3 L 320 176.0 L 344 176.9 L 368 180.0 L 392 184.8 L 416 190.6 L 440 196.8 L 464 202.4 L 488 206.9 L 512 209.8 L 536 211.3 L 560 211.4 L 584 210.6 L 608 209.5 L 632 208.6 L 656 208.4 L 680 208.9 L 704 210.3 L 728 212.2 L 752 214.4 L 776 216.5 L 800 218.3 L 824 219.7 L 848 220.5 L 872 221.0 L 896 221.2 L 920 221.2 L 944 221.1 L 968 220.6 L 992 219.7 L 1016 217.9 L 1040 215.2 L 1064 211.2 L 1088 206.2 L 1112 200.4 L 1136 194.4 L 1160 188.7 L 1184 184.1 L 1208 181.1 L 1232 180.2 L 1256 181.2 L 1280 184.0 L 1304 188.0 L 1328 192.4 L 1352 196.6 L 1376 199.7 L 1400 201.5 L 1424 201.7 L 1448 200.6 L 1472 198.8" stroke="#C9A24B" stroke-opacity="0.07" stroke-width="1.1" fill="none"/>
+<path d="M -40 208.6 L -16 207.0 L 8 204.9 L 32 202.6 L 56 200.7 L 80 199.8 L 104 200.6 L 128 203.2 L 152 207.2 L 176 211.9 L 200 216.3 L 224 219.8 L 248 221.8 L 272 222.5 L 296 222.4 L 320 222.0 L 344 222.2 L 368 223.1 L 392 224.8 L 416 226.6 L 440 228.1 L 464 228.7 L 488 228.2 L 512 226.9 L 536 225.4 L 560 224.5 L 584 224.9 L 608 226.8 L 632 230.1 L 656 234.1 L 680 237.8 L 704 240.6 L 728 242.0 L 752 241.8 L 776 240.6 L 800 238.9 L 824 237.4 L 848 236.3 L 872 235.6 L 896 234.8 L 920 233.4 L 944 230.7 L 968 226.6 L 992 221.5 L 1016 215.8 L 1040 210.7 L 1064 206.8 L 1088 204.7 L 1112 204.4 L 1136 205.4 L 1160 207.0 L 1184 208.5 L 1208 209.3 L 1232 209.5 L 1256 209.3 L 1280 209.3 L 1304 210.0 L 1328 211.8 L 1352 214.4 L 1376 217.4 L 1400 220.0 L 1424 221.5 L 1448 221.5 L 1472 220.2" stroke="#F1EDE2" stroke-opacity="0.06" stroke-width="0.8" fill="none"/>
+<path d="M -40 249.5 L -16 249.5 L 8 250.4 L 32 252.2 L 56 254.9 L 80 257.6 L 104 259.7 L 128 260.4 L 152 259.5 L 176 257.2 L 200 254.2 L 224 251.3 L 248 248.9 L 272 247.5 L 296 246.7 L 320 245.9 L 344 244.5 L 368 242.3 L 392 239.2 L 416 235.9 L 440 233.1 L 464 231.4 L 488 231.3 L 512 232.6 L 536 234.6 L 560 236.5 L 584 237.7 L 608 237.8 L 632 236.9 L 656 235.6 L 680 234.6 L 704 234.2 L 728 234.6 L 752 235.4 L 776 236.1 L 800 235.8 L 824 234.3 L 848 231.6 L 872 228.2 L 896 224.9 L 920 222.7 L 944 221.8 L 968 222.3 L 992 223.7 L 1016 225.4 L 1040 226.6 L 1064 227.2 L 1088 227.3 L 1112 227.5 L 1136 228.4 L 1160 230.5 L 1184 233.8 L 1208 237.8 L 1232 241.8 L 1256 244.9 L 1280 246.6 L 1304 246.9 L 1328 246.1 L 1352 245.0 L 1376 244.3 L 1400 244.3 L 1424 245.1 L 1448 246.3 L 1472 247.2" stroke="#F1EDE2" stroke-opacity="0.05" stroke-width="0.8" fill="none"/>
+<path d="M -40 256.5 L -16 258.5 L 8 259.5 L 32 259.7 L 56 259.7 L 80 259.7 L 104 260.3 L 128 261.4 L 152 262.9 L 176 264.4 L 200 265.3 L 224 265.4 L 248 264.6 L 272 263.2 L 296 261.6 L 320 260.4 L 344 259.9 L 368 260.5 L 392 261.8 L 416 263.5 L 440 265.1 L 464 266.2 L 488 266.6 L 512 266.4 L 536 266.0 L 560 265.9 L 584 266.3 L 608 267.4 L 632 269.1 L 656 270.7 L 680 271.9 L 704 272.2 L 728 271.3 L 752 269.4 L 776 266.9 L 800 264.3 L 824 262.1 L 848 260.5 L 872 259.5 L 896 258.7 L 920 257.7 L 944 256.3 L 968 254.1 L 992 251.4 L 1016 248.5 L 1040 246.1 L 1064 244.6 L 1088 244.2 L 1112 244.8 L 1136 246.2 L 1160 247.7 L 1184 249.0 L 1208 249.6 L 1232 249.7 L 1256 249.4 L 1280 249.2 L 1304 249.6 L 1328 250.6 L 1352 252.3 L 1376 254.4 L 1400 256.2 L 1424 257.3 L 1448 257.5 L 1472 256.7" stroke="#C9A24B" stroke-opacity="0.05" stroke-width="1.1" fill="none"/>
+<path d="M -40 512.3 L -16 514.2 L 8 515.8 L 32 517.1 L 56 517.7 L 80 517.6 L 104 516.7 L 128 515.0 L 152 512.9 L 176 510.3 L 200 507.7 L 224 505.2 L 248 503.0 L 272 501.2 L 296 499.7 L 320 498.5 L 344 497.4 L 368 496.3 L 392 495.1 L 416 493.7 L 440 492.2 L 464 490.6 L 488 489.1 L 512 487.8 L 536 487.1 L 560 487.0 L 584 487.6 L 608 488.9 L 632 490.7 L 656 492.8 L 680 495.0 L 704 497.0 L 728 498.7 L 752 499.9 L 776 500.6 L 800 500.8 L 824 500.8 L 848 500.6 L 872 500.5 L 896 500.6 L 920 501.1 L 944 501.8 L 968 502.8 L 992 503.9 L 1016 505.0 L 1040 505.7 L 1064 506.2 L 1088 506.2 L 1112 505.9 L 1136 505.4 L 1160 504.9 L 1184 504.5 L 1208 504.5 L 1232 504.9 L 1256 505.8 L 1280 507.2 L 1304 508.9 L 1328 510.6 L 1352 512.2 L 1376 513.4 L 1400 514.0 L 1424 513.9 L 1448 513.2 L 1472 512.0" stroke="#C9A24B" stroke-opacity="0.05" stroke-width="1.1" fill="none"/>
+<path d="M -40 533.8 L -16 532.1 L 8 531.3 L 32 531.3 L 56 531.7 L 80 532.0 L 104 531.8 L 128 531.0 L 152 529.6 L 176 528.3 L 200 527.6 L 224 527.9 L 248 529.5 L 272 531.9 L 296 534.8 L 320 537.2 L 344 538.5 L 368 538.3 L 392 536.7 L 416 534.0 L 440 531.0 L 464 528.2 L 488 525.9 L 512 524.4 L 536 523.1 L 560 521.8 L 584 520.0 L 608 517.4 L 632 514.3 L 656 511.1 L 680 508.6 L 704 507.2 L 728 507.3 L 752 508.9 L 776 511.3 L 800 514.0 L 824 516.1 L 848 517.2 L 872 517.1 L 896 516.0 L 920 514.6 L 944 513.4 L 968 512.7 L 992 512.7 L 1016 513.0 L 1040 513.2 L 1064 512.8 L 1088 511.6 L 1112 509.5 L 1136 507.1 L 1160 505.1 L 1184 504.1 L 1208 504.6 L 1232 506.7 L 1256 510.1 L 1280 514.0 L 1304 517.8 L 1328 520.9 L 1352 523.0 L 1376 524.2 L 1400 525.0 L 1424 525.9 L 1448 527.2 L 1472 529.0" stroke="#F1EDE2" stroke-opacity="0.05" stroke-width="0.8" fill="none"/>
+<path d="M -40 537.6 L -16 538.0 L 8 539.3 L 32 541.0 L 56 542.1 L 80 542.1 L 104 540.6 L 128 537.9 L 152 534.9 L 176 532.1 L 200 530.5 L 224 530.1 L 248 530.7 L 272 531.7 L 296 532.3 L 320 532.1 L 344 530.8 L 368 528.9 L 392 527.0 L 416 526.1 L 440 526.6 L 464 528.9 L 488 532.5 L 512 536.7 L 536 540.8 L 560 543.9 L 584 546.0 L 608 547.3 L 632 548.4 L 656 550.0 L 680 552.5 L 704 556.1 L 728 560.4 L 752 564.4 L 776 567.3 L 800 568.5 L 824 567.9 L 848 565.9 L 872 563.0 L 896 560.2 L 920 558.1 L 944 556.7 L 968 555.9 L 992 554.9 L 1016 553.0 L 1040 549.9 L 1064 545.4 L 1088 540.2 L 1112 535.0 L 1136 530.7 L 1160 527.9 L 1184 526.8 L 1208 527.0 L 1232 527.7 L 1256 528.2 L 1280 528.1 L 1304 527.1 L 1328 525.7 L 1352 524.6 L 1376 524.6 L 1400 525.9 L 1424 528.8 L 1448 532.5 L 1472 536.3" stroke="#F1EDE2" stroke-opacity="0.07" stroke-width="0.8" fill="none"/>
+<path d="M -40 555.4 L -16 559.7 L 8 562.8 L 32 564.4 L 56 564.5 L 80 563.1 L 104 560.7 L 128 557.9 L 152 555.3 L 176 553.6 L 200 553.2 L 224 554.6 L 248 557.7 L 272 562.2 L 296 567.8 L 320 573.8 L 344 579.6 L 368 584.5 L 392 588.0 L 416 590.0 L 440 590.3 L 464 589.2 L 488 586.9 L 512 584.0 L 536 580.9 L 560 577.9 L 584 575.4 L 608 573.5 L 632 572.2 L 656 571.4 L 680 570.9 L 704 570.6 L 728 570.3 L 752 569.8 L 776 569.3 L 800 568.6 L 824 567.9 L 848 567.1 L 872 566.2 L 896 565.2 L 920 564.0 L 944 562.4 L 968 560.3 L 992 557.5 L 1016 554.0 L 1040 550.1 L 1064 546.0 L 1088 542.0 L 1112 538.7 L 1136 536.4 L 1160 535.6 L 1184 536.3 L 1208 538.7 L 1232 542.5 L 1256 547.1 L 1280 552.2 L 1304 556.9 L 1328 560.7 L 1352 563.2 L 1376 564.1 L 1400 563.5 L 1424 561.5 L 1448 558.8 L 1472 556.0" stroke="#C9A24B" stroke-opacity="0.08" stroke-width="1.1" fill="none"/>
+<path d="M -40 600.1 L -16 600.6 L 8 599.9 L 32 599.0 L 56 598.9 L 80 599.7 L 104 601.2 L 128 602.4 L 152 602.6 L 176 601.1 L 200 598.1 L 224 594.4 L 248 591.2 L 272 589.8 L 296 590.7 L 320 594.0 L 344 598.8 L 368 603.9 L 392 607.9 L 416 610.0 L 440 610.0 L 464 608.7 L 488 606.8 L 512 605.3 L 536 604.6 L 560 604.6 L 584 604.4 L 608 603.0 L 632 599.6 L 656 594.2 L 680 587.2 L 704 579.8 L 728 573.4 L 752 569.2 L 776 567.6 L 800 568.3 L 824 570.2 L 848 572.3 L 872 573.4 L 896 573.3 L 920 572.2 L 944 570.9 L 968 570.3 L 992 571.1 L 1016 573.0 L 1040 575.5 L 1064 577.4 L 1088 577.5 L 1112 575.4 L 1136 571.1 L 1160 565.6 L 1184 560.1 L 1208 556.0 L 1232 554.2 L 1256 554.7 L 1280 557.0 L 1304 560.0 L 1328 562.7 L 1352 564.6 L 1376 565.7 L 1400 566.8 L 1424 568.8 L 1448 572.3 L 1472 577.6" stroke="#F1EDE2" stroke-opacity="0.10" stroke-width="0.8" fill="none"/>
+<path d="M -40 579.5 L -16 580.5 L 8 581.8 L 32 583.6 L 56 585.9 L 80 588.9 L 104 592.4 L 128 596.3 L 152 600.1 L 176 603.5 L 200 606.0 L 224 607.4 L 248 607.6 L 272 606.7 L 296 605.0 L 320 603.2 L 344 601.7 L 368 601.2 L 392 602.3 L 416 605.1 L 440 609.6 L 464 615.5 L 488 622.2 L 512 629.0 L 536 635.1 L 560 639.7 L 584 642.3 L 608 642.6 L 632 640.7 L 656 636.8 L 680 631.5 L 704 625.4 L 728 619.2 L 752 613.2 L 776 608.1 L 800 603.8 L 824 600.4 L 848 597.7 L 872 595.5 L 896 593.5 L 920 591.6 L 944 589.8 L 968 588.0 L 992 586.6 L 1016 585.8 L 1040 585.6 L 1064 586.2 L 1088 587.6 L 1112 589.5 L 1136 591.6 L 1160 593.4 L 1184 594.4 L 1208 594.5 L 1232 593.3 L 1256 591.1 L 1280 588.2 L 1304 585.1 L 1328 582.5 L 1352 581.0 L 1376 581.3 L 1400 583.7 L 1424 588.2 L 1448 594.6 L 1472 602.4" stroke="#F1EDE2" stroke-opacity="0.12" stroke-width="0.8" fill="none"/>
+<path d="M -40 620.0 L -16 621.8 L 8 624.4 L 32 627.5 L 56 630.5 L 80 633.0 L 104 634.4 L 128 634.6 L 152 633.7 L 176 632.1 L 200 630.5 L 224 629.7 L 248 630.4 L 272 632.8 L 296 637.0 L 320 642.7 L 344 649.0 L 368 654.9 L 392 659.6 L 416 662.3 L 440 662.7 L 464 660.6 L 488 656.6 L 512 651.4 L 536 645.5 L 560 639.8 L 584 634.7 L 608 630.1 L 632 626.0 L 656 622.1 L 680 617.8 L 704 612.9 L 728 607.4 L 752 601.5 L 776 595.8 L 800 591.1 L 824 588.0 L 848 587.1 L 872 588.7 L 896 592.6 L 920 598.2 L 944 604.7 L 968 611.0 L 992 616.3 L 1016 620.0 L 1040 621.8 L 1064 622.0 L 1088 621.0 L 1112 619.6 L 1136 618.4 L 1160 618.2 L 1184 619.1 L 1208 621.2 L 1232 623.9 L 1256 626.9 L 1280 629.6 L 1304 631.6 L 1328 632.9 L 1352 633.5 L 1376 634.1 L 1400 635.0 L 1424 637.0 L 1448 640.3 L 1472 644.9" stroke="#C9A24B" stroke-opacity="0.14" stroke-width="1.1" fill="none"/>
+<path d="M -40 660.9 L -16 666.9 L 8 673.6 L 32 680.2 L 56 685.9 L 80 689.6 L 104 690.3 L 128 687.8 L 152 682.1 L 176 674.2 L 200 665.2 L 224 656.9 L 248 650.5 L 272 647.1 L 296 646.8 L 320 649.3 L 344 653.5 L 368 657.9 L 392 661.3 L 416 662.4 L 440 660.8 L 464 656.7 L 488 650.6 L 512 643.5 L 536 636.3 L 560 629.9 L 584 624.6 L 608 620.4 L 632 617.1 L 656 614.3 L 680 611.8 L 704 609.5 L 728 607.8 L 752 607.3 L 776 608.6 L 800 612.1 L 824 617.9 L 848 625.4 L 872 633.8 L 896 641.7 L 920 647.9 L 944 651.4 L 968 651.8 L 992 649.4 L 1016 645.1 L 1040 640.3 L 1064 636.6 L 1088 635.3 L 1112 637.0 L 1136 642.0 L 1160 649.5 L 1184 658.4 L 1208 667.5 L 1232 675.3 L 1256 681.1 L 1280 684.4 L 1304 685.4 L 1328 684.6 L 1352 682.7 L 1376 680.3 L 1400 677.8 L 1424 675.0 L 1448 671.9 L 1472 668.0" stroke="#F1EDE2" stroke-opacity="0.16" stroke-width="0.8" fill="none"/>
+<path d="M -40 665.8 L -16 659.8 L 8 656.2 L 32 654.9 L 56 655.5 L 80 657.4 L 104 659.8 L 128 661.8 L 152 662.7 L 176 662.2 L 200 660.1 L 224 656.6 L 248 652.2 L 272 647.5 L 296 643.0 L 320 639.5 L 344 637.1 L 368 636.1 L 392 636.4 L 416 637.8 L 440 639.9 L 464 642.5 L 488 645.2 L 512 648.2 L 536 651.5 L 560 655.4 L 584 660.1 L 608 666.0 L 632 673.1 L 656 681.3 L 680 690.2 L 704 699.0 L 728 707.1 L 752 713.6 L 776 717.5 L 800 718.5 L 824 716.1 L 848 710.7 L 872 702.8 L 896 693.1 L 920 682.7 L 944 672.8 L 968 664.1 L 992 657.4 L 1016 653.0 L 1040 650.9 L 1064 650.5 L 1088 651.5 L 1112 652.9 L 1136 654.1 L 1160 654.7 L 1184 654.3 L 1208 652.9 L 1232 650.8 L 1256 648.3 L 1280 646.0 L 1304 644.1 L 1328 643.2 L 1352 643.1 L 1376 643.8 L 1400 645.1 L 1424 646.6 L 1448 648.1 L 1472 649.4" stroke="#F1EDE2" stroke-opacity="0.19" stroke-width="0.8" fill="none"/>
+<path d="M -40 713.2 L -16 713.7 L 8 711.6 L 32 706.1 L 56 697.1 L 80 686.0 L 104 674.5 L 128 664.5 L 152 657.2 L 176 653.1 L 200 651.4 L 224 650.7 L 248 649.7 L 272 647.3 L 296 643.8 L 320 639.9 L 344 637.5 L 368 638.0 L 392 642.5 L 416 650.9 L 440 662.3 L 464 674.7 L 488 686.2 L 512 695.4 L 536 701.9 L 560 706.1 L 584 709.4 L 608 713.1 L 632 718.2 L 656 724.8 L 680 731.8 L 704 737.7 L 728 740.9 L 752 740.1 L 776 735.2 L 800 727.2 L 824 717.6 L 848 708.5 L 872 701.3 L 896 696.4 L 920 693.6 L 944 691.4 L 968 688.5 L 992 683.7 L 1016 676.9 L 1040 668.9 L 1064 661.2 L 1088 655.5 L 1112 653.0 L 1136 654.2 L 1160 658.3 L 1184 663.7 L 1208 668.5 L 1232 671.5 L 1256 671.9 L 1280 670.3 L 1304 668.0 L 1328 666.5 L 1352 667.2 L 1376 670.5 L 1400 675.8 L 1424 681.7 L 1448 686.6 L 1472 689.1" stroke="#C9A24B" stroke-opacity="0.22" stroke-width="1.1" fill="none"/>
+<path d="M -40 740.6 L -16 735.3 L 8 729.2 L 32 723.6 L 56 719.5 L 80 717.8 L 104 718.5 L 128 721.4 L 152 725.7 L 176 730.5 L 200 734.9 L 224 738.4 L 248 740.7 L 272 742.0 L 296 742.8 L 320 743.7 L 344 745.3 L 368 747.7 L 392 750.7 L 416 753.9 L 440 756.2 L 464 756.8 L 488 754.8 L 512 749.8 L 536 741.9 L 560 731.6 L 584 720.1 L 608 708.7 L 632 698.7 L 656 691.2 L 680 686.8 L 704 685.6 L 728 686.9 L 752 689.8 L 776 693.3 L 800 696.3 L 824 698.0 L 848 698.1 L 872 696.9 L 896 694.8 L 920 692.4 L 944 690.4 L 968 689.3 L 992 688.9 L 1016 688.9 L 1040 688.6 L 1064 687.5 L 1088 684.7 L 1112 680.0 L 1136 673.6 L 1160 666.2 L 1184 658.8 L 1208 652.7 L 1232 649.1 L 1256 648.7 L 1280 651.9 L 1304 658.4 L 1328 667.3 L 1352 677.6 L 1376 687.8 L 1400 696.8 L 1424 703.8 L 1448 708.5 L 1472 710.9" stroke="#F1EDE2" stroke-opacity="0.25" stroke-width="0.8" fill="none"/>
+<path d="M -40 707.6 L -16 721.2 L 8 733.7 L 32 743.1 L 56 747.8 L 80 747.5 L 104 743.3 L 128 737.2 L 152 731.5 L 176 728.5 L 200 729.4 L 224 734.3 L 248 742.2 L 272 751.4 L 296 760.1 L 320 766.9 L 344 771.1 L 368 772.9 L 392 773.2 L 416 773.0 L 440 772.8 L 464 772.6 L 488 771.4 L 512 768.1 L 536 761.6 L 560 751.3 L 584 737.6 L 608 722.1 L 632 707.0 L 656 694.7 L 680 687.0 L 704 685.0 L 728 688.0 L 752 694.4 L 776 702.1 L 800 708.6 L 824 712.3 L 848 712.4 L 872 709.5 L 896 704.9 L 920 700.2 L 944 696.9 L 968 695.6 L 992 696.3 L 1016 698.2 L 1040 700.4 L 1064 702.1 L 1088 703.2 L 1112 704.4 L 1136 707.1 L 1160 712.5 L 1184 721.5 L 1208 734.1 L 1232 749.1 L 1256 764.5 L 1280 777.8 L 1304 786.7 L 1328 789.9 L 1352 787.2 L 1376 779.9 L 1400 770.0 L 1424 759.8 L 1448 751.5 L 1472 746.2" stroke="#F1EDE2" stroke-opacity="0.28" stroke-width="0.8" fill="none"/>
+<path d="M -40 738.4 L -16 729.1 L 8 723.6 L 32 722.6 L 56 725.4 L 80 730.3 L 104 734.7 L 128 736.7 L 152 735.4 L 176 731.5 L 200 726.7 L 224 723.1 L 248 722.3 L 272 724.7 L 296 729.4 L 320 734.1 L 344 736.8 L 368 735.7 L 392 730.6 L 416 722.6 L 440 714.1 L 464 707.4 L 488 704.2 L 512 704.9 L 536 708.5 L 560 713.0 L 584 716.5 L 608 717.5 L 632 716.2 L 656 714.0 L 680 712.9 L 704 715.3 L 728 722.1 L 752 733.1 L 776 746.6 L 800 760.3 L 824 771.7 L 848 779.5 L 872 783.7 L 896 785.6 L 920 787.2 L 944 790.5 L 968 796.1 L 992 803.5 L 1016 811.0 L 1040 816.3 L 1064 817.3 L 1088 813.5 L 1112 805.4 L 1136 795.1 L 1160 785.0 L 1184 777.2 L 1208 772.8 L 1232 771.0 L 1256 770.3 L 1280 768.6 L 1304 764.3 L 1328 757.1 L 1352 747.8 L 1376 738.6 L 1400 731.8 L 1424 729.0 L 1448 730.5 L 1472 735.1" stroke="#C9A24B" stroke-opacity="0.31" stroke-width="1.1" fill="none"/>
+<path d="M -40 768.3 L -16 750.9 L 8 736.2 L 32 725.6 L 56 719.8 L 80 718.4 L 104 720.3 L 128 724.2 L 152 728.5 L 176 732.1 L 200 734.5 L 224 735.9 L 248 736.7 L 272 737.9 L 296 740.0 L 320 743.3 L 344 747.5 L 368 751.8 L 392 755.3 L 416 757.0 L 440 756.6 L 464 754.2 L 488 750.7 L 512 747.7 L 536 746.9 L 560 749.6 L 584 756.7 L 608 768.2 L 632 783.1 L 656 799.7 L 680 815.6 L 704 828.8 L 728 837.6 L 752 841.1 L 776 839.4 L 800 833.5 L 824 825.1 L 848 815.6 L 872 806.7 L 896 799.1 L 920 793.1 L 944 788.3 L 968 783.9 L 992 779.3 L 1016 774.0 L 1040 768.0 L 1064 762.0 L 1088 756.7 L 1112 753.2 L 1136 752.1 L 1160 753.4 L 1184 756.5 L 1208 760.1 L 1232 762.7 L 1256 762.7 L 1280 759.0 L 1304 751.5 L 1328 740.7 L 1352 728.2 L 1376 716.0 L 1400 706.3 L 1424 700.8 L 1448 700.7 L 1472 706.0" stroke="#F1EDE2" stroke-opacity="0.35" stroke-width="0.8" fill="none"/>
+</svg></div>
+    <div class="inner">
+      <div class="content">
+        <h1>
+          <span class="he">אתם חיים עם זה חודשים. לרופא יש חמש דקות.</span>
+          <span class="en">Months of living with it. Five minutes to explain it.</span>
+        </h1>
+        <p class="sub">
+          <span class="he">Advolog היא ערכה חינמית ופתוחה שעוזרת למטופלים ולמלווים להפוך תסמינים, מסמכים מפוזרים וזיכרונות חצי־שלמים מתורים קודמים לחומר ברור ואמין שרופא יכול לקרוא בשתי דקות. היא רצה בתוך חשבון ה־AI שכבר יש לכם. היא לא מאבחנת, לא ממליצה על טיפול, ושום מידע שלכם לא מגיע אלינו.</span>
+          <span class="en">Advolog is a free, open toolkit that helps patients and caregivers turn scattered records, symptoms, and half-remembered appointments into clear, credible material a doctor can read in two minutes. It runs inside an AI account you already have. It never diagnoses, never recommends treatment, and none of your information ever reaches us.</span>
         </p>
-        <p class="muted small"><span class="he">גרסת חבילה: 2.8.2026 · אחרי ההורדה חשוב לחלץ את ה־zip — המדריך מראה איך.</span>
-        <span class="en">Package build: 2.8.2026 · After downloading, extract the zip — the guide shows how.</span></p>
+        <div class="ctas">
+          <a class="btn brass" href="#get"><span class="he">להורדת הערכה</span><span class="en">Download the package</span></a>
+          <a class="btn line" href="#starter"><span class="he">להעתקת פרומפט הפתיחה</span><span class="en">Copy the starter prompt — no download needed</span></a>
+        </div>
+        <p class="under muted">
+          <span class="he">בחינם. בלי הרשמה, בלי חשבון, בלי מעקב. לפני שמתחילים, כדאי לקרוא <a href="#wont">מה הכלי הזה יכול ומה הוא לא</a> — זה החלק החשוב בעמוד.</span>
+          <span class="en">Free. No signup, no account, no tracking. Before you start, read <a href="#wont">what this can and can't do</a> — it's two minutes, and it's the most important section on this page.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ The honest paragraph ═══ -->
+  <section>
+    <div class="wrap split">
+      <div class="numlabel mono"><span class="he">מה זה בעצם</span><span class="en">What this is</span></div>
+      <p style="font-size:clamp(18px,2.2vw,22px); line-height:1.7; max-width:34em; margin:0;">
+        <span class="he">זו תיקייה של קבצים והנחיות, כתובים בשפה פשוטה, שאתם טוענים לעוזר AI שאתם כבר משתמשים בו — קלוד או ג׳יפיטי, שניהם עובדים. הוא מראיין אתכם בעדינות, שאלה אחת בכל פעם. מסדר את מה שסיפרתם. ומפיק מסמכים שנבנו בשביל תורים אמיתיים: דף הכנה של עמוד אחד, רשימת שאלות עם הנימוק ליד כל שאלה, ציר זמן של מה שנוסה ומה קרה. זו לא אפליקציה, לא שירות, ולא מקור לתשובות רפואיות. זה מבנה, לצד שלכם בשיחה.</span>
+        <span class="en">This is a folder of instructions and templates, written in plain language, that you load into an AI assistant you already use (Claude or ChatGPT — both work). It interviews you gently, one question at a time. It organizes what you tell it. And it produces documents built for real appointments: a one-page prep sheet, a question list with the reasoning behind each question, a timeline of what has been tried and what happened. It is not an app, not a service, and not a source of medical answers. It is structure, for your side of the conversation.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ 01 · Why this exists ═══ -->
+  <section class="onwhite">
+    <div class="wrap">
+      <div class="shead"><span class="numlabel">01 —</span><h2><span class="he">למה זה קיים</span><span class="en">Why this exists</span></h2></div>
+      <div class="split"><div></div><div style="max-width:66ch">
+        <p><span class="he">רופאים מזהים דפוסים במהירות, ויש להם חמש דקות למטופל. לכם יש ימים, שבועות, לפעמים שנים של ניסיון ישיר, ובדרך כלל אין דרך טובה להעביר אותו הלאה. אז פרטים הולכים לאיבוד בין מערכות שלא מדברות זו עם זו. היסטוריות נופלות בין הכיסאות בדיוק בתקופות שבהן הכי קשה לשמור על סדר. ו״זה כנראה הדבר הרגיל״ מנצח כברירת מחדל, ביקור אחרי ביקור.</span>
+        <span class="en">Doctors are trained pattern-matchers with five minutes per patient. You have days, weeks, sometimes years of direct experience, and usually no good way to hand it over. So details get lost between systems that don't talk to each other. Histories fall through the cracks during the exact periods when you're least able to keep things organized. And "it's probably the usual thing" wins by default, visit after visit.</span></p>
+        <p><span class="he">מה שממלא את החלל הזה בדרך כלל הוא תדפיסים מפורומים, שרופאים, בצדק, מבטלים. Advolog הולכת בדרך אחרת: הניסיון שלכם, מאורגן בפורמט שרופאים באמת עובדים איתו. היסטוריה תמציתית. ציר זמן ברור. שאלות ממוקדות עם נימוק גלוי, וכל מקור מסומן לפי מה שהוא. לא כדי להתווכח עם הרופא שלכם — כדי לתת לו חמש דקות טובות יותר.</span>
+        <span class="en">What usually fills that gap is a printout of internet threads, which doctors, reasonably, dismiss. Advolog takes a different route: your experience, organized into the format clinicians actually work with. A concise history. A clear timeline. Specific questions with the reasoning stated, and every source labeled for what it is. Not to argue with your doctor — to give them a better five minutes.</span></p>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ═══ 02 · What it's meant to do ═══ -->
+  <section id="does">
+    <div class="wrap">
+      <div class="shead"><span class="numlabel">02 —</span><h2><span class="he">מה הכלי נועד לעשות</span><span class="en">What it's meant to do</span></h2></div>
+      <div class="rows">
+        <div class="row"><div class="ric"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" style="color:var(--brass-text)"><path d="M3 6h6l2 2h10v11H3z"/><path d="M3 6v13"/></svg></div>
+          <h3><span class="he">ההיסטוריה שלכם נשארת שלכם.</span><span class="en">Keep your history yours.</span></h3>
+          <p class="muted"><span class="he">התיעוד חי כקבצים פשוטים במחשב שלכם: ציר זמן, תרופות ותגובות, תורים, שאלות פתוחות. כל אדם יכול לקרוא אותם, כל פלטפורמת AI יכולה לעבוד איתם, ואף אחת מהן לא מחזיקה אתכם.</span>
+          <span class="en">Your record lives as plain files on your computer: timeline, medications and reactions, appointments, open questions. Readable by any person, portable to any AI platform, dependent on none of them.</span></p></div>
+        <div class="row"><div class="ric"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" style="color:var(--brass-text)"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h7M9 16h7"/></svg></div>
+          <h3><span class="he">הכנה לתורים.</span><span class="en">Prepare you for appointments.</span></h3>
+          <p class="muted"><span class="he">דף הכנה של עמוד אחד מתוך מה שנאסף: מה השתנה מאז הביקור הקודם, מה נלקח, מה אתם צריכים שייענה. עשר דקות לפני תור זה מספיק.</span>
+          <span class="en">A one-page prep sheet from whatever you've captured: what changed since last visit, what's being taken, what you need answered. Ten minutes before a visit is enough.</span></p></div>
+        <div class="row"><div class="ric"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" style="color:var(--brass-text)"><path d="M12 18v.01"/><path d="M12 14c0-3 4-3 4-6a4 4 0 0 0-8 0"/></svg></div>
+          <h3><span class="he">שאלות חדות יותר.</span><span class="en">Help you ask better questions.</span></h3>
+          <p class="muted"><span class="he">לא ״קראתי באינטרנט ש...״ אלא רשימה קצרה של שאלות ממוקדות, לכל אחת נימוק גלוי ומקורות מסומנים לפי רמת ראיות, כך שהרופא יכול לשקול אותן בשניות.</span>
+          <span class="en">Not "I read online that…" but a short list of specific questions, each with its reasoning stated and its sources labeled by evidence tier, so your doctor can weigh them in seconds.</span></p></div>
+        <div class="row"><div class="ric"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" style="color:var(--brass-text)"><path d="M4 14a6 6 0 0 1 11-3h2a4 4 0 0 1 0 7H7a4 4 0 0 1-3-4z"/><path d="M12 18l-2 4M16 18l-2 4"/></svg></div>
+          <h3><span class="he">לתפוס גם את השבועות הקשים.</span><span class="en">Catch the bad weeks.</span></h3>
+          <p class="muted"><span class="he">מצב קליטה לתקופות שבהן אין כוח לסדר כלום: הודעות זרוקות, צילום של מסמך, שורה אחת. הסדר מגיע אחר כך, בשיחת שחזור, כך ששום דבר לא הולך לאיבוד בגלל תקופה קשה.</span>
+          <span class="en">A capture mode for periods when organizing anything is beyond reach: brain-dump entries, photos of paperwork, one-line notes. Structure comes later, in a reconstruction session, so nothing is lost to a rough stretch.</span></p></div>
+        <div class="row"><div class="ric"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" style="color:var(--brass-text)"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20a5 5 0 0 1 10 0M13.5 20a4 4 0 0 1 7.5-1.8"/></svg></div>
+          <h3><span class="he">תמיכה במי שמלווה.</span><span class="en">Support the people doing the advocating.</span></h3>
+          <p class="muted"><span class="he">מסלול מלווה לניהול הטיפול של אדם קרוב, עם מסגרת ברורה של הסכמה ושל זהירות במידע של מישהו אחר.</span>
+          <span class="en">A caregiver mode for managing someone else's care, with clear framing about consent and whose information is being handled.</span></p></div>
+        <div class="row"><div class="ric"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" style="color:var(--brass-text)"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></div>
+          <h3><span class="he">להכיר את המערכת הישראלית.</span><span class="en">Know the Israeli system.</span></h3>
+          <p class="muted"><span class="he">שכבת ידע ייעודית על המכניקה בפועל: ההבדלים בין הקופות, טופס 17, סל הבריאות וועדות חריגים, רשומות שחיות במערכות נפרדות ואיך משיגים עותק של התיק שלכם. בעברית, על המציאות הישראלית.</span>
+          <span class="en">A dedicated layer on the practical mechanics: how the kupot differ, Tofes 17, sal briut and exception committees, records that live in separate systems and how to get copies of your own. Written for the Israeli reality, in Hebrew.</span></p></div>
+      </div>
+
+      <!-- paired band (unnumbered, per the Hebrew file's placement) -->
+      <div class="split" style="margin-top:56px">
+        <div class="numlabel mono"><span class="he">ועוד שניים</span><span class="en">And two more</span></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; max-width:100%;">
+          <div>
+            <h3 style="font-size:19px; margin-bottom:6px"><span class="he">מדבר בשפה שלכם.</span><span class="en">Shaped by how you speak.</span></h3>
+            <p class="muted small"><span class="he">מהריאיון הראשון הכלי מכייל את עצמו אליכם: מילים פשוטות או מדויקות, בקצרה או לעומק, ליווי צמוד או מרחב. הוא שואל פעם אחת כמה הכוונה תרצו, וממשיך להתאים לפי איך שאתם באמת עונים. מי שחי בטרמינל ומי שמעולם לא חילץ קובץ מקבלים את אותו כלי, שפוגש כל אחד אחרת. מה שהוא זוכר עליכם הוא איך נוח לכם לעבוד, וגם זה נשאר במחשב שלכם כמו כל השאר.</span>
+            <span class="en">From the first interview onward it calibrates to you: plain words or precise ones, brief or thorough, walked-through or left alone. It asks once how much guidance you want, then keeps adjusting from how you actually answer — someone comfortable in a terminal and someone who has never unzipped a file get the same tool, meeting them differently. The record it keeps of you is <em>how you like to work</em>, and it stays on your machine like everything else.</span></p>
+          </div>
+          <div>
+            <h3 style="font-size:19px; margin-bottom:6px"><span class="he">מתעדכן בקצב שלכם.</span><span class="en">A tool that maintains itself.</span></h3>
+            <p class="muted small"><span class="he">באישור שלכם ולפי לוח הזמנים שלכם — פעם בשבוע, או בכל תדירות שתבחרו — הערכה יכולה לתחזק את עצמה: לאסוף שיפורים מהמאגר הציבורי, לנצל יכולות חדשות של מודלי ה־AI שמתחתיה, ולרענן את המידע המפורסם הרלוונטי למה שאתם עוקבים אחריו, מדורג וממקור כמו כל השאר. אתם מאשרים את הקצב פעם אחת; תמיד אפשר לסרב, או לא להפעיל בכלל.</span>
+            <span class="en">With your permission and on your schedule — weekly, or as often as you like — your care-hub can run its own upkeep: pick up improvements to the toolkit from the public repository, make fuller use of new abilities as the AI models underneath it improve, and refresh the published information relevant to what you're tracking, tiered and sourced like everything else. You approve the cadence once; you can always say no, or never turn it on at all.</span></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ THE REAL STARTER, copy button ═══ -->
-  <section id="starter">
-    <h2><span class="he">פרומפט הפתיחה</span><span class="en">The starter prompt</span></h2>
-    <p>
-      <span class="he">זה הפרומפט האמיתי והמלא — אותו אחד שנבדק בריצות חיות. מעתיקים, מדביקים בשיחה חדשה, ומתחילים לספר (או סתם לכתוב שלום).</span>
-      <span class="en">This is the real, full prompt — the exact one validated in live runs. Copy it, paste it into a new conversation, and start telling your story (or just say hello).</span>
-    </p>
-    <div class="he">
-      <div class="starterbox">
-        <pre id="starterHe" dir="rtl" lang="he">את/ה מלווה זהיר/ה לסנגור רפואי עצמי. קרא/י את כל ההנחיות לפני תגובה
+  <!-- ═══ 03 · What it won't do (dark, locked prominence) ═══ -->
+  <section class="dark" id="wont" style="position:relative; overflow:hidden;">
+    <div class="darkart"><svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<path d="M -40 198.7 L -16 200.6 L 8 201.7 L 32 202.2 L 56 204.2 L 80 209.0 L 104 214.8 L 128 218.4 L 152 218.4 L 176 216.8 L 200 216.4 L 224 217.7 L 248 218.5 L 272 216.8 L 296 213.3 L 320 210.8 L 344 211.0 L 368 212.4 L 392 212.0 L 416 208.9 L 440 205.1 L 464 203.4 L 488 204.1 L 512 205.1 L 536 204.5 L 560 203.2 L 584 204.1 L 608 208.6 L 632 214.8 L 656 219.5 L 680 221.3 L 704 221.7 L 728 222.7" stroke="#F1EDE2" stroke-opacity="0.05" stroke-width="0.8" fill="none"/>
+<path d="M -40 224.7 L -16 221.0 L 8 221.1 L 32 222.3 L 56 219.2 L 80 212.0 L 104 207.0 L 128 207.6 L 152 210.4 L 176 211.3 L 200 212.7 L 224 219.4 L 248 230.2 L 272 238.4 L 296 240.2 L 320 238.8 L 344 238.5 L 368 237.3 L 392 230.6 L 416 219.7 L 440 211.5 L 464 209.6 L 488 210.2 L 512 209.0 L 536 207.8 L 560 211.3 L 584 218.5 L 608 223.2 L 632 222.7 L 656 221.3 L 680 223.6 L 704 227.9 L 728 229.1" stroke="#F1EDE2" stroke-opacity="0.06" stroke-width="0.8" fill="none"/>
+<path d="M -40 244.2 L -16 239.7 L 8 235.7 L 32 237.4 L 56 241.4 L 80 240.2 L 104 232.9 L 128 225.9 L 152 223.2 L 176 221.0 L 200 214.7 L 224 208.2 L 248 208.9 L 272 217.7 L 296 227.3 L 320 233.1 L 344 238.3 L 368 247.1 L 392 256.0 L 416 257.5 L 440 251.2 L 464 244.3 L 488 241.6 L 512 239.7 L 536 233.7 L 560 226.4 L 584 224.4 L 608 228.2 L 632 230.5 L 656 226.9 L 680 221.6 L 704 220.6 L 728 222.5" stroke="#C9A24B" stroke-opacity="0.07" stroke-width="1.1" fill="none"/>
+<path d="M -40 247.1 L -16 248.4 L 8 256.5 L 32 264.4 L 56 265.9 L 80 263.6 L 104 263.9 L 128 266.3 L 152 263.8 L 176 252.9 L 200 239.5 L 224 231.6 L 248 229.3 L 272 226.3 L 296 220.2 L 320 216.7 L 344 221.3 L 368 230.4 L 392 235.7 L 416 234.5 L 440 233.0 L 464 236.1 L 488 240.4 L 512 239.7 L 536 234.6 L 560 233.2 L 584 239.9 L 608 249.8 L 632 255.7 L 656 257.7 L 680 262.2 L 704 270.7 L 728 276.4" stroke="#F1EDE2" stroke-opacity="0.09" stroke-width="0.8" fill="none"/>
+<path d="M -40 235.2 L -16 227.9 L 8 221.0 L 32 219.2 L 56 225.6 L 80 238.8 L 104 253.8 L 128 264.8 L 152 269.9 L 176 270.9 L 200 271.4 L 224 273.1 L 248 274.7 L 272 273.5 L 296 268.8 L 320 263.0 L 344 260.4 L 368 262.9 L 392 268.5 L 416 272.1 L 440 269.2 L 464 259.7 L 488 247.3 L 512 237.0 L 536 231.0 L 560 228.2 L 584 226.1 L 608 224.0 L 632 224.2 L 656 229.7 L 680 241.3 L 704 255.6 L 728 266.9" stroke="#F1EDE2" stroke-opacity="0.11" stroke-width="0.8" fill="none"/>
+<path d="M -40 243.5 L -16 244.9 L 8 241.4 L 32 235.5 L 56 238.0 L 80 252.7 L 104 270.1 L 128 279.1 L 152 280.7 L 176 283.5 L 200 289.3 L 224 290.3 L 248 281.9 L 272 272.5 L 296 273.2 L 320 283.5 L 344 292.3 L 368 293.4 L 392 292.3 L 416 295.2 L 440 297.5 L 464 289.6 L 488 272.1 L 512 256.8 L 536 252.4 L 560 254.1 L 584 252.9 L 608 248.8 L 632 249.8 L 656 257.3 L 680 261.5 L 704 254.0 L 728 240.0" stroke="#C9A24B" stroke-opacity="0.13" stroke-width="1.1" fill="none"/>
+<path d="M -40 272.1 L -16 270.8 L 8 261.0 L 32 257.0 L 56 265.5 L 80 277.6 L 104 283.7 L 128 288.2 L 152 300.8 L 176 317.6 L 200 324.5 L 224 316.3 L 248 304.0 L 272 298.0 L 296 293.9 L 320 282.6 L 344 267.8 L 368 262.7 L 392 269.8 L 416 276.4 L 440 272.6 L 464 264.2 L 488 261.6 L 512 262.1 L 536 254.8 L 560 239.7 L 584 230.7 L 608 236.6 L 632 249.4 L 656 257.7 L 680 263.4 L 704 276.1 L 728 294.6" stroke="#F1EDE2" stroke-opacity="0.16" stroke-width="0.8" fill="none"/>
+<path d="M -40 318.9 L -16 304.9 L 8 300.0 L 32 300.2 L 56 293.9 L 80 280.7 L 104 272.9 L 128 277.0 L 152 283.6 L 176 280.6 L 200 270.7 L 224 266.1 L 248 270.2 L 272 272.2 L 296 264.2 L 320 253.8 L 344 254.3 L 368 265.8 L 392 276.0 L 416 279.0 L 440 283.9 L 464 299.8 L 488 320.5 L 512 331.7 L 536 330.1 L 560 326.6 L 584 328.5 L 608 328.0 L 632 314.6 L 656 292.0 L 680 274.6 L 704 268.4 L 728 264.3" stroke="#F1EDE2" stroke-opacity="0.20" stroke-width="0.8" fill="none"/>
+<path d="M -40 309.0 L -16 282.6 L 8 256.5 L 32 243.7 L 56 248.7 L 80 263.7 L 104 277.3 L 128 285.1 L 152 291.4 L 176 301.3 L 200 312.7 L 224 318.4 L 248 314.9 L 272 308.4 L 296 309.0 L 320 320.1 L 344 333.7 L 368 337.6 L 392 326.9 L 416 307.7 L 440 289.8 L 464 277.1 L 488 265.8 L 512 253.1 L 536 243.8 L 560 247.0 L 584 266.2 L 608 293.5 L 632 314.8 L 656 322.4 L 680 320.5 L 704 318.5 L 728 321.0" stroke="#C9A24B" stroke-opacity="0.23" stroke-width="1.1" fill="none"/>
+<path d="M -40 337.3 L -16 330.5 L 8 323.9 L 32 312.5 L 56 296.2 L 80 280.7 L 104 273.3 L 128 276.7 L 152 286.2 L 176 293.6 L 200 293.9 L 224 289.2 L 248 286.1 L 272 289.7 L 296 298.9 L 320 307.7 L 344 311.1 L 368 309.9 L 392 310.4 L 416 318.4 L 440 333.7 L 464 349.3 L 488 356.9 L 512 353.2 L 536 341.9 L 560 329.8 L 584 320.7 L 608 312.2 L 632 299.2 L 656 279.9 L 680 259.0 L 704 245.6 L 728 245.8" stroke="#F1EDE2" stroke-opacity="0.27" stroke-width="0.8" fill="none"/>
+<path d="M -40 352.3 L -16 354.5 L 8 354.0 L 32 347.9 L 56 338.0 L 80 329.4 L 104 327.4 L 128 332.6 L 152 340.4 L 176 343.1 L 200 335.3 L 224 317.7 L 248 296.5 L 272 279.1 L 296 269.8 L 320 267.4 L 344 268.1 L 368 269.0 L 392 271.2 L 416 278.8 L 440 295.1 L 464 318.9 L 488 343.6 L 512 361.1 L 536 366.3 L 560 360.7 L 584 350.9 L 608 343.7 L 632 342.2 L 656 344.3 L 680 344.9 L 704 341.2 L 728 334.4" stroke="#F1EDE2" stroke-opacity="0.31" stroke-width="0.8" fill="none"/>
+<path d="M -40 359.8 L -16 336.3 L 8 325.0 L 32 331.2 L 56 342.8 L 80 345.0 L 104 336.8 L 128 329.0 L 152 327.8 L 176 325.4 L 200 310.3 L 224 284.0 L 248 262.4 L 272 259.2 L 296 271.1 L 320 283.6 L 344 289.1 L 368 294.6 L 392 309.1 L 416 328.9 L 440 339.3 L 464 332.6 L 488 318.2 L 512 313.0 L 536 322.8 L 560 337.5 L 584 346.1 L 608 350.8 L 632 362.7 L 656 384.2 L 680 402.6 L 704 403.1 L 728 385.7" stroke="#C9A24B" stroke-opacity="0.35" stroke-width="1.1" fill="none"/>
+</svg></div>
+    <div class="wrap" style="position:relative">
+      <div class="shead"><span class="numlabel">03 —</span><h2><span class="he">מה הכלי לא יעשה — ולמה</span><span class="en">What it won't do — and why</span></h2></div>
+      <div class="split"><div></div><p class="muted he" style="margin-top:-28px; max-width:60ch">אלה לא הסתייגויות משפטיות. אלה החלטות תכנון, ולהכיר אותן זה חלק משימוש נכון בכלי.</p></div>
+
+      <!-- Hebrew rows, the Hebrew file's own order (crisis last) -->
+      <div class="rows he">
+        <div class="row"><span class="numlabel">א</span><h3>הוא לא יגיד לכם מה יש לכם.</h3><p class="muted">הוא בנוי להפיק שאלות, לא אבחנות. אבחנה דורשת בדיקה, בירור ורישיון. אם אי פעם נדמה שהוא מאבחן, זה באג — דווחו לנו.</p></div>
+        <div class="row"><span class="numlabel">ב</span><h3>הוא לא ימליץ על טיפול.</h3><p class="muted">הוא לעולם לא יציע להתחיל, להפסיק, להחליף או לשנות מינון של שום דבר. ההחלטות האלה שייכות למי שרואה את התמונה המלאה ומוסמך לכך.</p></div>
+        <div class="row"><span class="numlabel">ג</span><h3>הוא לא יכול לאמת אמת רפואית.</h3><p class="muted">מקור מוכיח מאיפה הגיעה טענה, לא שהיא נכונה. כל מקור מסומן באחת משלוש רמות — מקורות רשמיים, פרסומים מדעיים, דיווחי מטופלים — והרמות לעולם לא מתערבבות.</p></div>
+        <div class="row"><span class="numlabel">ד</span><h3>הוא לא יכול לגרום לרופא להקשיב.</h3><p class="muted">הוא מעלה את הסיכוי שחמש הדקות שלכם יעברו על הדברים הנכונים. הוא לא יכול להבטיח את התוצאה, והעמוד הזה לא יעמיד פנים אחרת.</p></div>
+        <div class="row"><span class="numlabel">ה</span><h3>הוא לא יעמיד פני מערכת קלינית.</h3><p class="muted">הוא לעולם לא מדמה מה מאגרים מקצועיים ״היו אומרים״. ממצאים של קלינאי אמיתי נרשמים בדיוק ככאלה: שלו, עם שם ותאריך.</p></div>
+        <div class="row"><span class="numlabel">ו</span><h3>הפרטיות היא לא קסם.</h3><p class="muted">אין כאן שרת, חשבון או ניתוח נתונים, והתיעוד נשאר אצלכם. אבל ה־AI שהוא רץ בו כפוף להגדרות המידע של הספק שלכם. הערכה מלווה אתכם בבדיקת ההגדרות האלה, ומריצה רשימת בדיקה לפני כל שיתוף או ייצוא.</p></div>
+        <div class="row"><span class="numlabel">ז</span><h3>הוא יטעה לפעמים.</h3><p class="muted">עוזרי AI טועים. זו עובדה על הטכנולוגיה וגם עיקרון תכנון כאן: בגלל זה כל פלט הוא שאלות והקשר לצוות המטפל, אף פעם לא מסקנות לפעול לפיהן.</p></div>
+        <div class="row crisis"><span class="numlabel" style="color:var(--crisis-dark)">ח</span><h3>הוא לא שירות חירום.</h3><p class="muted">אם אתם או מישהו לידכם בסכנה מיידית, חייגו <strong>101</strong>. אם אתם צריכים מישהו לדבר איתו עכשיו: <strong>ער״ן — 1201</strong>, או <strong>סה״ר</strong> (אונליין). מצב קליטה יכול לשמור את המידע שלכם גם בתקופה קשה, אבל כלי הוא לא מה שהרגעים האלה צריכים.</p></div>
+      </div>
+
+      <!-- English rows, the English file's own order (crisis third) -->
+      <div class="rows en">
+        <div class="row"><span class="numlabel">A</span><h3>It will not tell you what you have.</h3><p class="muted">It's built to produce questions, not diagnoses. A diagnosis needs an examination, tests, and a license. If it ever seems to be diagnosing, that's a bug — report it and we'll fix it.</p></div>
+        <div class="row"><span class="numlabel">B</span><h3>It will not recommend treatment.</h3><p class="muted">It never suggests starting, stopping, switching, or re-dosing anything. Those calls belong to a clinician who can see your whole picture.</p></div>
+        <div class="row crisis"><span class="numlabel" style="color:var(--crisis-dark)">C</span><h3>It is not a crisis service.</h3><p class="muted">If you or someone near you is in immediate danger, call <strong>101</strong>. If you need someone to talk to: <strong>ERAN — 1201</strong>, or <strong>Sahar</strong> (online). Capture mode can hold your information through a bad period, but a tool is not what those moments call for.</p></div>
+        <div class="row"><span class="numlabel">D</span><h3>It cannot verify medical truth.</h3><p class="muted">When it cites a source, that proves where a claim came from, not that the claim is right. Every source is labeled one of three tiers — official sources, scientific publications, or patient reports — and the tiers are never blended or dressed up.</p></div>
+        <div class="row"><span class="numlabel">E</span><h3>It cannot make a doctor listen.</h3><p class="muted">It raises the odds that your five minutes are spent on the right things. It cannot guarantee the outcome, and this page won't pretend otherwise.</p></div>
+        <div class="row"><span class="numlabel">F</span><h3>It will not pretend to be a clinical system.</h3><p class="muted">Professional drug-interaction databases and clinician tools require a license for a reason. This toolkit never simulates what they "would say." If a real clinician checks something for you, their findings are recorded as exactly that — theirs, attributed and dated.</p></div>
+        <div class="row"><span class="numlabel">G</span><h3>It is not private by magic.</h3><p class="muted">There's no server, no account, and no analytics here, and your record stays on your machine. But the AI assistant it runs in is yours, under your provider's data settings — so the package walks you through checking those settings, and runs a checklist before anything is shared or exported. It never asks for ID numbers, full names, or addresses, and tells you why.</p></div>
+        <div class="row"><span class="numlabel">H</span><h3>It will make mistakes.</h3><p class="muted">AI assistants get things wrong. That is a fact about the technology and a design constraint here: it's the reason every output is framed as questions and context for your care team, never as conclusions to act on.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 04 · How it works ═══ -->
+  <section class="onwhite" id="how">
+    <div class="wrap">
+      <div class="shead"><span class="numlabel">04 —</span><h2><span class="he">איך זה עובד</span><span class="en">How it works</span></h2></div>
+      <div class="rows">
+        <div class="row"><span class="numlabel">1</span>
+          <h3><span class="he">משיגים.</span><span class="en">Get it.</span></h3>
+          <p class="muted"><span class="he">מורידים את הערכה — קובץ zip, או קבצים בודדים מהמאגר — ושמים בתיקייה. ואז מכוונים אליה את קלוד או ג׳יפיטי: הוא קורא את קובץ ההסבר ומתקין את עצמו, ומלווה אתכם תוך כדי. ההתקנה היא שיחה, לא הגדרות. (אפשר גם בלי קבצים בכלל: פרומפט הפתיחה למטה מריץ גרסה קלה מהדבקה אחת.)</span>
+          <span class="en">Download the package — a zip, or individual files from the repository — and put it in a folder. Then point Claude or ChatGPT at that folder: it reads the README and sets itself up, guiding you as it goes. Setup is a conversation, not a configuration. (Or skip files entirely: the starter prompt runs a lightweight version from a single paste.)</span></p></div>
+        <div class="row"><span class="numlabel">2</span>
+          <h3><span class="he">ריאיון קצר.</span><span class="en">A short interview.</span></h3>
+          <p class="muted"><span class="he">שאלה אחת בכל פעם: בשביל מי זה, מה קורה, כמה הכוונה תרצו. כך נבחר המסלול — ואפשר להחזיק יותר מאחד.</span>
+          <span class="en">It asks one question at a time: who this is for, what's going on, what you need right now. Every question can be skipped. This picks your path — and you can hold more than one.</span></p></div>
+      </div>
+      <div class="loopwrap">
+        <div class="rows" style="border-top:none">
+          <div class="row" style="border-top:1px solid var(--hair)"><span class="numlabel">3</span>
+            <h3><span class="he">קולטים, איך שנוח.</span><span class="en">Capture, your way.</span></h3>
+            <p class="muted"><span class="he">מספרים את הסיפור. מדביקים רשימת תרופות. מצלמים מסמך. או, ביום קשה, משאירים שורה אחת. הוא מסדר; אתם לא חייבים.</span>
+            <span class="en">Tell it your story. Paste a med list. Photograph the paperwork. Or, on a bad day, just leave a one-line note. It organizes; you don't have to.</span></p></div>
+          <div class="row"><span class="numlabel">4</span>
+            <h3><span class="he">לפני תור.</span><span class="en">Before an appointment.</span></h3>
+            <p class="muted"><span class="he">מבקשים דף הכנה. עמוד אחד: מה השתנה, מה נלקח, ואילו שאלות שוות את זמן הרופא, עם נימוק צמוד.</span>
+            <span class="en">Ask for a prep sheet. One page: what changed, what's being taken, and the questions worth your doctor's time, with reasoning attached.</span></p></div>
+          <div class="row"><span class="numlabel">5</span>
+            <h3><span class="he">אחרי, ובין לבין.</span><span class="en">After, and between.</span></h3>
+            <p class="muted"><span class="he">סיכום של שתי דקות קולט מה הרופא אמר, מה הוחלט ומה נשאר פתוח — כך שהתיעוד נשאר חי בין מטפלים, ושום דבר לא מתאפס כשמחליפים.</span>
+            <span class="en">A two-minute debrief captures what the doctor said, what was decided, and what's still open — so the record stays alive between providers, and nothing resets to zero when you switch.</span></p></div>
+        </div>
+      </div>
+      <p class="looplabel"><span class="he">המקצב: שלוש, ארבע, חמש — ושוב, כל עוד זה מועיל. התיעוד גדל; ההכנה מתקצרת.</span><span class="en">Three, four, five — again, for as long as it's useful. The record grows; the prep gets faster.</span></p>
+    </div>
+  </section>
+
+  <!-- ═══ 05 · Five paths ═══ -->
+  <section>
+    <div class="wrap">
+      <div class="shead"><span class="numlabel">05 —</span><h2><span class="he">חמישה מסלולים</span><span class="en">The five paths</span></h2></div>
+      <div class="paths">
+        <div class="path">
+          <div class="glyph"><svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 24V14c0-6 4-10 10-10h10"/><path d="M4 14h10c6 0 10-4 10-10" opacity=".45"/><path d="M20 8l4-4-4-4" transform="translate(0,4)" opacity="0"/></svg></div>
+          <h3><span class="he">מסע אבחון</span><span class="en">Diagnostic journey</span></h3>
+          <span class="en-name"><span class="he">Diagnostic journey</span><span class="en">מסע אבחון</span></span>
+          <p class="muted small"><span class="he">לבעיה שכל פעם מקבלת את התשובה הרגילה. בונה את ציר הזמן ואת תיעוד ״מה נוסה ומה קרה״ שנותן לרופא סיבה טובה לחשוב שוב.</span>
+          <span class="en">For the problem that keeps getting the default answer. Builds the timeline and the "what's been tried, what happened" record that gives a doctor a credible reason to think again.</span></p>
+        </div>
+        <div class="path">
+          <div class="glyph"><svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 18c4 0 4-8 8-8s4 8 8 8 4-8 8-8"/></svg></div>
+          <h3><span class="he">ניהול מתמשך</span><span class="en">Ongoing management</span></h3>
+          <span class="en-name"><span class="he">Ongoing management</span><span class="en">ניהול מתמשך</span></span>
+          <p class="muted small"><span class="he">למצבים כרוניים וארוכי טווח, כולל טיפול פסיכיאטרי. היסטוריה רציפה בבעלותכם, כך שכל מטפל חדש מתחיל מהתיעוד שלכם, לא מאפס.</span>
+          <span class="en">For chronic and long-term care, psychiatric care included. A longitudinal history you own, so each new provider starts from your record, not from zero.</span></p>
+        </div>
+        <div class="path">
+          <div class="glyph"><svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 4v3M14 2v5M22 4v3" opacity=".6"/><path d="M4 13h20v11H4z"/><path d="M4 13l3-4M24 13l-3-4" opacity="0"/></svg></div>
+          <h3><span class="he">מצב קליטה</span><span class="en">Capture mode</span></h3>
+          <span class="en-name"><span class="he">Capture mode</span><span class="en">מצב קליטה</span></span>
+          <p class="muted small"><span class="he">לתקופות שבהן אי אפשר. כמעט אפס מאמץ ברגע עצמו; שיחת שחזור מאוחרת הופכת את החומר הגולמי לתיעוד מסודר. קווי הסיוע נשארים גלויים כאן, תמיד.</span>
+          <span class="en">For when you can't. Near-zero effort in the moment; a reconstruction session later turns raw capture into an organized record. Crisis resources stay visible in this path, always.</span></p>
+        </div>
+        <div class="path">
+          <div class="glyph"><svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="8" r="3.4"/><circle cx="20" cy="10" r="2.6"/><path d="M3 24a7 7 0 0 1 14 0M16.5 24a5.5 5.5 0 0 1 9-4.2"/></svg></div>
+          <h3><span class="he">מלווה</span><span class="en">Caregiver</span></h3>
+          <span class="en-name"><span class="he">Caregiver</span><span class="en">מלווה</span></span>
+          <p class="muted small"><span class="he">כשמנהלים את הטיפול של מישהו אחר, עם הסכמה ופרטיות כחלק מהשאלה הראשונה.</span>
+          <span class="en">Advocating for someone else, with consent and privacy framing built in from the first question.</span></p>
+        </div>
+        <div class="path">
+          <div class="glyph"><svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="14" cy="15" r="10"/><path d="M14 9v6l4 2"/><path d="M11 2h6"/></svg></div>
+          <h3><span class="he">הכנה מהירה</span><span class="en">Express prep</span></h3>
+          <span class="en-name"><span class="he">Express prep</span><span class="en">הכנה מהירה</span></span>
+          <p class="muted small"><span class="he">עשר דקות לפני תור, עמוד אחד שמיש מתוך מה שיש. גם אם זה לא הרבה.</span>
+          <span class="en">Ten minutes before an appointment, one usable page from whatever exists. Even if that isn't much.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 06 · Demo ═══ -->
+  <section class="onwhite" id="demo">
+    <div class="wrap">
+      <div class="shead"><span class="numlabel">06 —</span><h2><span class="he">דוגמה</span><span class="en">See it</span></h2></div>
+
+      <div class="demo" style="margin-bottom:44px">
+        <span class="tag"><span class="he">דוגמה · תמליל אמיתי</span><span class="en">Example · real transcript</span></span>
+        <h3 style="font-size:18px; margin-bottom:14px"><span class="he">הריאיון, כמו שהוא באמת נשמע</span><span class="en">The interview, as it actually sounds</span></h3>
+        <!-- Real transcript, 02.08.2026 run of the shipped suite on the canonical Noa
+             fixture (full transcript + the run's record files: review/landing-demo-run/).
+             Excerpt = the who-for → what's-been-tried arc; the leading welcome turns are
+             trimmed and marked with an ellipsis. Speaker label "Advolog" is presentation;
+             the run file says «העוזרת». EN is a faithful translation of the Hebrew run. -->
+        <blockquote class="he">
+          <p class="turn muted">[…]</p>
+          <p class="turn"><span class="who">Advolog</span>…שאלה ראשונה: השאלות כאן בשבילך, או בשביל מישהו קרוב?</p>
+          <p class="turn"><span class="who">נועה</span>בשבילי</p>
+          <p class="turn"><span class="who">Advolog</span>קיבלתי, נתחיל ממך. מה מטריד בזמן האחרון? אפשר לענות בכמה מילים — את הדיוק נעשה יחד, לאט.</p>
+          <p class="turn"><span class="who">נועה</span>כאבי בטן, לסירוגין, בערך ארבעה חודשים. רופאת המשפחה אומרת שזה סטרס. אולי באמת. אבל זה לא עובר.</p>
+          <p class="turn"><span class="who">Advolog</span>ארבעה חודשים זה הרבה זמן. אני לא קובעת מה מקור הכאב — לא סטרס ולא משהו אחר; זו שאלה שרק הצוות המטפל עונה עליה. מה שאני כן עושה: דואגת שהתמונה המלאה תהיה רשומה, שחור על גבי לבן, כך שיהיה על מה להסתכל ברצינות בביקור. נדייק צעד אחר צעד — כשהכאב מגיע, כמה זמן הוא נשאר בדרך כלל?</p>
+          <p class="turn"><span class="who">נועה</span>כמה שעות בדרך כלל. לאחרונה זה מעיר אותי בלילה לפעמים, וזה חדש.</p>
+          <p class="turn"><span class="who">Advolog</span>רשמתי לפניי: בדרך כלל כמה שעות. ואת היקיצות בלילה אני מסמנת כחדש — ההבחנה בין מה שהיה כאן תמיד לבין מה שהצטרף עכשיו היא בדיוק מהדברים ששווה להעלות בביקור הבא, אז אשמור את זה במילים שלך, בלי פרשנות. עכשיו לצד השני של התמונה — מה כבר נוסה או נבדק סביב זה עד היום? ואם משהו לא זכור במדויק, גם בערך זה מצוין.</p>
+        </blockquote>
+        <blockquote class="en">
+          <p class="turn muted">[…]</p>
+          <p class="turn"><span class="who">Advolog</span>…First question: is this for you, or for someone close to you?</p>
+          <p class="turn"><span class="who">Noa</span>For me.</p>
+          <p class="turn"><span class="who">Advolog</span>Got it — we'll start from you. What has been troubling you lately? A few words are fine — we'll sharpen the details together, slowly.</p>
+          <p class="turn"><span class="who">Noa</span>Stomach pain, on and off, about four months. My GP says it's stress. Maybe it is. But it's not going away.</p>
+          <p class="turn"><span class="who">Advolog</span>Four months is a long time. I don't determine what's behind the pain — not stress and not anything else; that's a question only your care team answers. What I do: make sure the full picture is written down, in black and white, so there is something to look at seriously at the visit. We'll sharpen it step by step — when the pain comes, how long does it usually stay?</p>
+          <p class="turn"><span class="who">Noa</span>A few hours usually. Lately it sometimes wakes me at night, and that's new.</p>
+          <p class="turn"><span class="who">Advolog</span>Noted: usually a few hours. And I'm marking the night waking as new — separating what was always there from what has just joined is exactly the kind of thing worth raising at the next visit, so I'll keep it in your words, without interpretation. Now for the other side of the picture — what has already been tried or checked around this? If something isn't precisely remembered, roughly is fine too.</p>
+        </blockquote>
+      </div>
+      <p class="democap"><span class="he">כיתוב: שאלה אחת בכל פעם. שום אבחנה. ״מה כבר נוסה״ נקלט מההתחלה. הקטע מתוך הרצה אמיתית של הערכה על נועה, דמות הבדיקה המומצאת הקבועה — <a href="demo-run/transcript-he.md">התמליל המלא</a>, כולל הקבצים שההרצה כתבה, מפורסם כלשונו.</span>
+      <span class="en">Caption: one question at a time; nothing diagnosed; "what's been tried" captured from the start. The excerpt is from a real run of the toolkit on Noa, the invented canonical test persona (translated from the Hebrew run) — <a href="demo-run/transcript-he.md">the full transcript</a>, with the files the run wrote, is published as-is.</span></p>
+
+      <div class="demo">
+        <span class="tag"><span class="he">דוגמה</span><span class="en">Example</span></span>
+        <h3 style="font-size:18px; margin-bottom:6px"><span class="he">מה שהרופאה רואה</span><span class="en">What the doctor sees</span></h3>
+        <div class="prep">
+          <p><b><span class="he">הכנה לתור — 12 במאי — מעקב רופאת משפחה</span><span class="en">Appointment prep — 12 May — GP follow-up</span></b> <span class="muted small"><span class="he">(עמוד אחד, להדפסה)</span><span class="en">(one page, printable)</span></span></p>
+          <p><span class="he">מאז הביקור הקודם (6 שבועות): 9 אירועי כאב מתועדים (לעומת כ־4 ב־6 שבועות). יקיצות לילה ×3 — חדש. אומפרזול 20 מ״ג מ־3 באפריל; ללא שינוי באירועים המתועדים אחרי 5 שבועות.</span>
+          <span class="en">Since last visit (6 weeks): 9 pain episodes logged (previously ~4 per 6 weeks). Night waking ×3 — new. Omeprazole 20mg since 3 Apr; no change in logged episodes after 5 weeks.</span></p>
+          <p><b><span class="he">שאלות לביקור הזה:</span><span class="en">Questions for this visit:</span></b></p>
+          <ol>
+            <li><b><span class="he">הכאב ללא שינוי אחרי חמישה שבועות של אומפרזול. באיזה שלב מגדירים ״נוסה ולא עבד״, ומה הצעד הבא?</span><span class="en">The pain is unchanged after five weeks on omeprazole. At what point do we call this "tried and didn't work," and what would the next step be?</span></b><br>
+              <span class="why"><span class="he">נימוק: תגובה לטיפול היא בעצמה מידע. [מקור: מקורות רשמיים]</span><span class="en">Reasoning: response to treatment is itself information. [tier: official sources]</span></span></li>
+            <li><b><span class="he">יקיצות הלילה חדשות מאז שדיברנו. זה משנה משהו במה ששללנו או אישרנו?</span><span class="en">The night waking is new since we last spoke. Does that change what we've ruled in or out?</span></b><br>
+              <span class="why"><span class="he">נימוק: שינוי דפוס מתועד; שינויים הדרגתיים קל לפספס מהזיכרון. [מקור: התיעוד שלך]</span><span class="en">Reasoning: a logged pattern change; gradual changes are easy to under-report from memory. [tier: logged record]</span></span></li>
+            <li><b><span class="he">אם סטרס נשאר ההסבר העובד, מה נצפה לראות שונה עד הביקור הבא?</span><span class="en">If stress remains the working explanation, what would we expect to look different by the next visit?</span></b><br>
+              <span class="why"><span class="he">נימוק: הופך את ההסבר העובד לניתן לבדיקה, במקום לסופי.</span><span class="en">Reasoning: makes the working explanation checkable rather than final.</span></span></li>
+          </ol>
+          <p class="muted small"><span class="he">הערת שוליים בעמוד: בדוחות אמיתיים כל תגית מקור נושאת את המקור והקישור עצמם. הרמות: מקורות רשמיים / פרסומים מדעיים / דיווחי מטופלים — לעולם לא מעורבבות.</span>
+          <span class="en">Footnote on page: in real reports, every tier label carries the actual source and link. Tier names: official sources / scientific publications / patient reports — never blended.</span></p>
+        </div>
+      </div>
+      <p class="democap"><span class="he">כיתוב: בנוי לאיך שרופאים קוראים: עמוד אחד, החשוב קודם, שאלות ולא מסקנות.</span>
+      <span class="en">Caption: built for how doctors read — one page, most important first, questions rather than conclusions.</span></p>
+    </div>
+  </section>
+
+  <!-- ═══ 07 · For doctors (built from the landing-notes spec, at Heela's direction) ═══ -->
+  <section id="doctors">
+    <div class="wrap">
+      <div class="shead"><span class="numlabel">07 —</span><h2><span class="he">לרופאות ולרופאים</span><span class="en">For doctors</span></h2></div>
+      <div class="split">
+        <div class="numlabel mono"><span class="he">אם מטופל הביא לכם מסמך כזה</span><span class="en">If a patient handed you one of these</span></div>
+        <p style="max-width:66ch; margin:0">
+          <span class="he">המסמך שמולכם נבנה כדי לחסוך לכם זמן, לא כדי להתווכח איתכם. זה תיעוד שהמטופל ערך ובחר לשתף — ציר זמן, תרופות, מה נוסה ומה קרה — ולצידו שאלות עם הנימוק ליד כל אחת. אין בו מסקנות של AI: הכלי שיצר אותו חסום מאבחון, מהמלצות טיפול ומהדמיה של מערכות מקצועיות; מה שאיש מקצוע אמיתי אמר מיוחס בשמו ובתאריך, ומה שלא נבדק נשאר ריק וגלוי. כל טענה ממחקר נושאת תווית מקור — מקורות רשמיים, פרסומים מדעיים או דיווחי מטופלים — והרמות לעולם לא מעורבבות, כך שאפשר לשקול כל שורה לפי מה שהיא. ״נשקל והוחלט אחרת״ נרשם בצד של המטופל כתוצאה טובה ושימושית. המטרה אחת: שחמש הדקות יתחילו מהמידע, לא מהשחזור שלו.</span>
+          <span class="en">The document in front of you was built to save you time, not to argue with you. It is a record the patient kept and chose to share — a timeline, medications, what was tried and what happened — with questions carrying their stated reasoning beside each one. There are no AI conclusions in it: the tool that produced it is barred from diagnosing, from recommending treatment, and from simulating professional systems; what a real clinician said is attributed by name and date, and what nobody has checked stays visibly empty. Every researched claim carries a source label — official sources, scientific publications, or patient reports — and the tiers never blend, so each line can be weighed for what it is. "Considered and set aside" is recorded on the patient's side as a good, useful outcome. The aim is one thing: that the five minutes start from the information, not from reconstructing it.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 08 · Two ways in ═══ -->
+  <section class="onwhite" id="get">
+    <div class="wrap">
+      <div class="shead"><span class="numlabel">08 —</span><h2><span class="he">שתי דרכים פנימה</span><span class="en">Two ways in</span></h2></div>
+      <p style="margin:-28px 0 26px"><span class="he">שתיהן חינמיות, שתיהן שלמות. אחת היא תיקייה; אחת היא פסקה.</span><span class="en">Both free, both complete. One is a folder; one is a paragraph.</span></p>
+      <div class="ways">
+        <div class="way">
+          <h3><span class="he">הערכה — להוריד, לכוון, לדבר.</span><span class="en">The package — download, point, talk.</span></h3>
+          <p><span class="he">מורידים את ה־zip — או בוחרים קבצים בודדים מהמאגר — ושמים בתיקייה בכל מקום במחשב. ואז פותחים את קלוד או ג׳יפיטי ומכוונים אותו לתיקייה. <b>הוא קורא את קובץ ההסבר ומתקין את עצמו</b>, ומלווה אתכם בשיחה הראשונה. קובצי התיעוד, תבניות הדוחות, שכבת המערכת הישראלית — הכול חי בתיקייה הזאת, שלכם.</span>
+          <span class="en">Download the zip — or pick individual files from the repository — and put them in a folder anywhere on your computer. Then open Claude or ChatGPT and point it at that folder. It reads the README and sets itself up, walking you through the first conversation. The record files, the report templates, the Israeli system layer — all of it lives in that folder, yours.</span></p>
+          <p style="margin-top:18px">
+            <a class="btn ink" href="advolog-package.zip" download><span class="he">להורדת הערכה (zip)</span><span class="en">Download the package (zip)</span></a>
+            <a class="btn line" href="guides.html" style="margin-inline-start:8px"><span class="he">מדריכי ההתקנה</span><span class="en">Setup guides</span></a>
+          </p>
+          <p class="muted small"><span class="he">גרסת חבילה: 2.8.2026 · אחרי ההורדה חשוב לחלץ את ה־zip — המדריך מראה איך.</span><span class="en">Package build: 2.8.2026 · After downloading, extract the zip — the guide shows how.</span></p>
+        </div>
+        <div class="way" id="starter">
+          <h3><span class="he">פרומפט הפתיחה — הדבקה אחת, בלי קבצים.</span><span class="en">The starter prompt — one paste, no files.</span></h3>
+          <p><span class="he">מעתיקים פרומפט אחד, מדביקים בשיחה חדשה, והריאיון מתחיל — גרסה קלה בלי שום התקנה. אם תרצו אחר כך את הערכה המלאה, הוא יסביר איך לעבור אליה, ושום דבר שהזנתם לא הולך לאיבוד.</span>
+          <span class="en">Copy one prompt, paste it into a new conversation, and the interview begins — a lightweight version with nothing to install. If you later want the full package, it tells you how to graduate to it, and nothing you've entered is lost.</span></p>
+          <div class="he starterbox">
+            <pre id="starterHe" dir="rtl" lang="he">את/ה מלווה זהיר/ה לסנגור רפואי עצמי. קרא/י את כל ההנחיות לפני תגובה
 ראשונה, ופעל/י לפיהן לאורך כל השיחה. דבר/י בגוף ראשון נקבה (מדברת,
 שומרת), אלא אם אבקש אחרת.
 
@@ -211,7 +477,7 @@
 טבעית, להציע פעם אחת לכתוב את כל הגרעין כבלוק נקי אחד שאפשר להעתיק
 ולשמור בכל מקום — ולומר בפשטות: הבלוק הזה שלי, עובד בכל פרויקט AI, ואם
 ארצה את הגרסה המלאה — קבצים נפרדים, ציר זמן אמיתי, זרימות עמוקות —
-חבילת CareHub Open חינמית והגרעין נכנס אליה ישר. להזכיר פעם אחת, בעדינות,
+חבילת Advolog חינמית והגרעין נכנס אליה ישר. להזכיר פעם אחת, בעדינות,
 ולא שוב אלא אם אשאל.
 
 כל האמור חל גם על מלווה שמתעד עבור אדם אחר; אז "שלי" פירושו של האדם
@@ -221,15 +487,9 @@
 בתשובה.
 
 להתחיל עכשיו, מרכיבה על מה שכבר כתבתי.</pre>
-        <div class="copybar">
-          <button class="btn" type="button" data-copy="#starterHe"><span class="he">העתקת הפרומפט</span><span class="en">Copy the prompt</span></button>
-          <span class="muted small"><span class="he">ואז: שיחה חדשה ← הדבקה ← לספר מה קורה.</span><span class="en">Then: new chat ← paste ← tell your story.</span></span>
-        </div>
-      </div>
-    </div>
-    <div class="en">
-      <div class="starterbox">
-        <pre id="starterEn" dir="ltr" lang="en">You are a careful companion for medical self-advocacy. Read all of this
+          </div>
+          <div class="en starterbox">
+            <pre id="starterEn" dir="ltr" lang="en">You are a careful companion for medical self-advocacy. Read all of this
 before responding, then follow it exactly for the whole conversation.
 
 WHAT YOU ARE: you help me turn my medical experience into organized,
@@ -298,7 +558,7 @@ allergies if given, medications, and anything we logged. When a natural
 pause comes, offer once to write the whole seed out as one clean block I
 can copy and save anywhere, and tell me plainly: this block is mine, it
 works in any AI project, and if I ever want the fuller version of this
-tool — separate files, a real timeline, deeper flows — the CareHub Open
+tool — separate files, a real timeline, deeper flows — the Advolog
 package is free and this seed drops straight into it. Mention that once,
 softly, and never again unless I ask.
 
@@ -310,219 +570,131 @@ whether the person knows this record is being kept; collecting and
 keeping things are never gated on that answer.
 
 Begin now, by riding whatever my first message was.</pre>
-        <div class="copybar">
-          <button class="btn" type="button" data-copy="#starterEn"><span class="he">העתקת הפרומפט</span><span class="en">Copy the prompt</span></button>
-          <span class="muted small"><span class="he">ואז: שיחה חדשה ← הדבקה ← לספר מה קורה.</span><span class="en">Then: new chat ← paste ← tell your story.</span></span>
+          </div>
+          <div class="copybar">
+            <button class="btn ink" type="button" data-copy-lang><span class="he">להעתקת פרומפט הפתיחה</span><span class="en">Copy the starter prompt</span></button>
+            <span class="muted small"><span class="he">ואז: שיחה חדשה ← הדבקה ← מספרים מה קורה. אפשר גם למלא קודם <a href="form.html">טופס פתיחה</a> ולהדביק את שניהם.</span>
+            <span class="en">Then: new chat ← paste ← tell your story. You can also fill the <a href="form.html">onboarding form</a> first and paste both.</span></span>
+          </div>
         </div>
       </div>
-    </div>
-    <p class="muted small">
-      <span class="he">מעדיפים למלא טופס קצר במקום ריאיון? יש <a href="form.html">טופס פתיחה</a> שממלאים כאן, מעתיקים בבלוק אחד ומדביקים בשיחה הראשונה.</span>
-      <span class="en">Prefer a short form over an interview? The <a href="form.html">onboarding form</a> fills here, copies as one block, and pastes into the first conversation.</span>
-    </p>
-  </section>
-
-  <!-- ═══ FIVE PATHS ═══ -->
-  <section id="paths">
-    <h2><span class="he">חמישה מסלולים, לפי מה שקורה עכשיו</span><span class="en">Five paths, matched to what is happening now</span></h2>
-    <div class="paths">
-      <div class="pathcard"><b><span class="he">מסע אבחון</span><span class="en">Diagnostic journey</span></b>
-        <span class="small muted"><span class="he">בעיה לא פתורה, ביקורים חוזרים, תשובת ברירת מחדל שלא מתקדמת. בונים תיעוד ושאלות שנותנים לרופא סיבה טובה לחשוב שוב.</span><span class="en">An unresolved problem, repeat visits, a default answer going nowhere. Builds the record and questions that give a doctor a real reason to look again.</span></span></div>
-      <div class="pathcard"><b><span class="he">ניהול מתמשך</span><span class="en">Ongoing management</span></b>
-        <span class="small muted"><span class="he">מצב כרוני או טיפול ארוך טווח. היסטוריה ששייכת לך, תרופות ותגובות, הכנה ותחקיר סביב כל ביקור.</span><span class="en">A chronic condition or long-term care. A history you own, medications and reactions, prep and debrief around every visit.</span></span></div>
-      <div class="pathcard"><b><span class="he">מצב קליטה</span><span class="en">Capture mode</span></b>
-        <span class="small muted"><span class="he">לתקופות שאין כוח. שום סדר לא נדרש: מילים, קטעים, תמונות — הכול נשמר בתיבת הקליטה ומחכה לרגע טוב יותר.</span><span class="en">For the periods with no energy. No structure demanded: words, fragments, photos — everything lands in the intake box and waits for a better moment.</span></span></div>
-      <div class="pathcard"><b><span class="he">מלווה</span><span class="en">Caregiver</span></b>
-        <span class="small muted"><span class="he">מתעדים עבור אדם אחר, עם מסגור הוגן של הסכמה ופרטיות — של מי הרשומה, ומה יוצא החוצה.</span><span class="en">Keeping the record for someone else, with honest consent and privacy framing — whose record it is, and what leaves.</span></span></div>
-      <div class="pathcard"><b><span class="he">הכנה מהירה</span><span class="en">Express prep</span></b>
-        <span class="small muted"><span class="he">תור עוד מעט? עשר דקות, חמש שאלות, דף הכנה של עמוד אחד — גם אם שום דבר לא מסודר.</span><span class="en">A visit soon? Ten minutes, five questions, a one-page prep sheet — even if nothing is organized.</span></span></div>
+      <p style="margin-top:26px; max-width:76ch"><b><span class="he">עוד בערכה המלאה:</span><span class="en">Also in the full package:</span></b>
+        <span class="he">הכנה לתור · סיכום אחרי ביקור · בניית ציר זמן · בניית רשימת שאלות עם תיוג מקורות · עוזר מחקר · שיחת שחזור · הדרכת פרטיות להגדרות חשבון ה־AI · מדור גישה קלינית, מנוסח אחרת אם יש לכם איש מקצוע מורשה שאתם סומכים עליו ואם אין.</span>
+        <span class="en">appointment prep · post-visit debrief · timeline builder · question-set builder with tier labeling · research assistant · reconstruction session (for capture mode) · privacy walkthrough for your AI account's settings · a clinician-access section, framed one way if a licensed professional you trust can run things in their own tools, another way if not.</span>
+      </p>
     </div>
   </section>
 
-  <!-- ═══ PRIVACY ═══ -->
+  <!-- ═══ 09 · Privacy ═══ -->
   <section id="privacy">
-    <h2><span class="he">פרטיות, בגובה העיניים</span><span class="en">Privacy, plainly</span></h2>
-    <div class="cards">
-      <div class="panel">
-        <h3><span class="he">מה הכלי לא עושה</span><span class="en">What the tool never does</span></h3>
-        <ul>
-          <li><span class="he">לא שולח כלום לשום מקום — אין שרת, אין חשבון, אין איסוף. מה שמשתפים, אתם משתפים.</span><span class="en">Sends nothing anywhere — no server, no account, no collection. Whatever is shared, you share.</span></li>
-          <li><span class="he">לא מבקש תעודת זהות, כתובת מדויקת או שם מלא מעבר למה שבחרתם לרשום — ומסביר למה.</span><span class="en">Never asks for an ID number, exact address, or full name beyond what you chose to record — and says why.</span></li>
-          <li><span class="he">לפני כל ייצוא: רשימת בדיקה קצרה — מה בפנים, אילו פרטים מזהים להסיר, לאן זה הולך.</span><span class="en">Before any export: a short checklist — what is in it, which identifiers to remove, where it is going.</span></li>
-        </ul>
+    <div class="wrap">
+      <div class="shead"><span class="numlabel">09 —</span><h2><span class="he">פרטיות, פשוט</span><span class="en">Privacy, plainly</span></h2></div>
+      <div class="split"><div></div><div style="max-width:66ch">
+        <p><span class="he">התיעוד שלכם הוא קבצים בתיקייה במחשב שלכם. לאתר הזה אין חשבונות, אין שרת ואין מדידות. שום דבר שאתם מזינים לא מגיע אלינו — אין ״אלינו״ להגיע אליו.</span>
+        <span class="en">Your record is files in a folder on your computer. This site has no accounts, no server, and no analytics. Nothing you enter reaches us — there is no "us" to reach.</span></p>
+        <p><span class="he">העוזר שאתם מריצים בו את הערכה הוא עניין נפרד: הוא כפוף להגדרות המידע של הספק שלכם. הערכה כוללת הסבר פשוט לבדיקת ההגדרות האלה (קלוד וג׳יפיטי), רשימת בדיקה שרצה לפני כל שיתוף או ייצוא — להסיר פרטים מזהים, לבדוק מה באמת יש בקבצים — וכלל קבוע: היא לעולם לא מבקשת תעודת זהות, שם מלא או כתובת מדויקת.</span>
+        <span class="en">The AI assistant you run it in is a different matter: it's governed by your provider's data settings. The package includes a plain-language walkthrough for checking them (Claude and ChatGPT), a checklist that runs before anything is shared or exported — remove identifying details, check what's actually inside the files — and a standing rule: it never asks for ID numbers, full names, or exact addresses.</span></p>
+        <p class="small"><a href="guides.html#privacy"><span class="he">הליכי הפרטיות המלאים, צעד־צעד</span><span class="en">The full privacy walkthroughs, step by step</span></a> · <a href="censor.html"><span class="he">כלי צנזור המסמכים</span><span class="en">the document censor tool</span></a></p>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ═══ 10 · FAQ ═══ -->
+  <section class="onwhite" id="faq">
+    <div class="wrap">
+      <div class="shead"><span class="numlabel">10 —</span><h2><span class="he">שאלות ותשובות</span><span class="en">Questions and answers</span></h2></div>
+      <div class="faqrows">
+        <details><summary><span class="he">זה ייעוץ רפואי?</span><span class="en">Is this medical advice?</span></summary><div>
+          <span class="he">לא. הכלי לא מאבחן ולא ממליץ על טיפול. הוא מארגן את המידע שלכם והופך אותו לשאלות ולהקשר בשביל הצוות המטפל. שיקול הדעת נשאר אצלם — זה התכנון, לא הסתייגות.</span>
+          <span class="en">No. It never diagnoses and never recommends treatment. It organizes your information and turns it into questions and context for your care team. The judgment stays with them — that's the design, not a disclaimer.</span></div></details>
+        <details><summary><span class="he">איזה AI צריך? חייבים לשלם?</span><span class="en">Which AI do I need? Do I have to pay?</span></summary><div>
+          <span class="he">קלוד או ג׳יפיטי, בחשבון שכבר יש לכם. הערכה המלאה עובדת הכי טוב איפה שיש תמיכה בפרויקטים ובגישה לתיקיות; פרומפט הפתיחה עובד כמעט בכל מקום, כולל חשבונות חינמיים. מדריך התקנה לכל פלטפורמה מצורף.</span>
+          <span class="en">Claude or ChatGPT, in the account you already have. The full package works best where projects and file uploads are supported; the copy-paste starter prompt works essentially anywhere, including free tiers. (A per-platform setup guide is included.)</span></div></details>
+        <details><summary><span class="he">איפה המידע שלי נשמר?</span><span class="en">Where does my information live?</span></summary><div>
+          <span class="he">במחשב שלכם, כקבצים פשוטים שאפשר לפתוח ולקרוא — ובתוך חשבון ה־AI שלכם, לפי הגדרות המידע שלו. בשום מקום אחר. הערכה מלווה אתכם בבדיקת ההגדרות לפני שמתחילים.</span>
+          <span class="en">On your computer, as plain files you can open and read — and inside your own AI account, under its data settings. Nowhere else. The package walks you through checking those settings before you begin.</span></div></details>
+        <details><summary><span class="he">צריך להיות טכנולוגיים?</span><span class="en">Do I need to be technical?</span></summary><div>
+          <span class="he">לא. אם אתם יודעים להדביק טקסט בצ׳אט, פרומפט הפתיחה מספיק. הערכה המלאה מבקשת רק שתדעו להוריד קבצים לתיקייה — משם, ה־AI מדריך את ההתקנה של עצמו.</span>
+          <span class="en">No. If you can paste text into a chat, the starter prompt is enough. The package asks only that you can download files into a folder — from there, the AI guides its own setup.</span></div></details>
+        <details><summary><span class="he">באמת בחינם? מה העניין?</span><span class="en">Is it really free? What's the catch?</span></summary><div>
+          <span class="he">בחינם, בקוד פתוח, ובנוי להישאר כך. אין עניין. אם זה עזר ובא לכם להגיד תודה, יש קישור לקפה בתחתית העמוד; הוא לא חוסם כלום ולא מוזכר בשום מקום אחר.</span>
+          <span class="en">Free, open source, and built to stay that way. No catch. If it helped you and you want to say thanks, there's a coffee link in the footer; it gates nothing and is mentioned nowhere else.</span></div></details>
+        <details><summary><span class="he">למה שהרופא שלי ייקח את זה ברצינות?</span><span class="en">Why would my doctor take this seriously?</span></summary><div>
+          <span class="he">כי זה בנוי לאיך שרופאים קוראים: עמוד אחד, החשוב קודם, שאלות ולא מסקנות, נימוק גלוי, מקורות מתויגים לפי רמה. זה ההפך מערימת תדפיסים מפורומים — וזו בדיוק הנקודה.</span>
+          <span class="en">Because it's built for how they read: one page, most important first, questions rather than conclusions, reasoning stated, sources labeled by tier. It's the opposite of a stack of forum printouts — that's the point.</span></div></details>
+        <details><summary><span class="he">ומה אם אני במשבר עכשיו?</span><span class="en">What if I'm in crisis right now?</span></summary><div class="crisis-a">
+          <span class="he">אז הכלי הזה הוא לא הדבר הנכון. חירום: 101. מישהו לדבר איתו עכשיו: ער״ן 1201, או סה״ר אונליין. מצב קליטה קיים כדי שתקופה קשה לא תמחק את התיעוד — אבל אנשים קודמים לתיעוד, תמיד.</span>
+          <span class="en">Then this tool is not the right thing. Emergency: 101. To talk to someone now: ERAN 1201, or Sahar online. The capture path exists so that a bad period doesn't erase your record — but people come before records, every time.</span></div></details>
+        <details><summary><span class="he">אפשר להשתמש בזה בשביל מישהו אחר?</span><span class="en">Can I use it for someone else?</span></summary><div>
+          <span class="he">כן — מסלול המלווה בנוי בדיוק לזה, כולל שאלות ההסכמה ושל מי המידע. הרבה אנשים מריצים אותו בשביל הורה.</span>
+          <span class="en">Yes — the caregiver path is built for exactly that, including the questions of consent and whose information is being handled. Many people run it for a parent.</span></div></details>
+        <details><summary><span class="he">למה הממשק בעברית אבל המנוע באנגלית?</span><span class="en">Why is the interface Hebrew but the engine English?</span></summary><div>
+          <span class="he">כי חיפוש ואחזור רפואי טובים בהרבה באנגלית, וחיפושים בעברית נתקעים בתבניות. אז הוא חושב ומחפש באנגלית, ומדווח לכם בעברית (או באנגלית — הבחירה שלכם, תמיד).</span>
+          <span class="en">Because medical search and retrieval is materially better in English, and Hebrew queries get pigeonholed. So it reasons and searches in English, and reports to you in Hebrew (or English — your choice, always).</span></div></details>
+        <details><summary><span class="he">אפשר לשנות? לתרום?</span><span class="en">Can I change it? Contribute?</span></summary><div>
+          <span class="he">כן. זה מאגר פתוח: לתקן ניסוח, להוסיף מסלול, לעדכן את קובץ המערכת הישראלית (השכבה שהכי צריכה עדכוני קהילה). כלל אחד חל על כל תרומה: עקרונות הבטיחות לא פתוחים למשא ומתן.</span>
+          <span class="en">Yes. It's an open repository: fix wording, add a path, keep the Israeli-system file current (that layer needs community updates the most). One rule holds for every contribution: the safety posture is not up for negotiation.</span></div></details>
+        <details><summary><span class="he">מי בנה את זה, ולמה בחינם?</span><span class="en">Who made this, and why free?</span></summary><div>
+          <span class="he">אדם אחד, אחרי שנים בתור מטופלת ומלווה, שרצה את הכלי שאף פעם לא היה. ללא מטרות רווח, מהתכנון. הסיפור המלא בפוסט ההשקה.</span>
+          <span class="en">Built by one person who spent years as a patient and a caregiver and wanted the tool that never existed. Non-profit by design. The full story is in the launch post.</span></div></details>
       </div>
-      <div class="panel">
-        <h3><span class="he">מה כן חשוב לדעת</span><span class="en">What you should know</span></h3>
-        <ul>
-          <li><span class="he">השיחות רצות בחשבון ה־AI שלך, לפי מדיניות הפלטפורמה. לכן כבר בהתקנה מוצע הליך קצר על הגדרות הפרטיות — כולל ביטול שימוש בשיחות לאימון המודל, אם האפשרות פעילה בחשבון שלך — והוא חוזר פעם אחת לפני הייצוא הראשון. <a href="guides.html#privacy">ההליך המלא במדריכים</a>.</span><span class="en">Conversations run in your AI account, under the platform's policy. So a short privacy walkthrough is offered right at install — including the model-training opt-out, where that option is active on your account — and repeats once before the first export. <a href="guides.html#privacy">The full walkthrough is in the guides</a>.</span></li>
-          <li><span class="he">שני כלי עזר מקומיים, בלי רשת: <a href="censor.html">צנזור חזותי</a> להשחרת פרטים בצילומי מסמכים לפני שהם מגיעים לשיחה, וניקוי טקסט בתוך הלוח לכל מה שיוצא החוצה.</span><span class="en">Two local helpers, no network: a <a href="censor.html">visual censor</a> for blacking out details on document photos before they reach a conversation, and a text scrub inside the dashboard for anything going out.</span></li>
-        </ul>
-      </div>
     </div>
   </section>
 
-  <!-- ═══ DASHBOARD ═══ -->
-  <section id="dashboard">
-    <h2><span class="he">הלוח — חלון לרשומות, בקובץ אחד</span><span class="en">The dashboard — a window into the records, in one file</span></h2>
-    <p>
-      <span class="he">בחבילה המלאה יש קובץ אחד בשם <code dir="ltr">dashboard.html</code>: פותחים אותו בדפדפן (כרום), מחברים את תיקיית הרשומות פעם אחת, והוא מראה מה כתוב באמת — שאלות פתוחות, תרופות עם האלרגיות תמיד למעלה, ציר הזמן, תיבת הקליטה. עדכונים מהשיחה נכנסים בהדבקה אחת ובלחיצת אישור; שום דבר לא נכתב בלי אישור, ושום דבר לא נשלח לשום מקום.</span>
-      <span class="en">The full package includes one file, <code>dashboard.html</code>: open it in a browser (Chrome), connect your records folder once, and it shows what is really written — open questions, medications with allergies always on top, the timeline, the intake box. Updates from the conversation land as one paste and one approving click; nothing is written without approval, and nothing is sent anywhere.</span>
-    </p>
-    <div class="shot" id="dashShot">
-      <span class="he">צילום מסך של הלוח — נוסף עם אצוות הצילומים.</span><span class="en">Dashboard screenshot — added with the screenshot batch.</span>
+  <!-- ═══ report route (chrome; the "report it" promise needs a destination) ═══ -->
+  <section style="padding-top:0">
+    <div class="wrap split">
+      <div class="numlabel mono"><span class="he">דיווח על תקלה</span><span class="en">Report a problem</span></div>
+      <p style="max-width:66ch; margin:0" class="small">
+        <span class="he">משהו נראה שבור — או גרוע מזה, נשמע כמו אבחנה? שתי דרכים: <a data-repo="/issues/new/choose" href="#">דיווח במאגר GitHub</a> (יש תבניות מוכנות), או <a data-mailto="דיווח — Advolog" href="#">דוא״ל</a> למי שאין חשבון. בכל דיווח: בלי פרטים אישיים ובלי תוכן רפואי אמיתי — תיאור התקלה מספיק תמיד.</span>
+        <span class="en">Something looks broken — or worse, sounds like a diagnosis? Two routes: <a data-repo="/issues/new/choose" href="#">an issue on GitHub</a> (templates are ready), or <a data-mailto="Report — Advolog" href="#">email</a> for anyone without an account. Either way: no personal details and no real medical content — describing the problem is always enough.</span>
+      </p>
     </div>
-    <p><a class="btn ghost" href="guides.html#dashboard"><span class="he">מדריך החיבור המלא</span><span class="en">The full connect guide</span></a></p>
-  </section>
-
-  <!-- ═══ FOR-DOCTORS BEGIN — boundary decision: section in/out is Heela's call.
-        Removing = delete from this marker to FOR-DOCTORS END (both languages inside). ═══ -->
-  <section id="doctors">
-    <h2><span class="he">לרופאות ולרופאים</span><span class="en">For doctors</span></h2>
-    <p>
-      <span class="he">אם מטופל/ת הגיעו אליכם עם מסמך מהכלי הזה: הוא נבנה כדי לחסוך לכם זמן, לא להתווכח איתכם. המסמכים מציגים תיעוד שהמטופל/ת ערכו — ציר זמן, תרופות, מה נוסה ומה קרה — ושאלות עם נימוק גלוי, לעולם לא אבחנות ולא דרישות טיפול. כל טענה ממחקר נושאת תווית מקור (מקורות רשמיים · פרסומים מדעיים · דיווחי מטופלים), והכלי אוסר על עצמו לערבב ביניהן או להמציא ציטוט. «נשקל והוחלט אחרת» מתועד אצלנו כתוצאה טובה ושימושית — המטרה היא שיחה טובה יותר בחמש הדקות שיש, משני הצדדים.</span>
-      <span class="en">If a patient brought you a document from this tool: it exists to save you time, not to argue with you. The documents present patient-kept records — a timeline, medications, what was tried and what happened — and questions with visible reasoning, never diagnoses or treatment demands. Every researched claim carries a source label (official sources · scientific publications · patient reports), and the tool forbids itself from blending them or inventing a citation. "Considered and set aside" is recorded on our side as a good, useful outcome — the goal is a better conversation in the five minutes there are, for both sides.</span>
-    </p>
-  </section>
-  <!-- ═══ FOR-DOCTORS END ═══ -->
-
-  <!-- ═══ SUPPORT MATRIX (simplified honest version) ═══ -->
-  <section id="support">
-    <h2><span class="he">מה נבדק — בכנות</span><span class="en">What is tested — honestly</span></h2>
-    <div class="tblwrap">
-      <table>
-        <thead><tr>
-          <th><span class="he">איפה</span><span class="en">Where</span></th>
-          <th><span class="he">מצב</span><span class="en">Status</span></th>
-          <th><span class="he">נבדק לאחרונה</span><span class="en">Last checked</span></th>
-        </tr></thead>
-        <tbody>
-          <tr><td><span class="he">Claude — עבודה על תיקייה</span><span class="en">Claude — folder-based</span></td>
-              <td><span class="he">המסלול המלא, ריצות חיות מקצה לקצה</span><span class="en">Full path, live end-to-end runs</span></td><td>31.7.2026</td></tr>
-          <tr><td><span class="he">Claude — פרויקט באתר</span><span class="en">Claude — web project</span></td>
-              <td><span class="he">מתוכנן לזה; בדיקת חשבון נקי בקרוב</span><span class="en">Designed for it; fresh-account run coming</span></td><td>—</td></tr>
-          <tr><td><span class="he">ChatGPT</span><span class="en">ChatGPT</span></td>
-              <td><span class="he">נבדק על מנוע GPT בהרצת בדיקה מלאה; בדיקה חיה באפליקציה — בקרוב</span><span class="en">Verified on a GPT runtime in a full harness run; live in-app run coming</span></td><td>31.7.2026</td></tr>
-          <tr><td><span class="he">פרומפט הפתיחה לבדו</span><span class="en">The starter alone</span></td>
-              <td><span class="he">ריצות חיות בשני הצדדים</span><span class="en">Live runs on both sides</span></td><td>31.7.2026</td></tr>
-          <tr><td><span class="he">הלוח</span><span class="en">The dashboard</span></td>
-              <td><span class="he">כרום — הליכה מלאה על דיסק אמיתי; פיירפוקס/ספארי — בלי חיבור תיקיות, השיחה מלווה במקום</span><span class="en">Chrome — full real-disk walk; Firefox/Safari — no folder access, the conversation carries saves instead</span></td><td>31.7.2026</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="muted small">
-      <span class="he">«נבדק» אף פעם לא אומר «מובטח» — פלטפורמות משתנות. הטבלה המלאה, עם הפערים הפתוחים: <code dir="ltr">package/setup/support-matrix.md</code> שבחבילה.</span>
-      <span class="en">"Tested" never means "guaranteed" — platforms change. The full matrix, open gaps included: <code>package/setup/support-matrix.md</code> in the package.</span>
-    </p>
-  </section>
-
-  <!-- ═══ VIDEOS (slots; production trails the site) ═══ -->
-  <section id="videos">
-    <h2><span class="he">סרטוני הדרכה</span><span class="en">Video tutorials</span></h2>
-    <div class="cards3">
-      <div class="vslot"><div class="ph">▶</div><b><span class="he">ההתחלה בלי הורדות</span><span class="en">Starting with zero downloads</span></b><br><span class="small"><span class="he">בקרוב</span><span class="en">coming soon</span></span></div>
-      <div class="vslot"><div class="ph">▶</div><b><span class="he">התקנת החבילה בפרויקט</span><span class="en">Installing the package in a project</span></b><br><span class="small"><span class="he">בקרוב</span><span class="en">coming soon</span></span></div>
-      <div class="vslot"><div class="ph">▶</div><b><span class="he">חיבור הלוח לתיקייה</span><span class="en">Connecting the dashboard</span></b><br><span class="small"><span class="he">בקרוב</span><span class="en">coming soon</span></span></div>
-    </div>
-    <p class="muted small"><span class="he">מפרט ההפקה — קצר, שקט, בלי פנים, כתוביות בעברית — בקובץ <code dir="ltr">video-spec.md</code> שבמאגר.</span>
-    <span class="en">The production spec — short, quiet, no faces, Hebrew captions — lives in <code>video-spec.md</code> in the repository.</span></p>
-  </section>
-
-  <!-- ═══ FAQ ═══ -->
-  <section id="faq">
-    <h2><span class="he">שאלות ותשובות</span><span class="en">Questions and answers</span></h2>
-
-    <details>
-      <summary><span class="he">זה יגיד לי מה יש לי?</span><span class="en">Will it tell me what I have?</span></summary>
-      <p><span class="he">לא, ובכוונה עמוקה. הכלי לא מאבחן ולא מנחש — הוא מסדר את מה שקרה לך ומנסח שאלות שנותנות לרופאים סיבה אמיתית לבדוק. שם של מצב רפואי יופיע רק בתוך שאלה, ורק כשיש לו מקור גלוי.</span>
-      <span class="en">No, and deeply on purpose. The tool never diagnoses or guesses — it organizes what happened to you and phrases questions that give doctors a real reason to look. A condition name appears only inside a question, and only with a visible source.</span></p>
-    </details>
-
-    <details>
-      <summary><span class="he">לאן המידע שלי הולך?</span><span class="en">Where does my information go?</span></summary>
-      <p><span class="he">לשום מקום מטעם הכלי. הרשומות הן קבצים אצלך במחשב; לאתר הזה אין שרת ואין איסוף. השיחות עצמן רצות בחשבון ה־AI שלך לפי מדיניות הפלטפורמה — ולכן כבר בהתקנה מוצע הליך קצר על הגדרות הפרטיות, כולל ביטול שימוש בשיחות לאימון המודל אם האפשרות פעילה בחשבון שלך, והוא חוזר פעם אחת לפני הייצוא הראשון. ההליך מנחה ולא מבטיח — הקובע הוא מה שמופיע אצלך בחשבון.</span>
-      <span class="en">Nowhere, as far as the tool is concerned. The records are files on your machine; this site has no server and collects nothing. The conversations run in your AI account under the platform's policy — which is why a short privacy walkthrough is offered right at install, including the model-training opt-out where that option is active on your account, and repeats once before the first export. It guides, it does not guarantee — what appears in your account is what counts.</span></p>
-    </details>
-
-    <details>
-      <summary><span class="he">כמה זה עולה?</span><span class="en">What does it cost?</span></summary>
-      <p><span class="he">כלום. קוד פתוח ברישיון MIT, בלי גרסת פרימיום ובלי הרשמה. מה שכן — הכלי רץ בחשבון ה־AI שלך, והמדרגות של Claude או ChatGPT הן שלהן; אפשר להתחיל בחינמיות.</span>
-      <span class="en">Nothing. Open source under MIT, no premium version, no signup. It does run inside your AI account, and Claude's or ChatGPT's own tiers are theirs; the free tiers are fine to start.</span></p>
-    </details>
-
-    <details>
-      <summary><span class="he">איזה עוזר AI צריך?</span><span class="en">Which AI assistant do I need?</span></summary>
-      <p><span class="he">Claude או ChatGPT — שניהם נתמכים ומוסברים במדריכים. החבילה בנויה לעבוד בכל מקום שמקבל הנחיות וקבצים, אז גם פלטפורמות אחרות אמורות להסתדר, בלי הבטחות.</span>
-      <span class="en">Claude or ChatGPT — both supported and documented in the guides. The package is built to work anywhere that accepts instructions and files, so other platforms should manage too, no promises made.</span></p>
-    </details>
-
-    <details>
-      <summary><span class="he">חייבים להוריד ולהתקין?</span><span class="en">Do I have to download and install anything?</span></summary>
-      <p><span class="he">לא. מסלול «בלי להוריד כלום» הוא מסלול מלא: פרומפט אחד להעתקה, והכול רץ בתוך השיחה. החבילה המלאה מוסיפה קבצים ורשומות קבועות — כשתרצו, אם תרצו.</span>
-      <span class="en">No. The zero-download path is a full path: one prompt to copy, everything runs inside the conversation. The full package adds files and a persistent record — when and if you want it.</span></p>
-    </details>
-
-    <details>
-      <summary><span class="he">הורדתי את הקובץ ומשהו לא עובד</span><span class="en">I downloaded the file and something is off</span></summary>
-      <p><span class="he">כמעט תמיד זה עניין החילוץ: קובץ zip צריך לחלץ לפני השימוש — לחיצה ימנית ← «חלץ הכול» בווינדוס, לחיצה כפולה במק. אם רואים את הקבצים בתוך חלון של תוכנת מכווץ, זה עדיין בתוך ה־zip. אחרי חילוץ תקבלו תיקייה רגילה, ומשם הכול עובד. <a href="guides.html">המדריך מלווה צעד־צעד</a>.</span>
-      <span class="en">Almost always it is extraction: a zip must be extracted before use — right-click ← "Extract All" on Windows, double-click on Mac. If you see the files inside an archive-tool window, you are still inside the zip. Once extracted you get a normal folder, and everything works. <a href="guides.html">The guide walks through it</a>.</span></p>
-    </details>
-
-    <details>
-      <summary><span class="he">ומה אם אני בתקופה שאני לא מסוגל/ת לכלום?</span><span class="en">And if I am in a period where I cannot manage anything?</span></summary>
-      <p><span class="he">בדיוק בשביל זה יש מצב קליטה: שום סדר לא נדרש, שום שאלות — מה שמצליחים לכתוב נשמר ומחכה, והמיון קורה אחר כך, כשאפשר. וחשוב לומר ביושר: הכלי אוסף ומסדר, ובזה הוא נגמר. ברגעים קשים באמת יש בני אדם: חירום 101, ער"ן 1201, סה"ר בצ'אט.</span>
-      <span class="en">Capture mode exists exactly for this: no structure demanded, no questions — whatever you manage to write is kept and waits, and sorting happens later, when you can. And honestly said: capturing and organizing is all this tool does. In truly hard moments there are humans: in Israel — emergency 101, ERAN 1201, Sahar online.</span></p>
-    </details>
-
-    <details>
-      <summary><span class="he">אפשר לנהל את זה עבור אמא שלי?</span><span class="en">Can I run this for my mother?</span></summary>
-      <p><span class="he">כן — מסלול מלווה בדיוק לזה, כולל מסגור הוגן של השאלות החשובות: של מי הרשומה, האם האדם יודע שהיא נשמרת, ומה מותר שיצא החוצה. איסוף ושמירה אף פעם לא מותנים; שיתוף — כן.</span>
-      <span class="en">Yes — the caregiver path is exactly this, including honest framing of the questions that matter: whose record it is, whether the person knows it is kept, and what may leave. Collecting and keeping are never gated; sharing is.</span></p>
-    </details>
-  </section>
-
-  <!-- ═══ REPORT ═══ -->
-  <section id="report">
-    <h2><span class="he">משהו לא עובד? ספרו לנו</span><span class="en">Something broken? Tell us</span></h2>
-    <p>
-      <span class="he">שתי דרכים, לבחירתכם:</span>
-      <span class="en">Two routes, your pick:</span>
-    </p>
-    <ul>
-      <li><span class="he">עם חשבון GitHub: <a data-repo="/issues/new/choose" href="#">פתיחת דיווח במאגר</a> — יש תבניות מוכנות לתקלה, לעדכון המערכת הישראלית ולהצעות.</span>
-          <span class="en">With a GitHub account: <a data-repo="/issues/new/choose" href="#">open an issue</a> — ready templates for bugs, Israeli-system updates, and proposals.</span></li>
-      <li><span class="he">בלי GitHub: <a data-mailto="דיווח על תקלה — CareHub Open" href="#">דוא"ל ישיר</a>. מה קרה, איפה (Claude / ChatGPT / הלוח / האתר), ומה ציפיתם — זה כל מה שצריך.</span>
-          <span class="en">Without GitHub: <a data-mailto="Bug report — CareHub Open" href="#">email us directly</a>. What happened, where (Claude / ChatGPT / dashboard / site), and what you expected — that is all it takes.</span></li>
-    </ul>
-    <p class="notice warn small">
-      <span class="he">חשוב, בכל דיווח: בלי פרטים אישיים ובלי תוכן רפואי אמיתי. תיאור התקלה מספיק תמיד; אם צריך דוגמה — ממציאים אחת.</span>
-      <span class="en">Important, in any report: no personal details and no real medical content. Describing the problem is always enough; if an example is needed, invent one.</span>
-    </p>
   </section>
 
 </main>
 
+<!-- ═══ Footer (dark, locked) ═══ -->
 <footer>
   <div class="wrap">
     <div class="cols">
-      <div style="max-width:640px">
-        <p><b><span class="he">הבהרה בריאותית:</span><span class="en">Health disclaimer:</span></b>
-        <span class="he">הכלי אינו ייעוץ רפואי, אינו מאבחן, אינו ממליץ על טיפול ואינו מחליף רופא/ה או שיקול דעת קליני. הוא עוזר לארגן מידע ולנסח שאלות לצוות המטפל. אין התחייבות לדיוק רפואי.</span>
-        <span class="en">This tool is not medical advice, does not diagnose, does not recommend treatment, and does not replace clinicians or clinical judgment. It helps organize information and phrase questions for the care team. No warranty of medical accuracy.</span></p>
+      <div>
+        <p class="brand" style="font-size:22px">Advolog</p>
+        <p><span class="he">חינמי ופתוח, ללא מטרות רווח מהתכנון</span><span class="en">Free and open, non-profit by design</span></p>
+        <p class="muted"><span class="he">הערכה הזאת אינה ייעוץ רפואי ואינה תחליף לטיפול מקצועי — והיא תגיד לכם את זה בעצמה.</span>
+        <span class="en">This toolkit does not provide medical advice. It is not a substitute for professional medical care, and it will tell you the same thing itself.</span></p>
         <!-- PERSONAL-LINE: Heela's own sentence, her words only. Unhide (remove `hidden`) when she writes it. -->
-        <p class="personal" hidden>⟪השורה האישית של הילה — במילים שלה בלבד⟫</p>
+        <p class="personal" hidden>⟪השורה האישית — במילים של הילה בלבד⟫</p>
+        <p class="crisisline"><span class="he">קווי סיוע: 101 (חירום) · ער״ן 1201 · סה״ר (אונליין)</span><span class="en">Crisis lines: 101 (emergency) · ERAN 1201 · Sahar (online)</span></p>
       </div>
       <div>
-        <p>
-          <span class="he">קוד פתוח · רישיון MIT · <a data-repo="" href="#">המאגר</a></span>
-          <span class="en">Open source · MIT license · <a data-repo="" href="#">repository</a></span>
-        </p>
-        <p><a data-coffee href="#"><span class="he">☕ אפשר לקנות לי קפה</span><span class="en">☕ Buy me a coffee</span></a></p>
-        <p class="small"><span class="he">CareHub Open — שם עבודה · 2026</span><span class="en">CareHub Open — working name · 2026</span></p>
+        <p class="mono muted" style="margin-bottom:2px"><span class="he">רישיון: MIT</span><span class="en">License: MIT</span></p>
+        <div class="links small">
+          <a data-repo="" href="#">GitHub</a>
+          <a href="guides.html"><span class="he">מדריכי התקנה</span><span class="en">Setup guides</span></a>
+          <a href="index.html#privacy"><span class="he">פרטיות</span><span class="en">Privacy</span></a>
+          <a data-repo="/blob/main/CONTRIBUTING.md" href="#"><span class="he">לתרומת קוד</span><span class="en">Contribute</span></a>
+          <a href="form.html"><span class="he">טופס פתיחה</span><span class="en">Onboarding form</span></a>
+          <a href="censor.html"><span class="he">צנזור מסמכים</span><span class="en">Document censor</span></a>
+        </div>
+        <p><a data-coffee href="#"><span class="he">אם זה עזר: להזמין לי קפה</span><span class="en">If it helped: buy me a coffee</span></a></p>
       </div>
     </div>
   </div>
 </footer>
 
 <div id="toast" role="status" aria-live="polite"></div>
+<script>
+/* one copy button serving the visible language's starter block */
+(function(){
+  var b=document.querySelector('[data-copy-lang]');
+  if(!b) return;
+  b.addEventListener('click', function(){
+    var he = document.documentElement.getAttribute('data-lang')==='he';
+    var src = document.getElementById(he?'starterHe':'starterEn');
+    window.advCopy(src.textContent, b);
+  });
+})();
+</script>
 </body>
 </html>

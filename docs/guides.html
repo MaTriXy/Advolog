@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- CareHub Open — setup guides page.
+<!-- Advolog — setup guides page.
      Canonical Hebrew lives in package/setup/*.md (setup-claude, setup-chatgpt,
      dashboard-guide, support-matrix); this page carries the same content for
      readers plus the English toggle layer (authored here, Phase 4, as the
@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-he="מדריכי התקנה — CareHub Open" data-en="Setup guides — CareHub Open">מדריכי התקנה — CareHub Open</title>
+<title data-he="מדריכי התקנה — Advolog" data-en="Setup guides — Advolog">מדריכי התקנה — Advolog</title>
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/site.js"></script>
 </head>
@@ -18,13 +18,13 @@
 
 <header class="topbar">
   <div class="inner">
-    <a class="brand" href="index.html">CareHub Open <span class="sub"><span class="he">(שם עבודה)</span><span class="en">(working name)</span></span></a>
+    <a class="brand" href="index.html">Advolog<span class="sub"><span class="he">חינמי · פתוח · ללא מטרות רווח</span><span class="en">free · open · non-profit</span></span></a>
     <nav class="topnav" aria-label="ניווט ראשי">
       <a href="index.html"><span class="he">דף הבית</span><span class="en">Home</span></a>
       <a href="form.html"><span class="he">טופס פתיחה</span><span class="en">Onboarding form</span></a>
       <a href="censor.html"><span class="he">צנזור מסמכים</span><span class="en">Document censor</span></a>
       <button id="langBtn" class="tbtn" type="button">English</button>
-      <button id="themeBtn" class="tbtn" type="button" aria-pressed="false"><span class="he">מצב כהה</span><span class="en">Dark mode</span></button>
+      <button id="scaleBtn" class="tbtn" type="button" aria-pressed="false" aria-label="טקסט גדול יותר">Aa</button>
     </nav>
   </div>
 </header>
@@ -45,7 +45,7 @@
   <!-- ════════════════ CLAUDE ════════════════ -->
   <section class="guide" id="claude">
     <h2><span class="he">התקנה ב־Claude</span><span class="en">Setup in Claude</span></h2>
-    <p><span class="he">יש שתי דרכים טובות, ולא צריך לבחור מראש נכון: אפשר להתחיל בקלה ולעבור אחר כך — הרשומות עוברות איתך.</span>
+    <p><span class="he">יש שתי דרכים טובות, ולא צריך לבחור מראש נכון: אפשר להתחיל בקלה ולעבור אחר כך — הרשומות עוברות איתכם.</span>
     <span class="en">There are two good ways in, and no need to choose right the first time: start light and move later — the records move with you.</span></p>
 
     <h3><span class="he">דרך א — פרויקט באתר (claude.ai)</span><span class="en">Way one — a project on claude.ai</span></h3>
@@ -60,7 +60,7 @@
     <div class="shot"><span class="he">[צילום מסך: מסך פרויקט חדש עם שדה ההנחיות מסומן — מופק עם אצוות הצילומים]</span><span class="en">[Screenshot: new-project screen with the instructions field marked — produced with the screenshot batch]</span></div>
     <p class="notice"><span class="he"><b>חלופה בלי שום התקנה:</b> שיחה רגילה + הדבקת <a href="index.html#starter">פרומפט הפתיחה</a>. גרסה קלה ושלמה, בלי קבצים.</span>
     <span class="en"><b>The no-install alternative:</b> a regular chat + pasting <a href="index.html#starter">the starter prompt</a>. A light, complete version, no files.</span></p>
-    <p><span class="he"><b>איפה הרשומות?</b> קובצי הרשומות נשמרים אצלך במחשב, בתיקייה אחת שבחרת, והשיחה מלווה כל שמירה — או שפותחים את <code dir="ltr">dashboard.html</code> מאותה תיקייה והוא מכניס את העדכונים בלחיצה (<a href="#dashboard">מדריך הלוח</a>). בנייד אפשר לנהל את הגרעין בתוך השיחה ולהעביר לקבצים כשמגיעים למחשב.</span>
+    <p><span class="he"><b>איפה הרשומות?</b> קובצי הרשומות נשמרים אצלכם במחשב, בתיקייה אחת שבחרתם, והשיחה מלווה כל שמירה — או שפותחים את <code dir="ltr">dashboard.html</code> מאותה תיקייה והוא מכניס את העדכונים בלחיצה (<a href="#dashboard">מדריך הלוח</a>). בנייד אפשר לנהל את הגרעין בתוך השיחה ולהעביר לקבצים כשמגיעים למחשב.</span>
     <span class="en"><b>Where are the records?</b> The record files live on your machine, in one folder you choose, and the conversation walks every save with you — or open <code>dashboard.html</code> from that folder and it applies updates on a click (<a href="#dashboard">dashboard guide</a>). On mobile, keep the seed in the conversation and move it to files at a computer.</span></p>
 
     <h3><span class="he">דרך ב — תיקייה במחשב (Claude Code / Cowork)</span><span class="en">Way two — a folder on your computer (Claude Code / Cowork)</span></h3>
@@ -99,26 +99,26 @@
     <span class="en"><b>The no-install alternative:</b> a regular chat + <a href="index.html#starter">the starter prompt</a>.</span></p>
 
     <h3><span class="he">הערה חשובה על «זיכרון» (Memory)</span><span class="en">An important note on Memory</span></h3>
-    <p><span class="he">ל־ChatGPT יש זיכרון חוצה־שיחות. לרשומה רפואית עדיף מקור אמת אחד — הקבצים שלך: בבדיקות שלנו זוהה מקרה שבו ידע כללי «מהזיכרון» התערבב בטענות ממקורות, וההנחיות דורשות שכל מספר וסף יגיעו רק ממקור שנשמר באותה ריצה. לשקט נפשי אפשר לכבות זיכרון לשיחות האלה (Settings ← Personalization ← Memory) או להשתמש בפרויקט ייעודי. הבחירה שלך; העיקרון — הרשומה גוברת על הזיכרון.</span>
+    <p><span class="he">ל־ChatGPT יש זיכרון חוצה־שיחות. לרשומה רפואית עדיף מקור אמת אחד — הקבצים שלכם: בבדיקות שלנו זוהה מקרה שבו ידע כללי «מהזיכרון» התערבב בטענות ממקורות, וההנחיות דורשות שכל מספר וסף יגיעו רק ממקור שנשמר באותה ריצה. לשקט נפשי אפשר לכבות זיכרון לשיחות האלה (Settings ← Personalization ← Memory) או להשתמש בפרויקט ייעודי. הבחירה שלכם; העיקרון — הרשומה גוברת על הזיכרון.</span>
     <span class="en">ChatGPT has cross-conversation memory. A medical record wants one source of truth — your files: our testing caught a case where general "memory" knowledge blended into sourced claims, and the instructions require every number and threshold to come only from a source retained in that run. For peace of mind, turn Memory off for these conversations (Settings ← Personalization ← Memory) or use a dedicated project. Your choice; the principle — the record outranks the memory.</span></p>
 
     <h3><span class="he">שיחה חדשה בתוך הפרויקט</span><span class="en">A new chat inside the project</span></h3>
-    <p><span class="he">Projects ← הפרויקט שלך ← <b>New chat</b> בתוכו. מילת פתיחה: «תתעדכני».</span>
+    <p><span class="he">Projects ← הפרויקט שלכם ← <b>New chat</b> בתוכו. מילת פתיחה: «תתעדכני».</span>
     <span class="en">Projects ← your project ← <b>New chat</b> inside it. Opening word: "catch up."</span></p>
   </section>
 
   <!-- ════════════════ DASHBOARD (mounted from package/setup/dashboard-guide.md) ════════════════ -->
   <section class="guide" id="dashboard">
     <h2><span class="he">הלוח — המדריך המלא</span><span class="en">The dashboard — the full guide</span></h2>
-    <p><span class="he">הלוח הוא קובץ אחד בשם <code dir="ltr">dashboard.html</code> שיושב בתיקיית הרשומות שלך. הוא לא אתר, לא אפליקציה להתקנה ולא שירות: פותחים אותו בדפדפן, והוא מראה מה יש ברשומות ומכניס לתוכן עדכונים מהשיחה — רק אחרי שאישרת. הכול קורה אצלך במחשב. שום דבר לא נשלח לשום מקום, אף פעם: אין רשת, אין חשבון, אין שרת.</span>
+    <p><span class="he">הלוח הוא קובץ אחד בשם <code dir="ltr">dashboard.html</code> שיושב בתיקיית הרשומות שלכם. הוא לא אתר, לא אפליקציה להתקנה ולא שירות: פותחים אותו בדפדפן, והוא מראה מה יש ברשומות ומכניס לתוכן עדכונים מהשיחה — רק אחרי שאישרת. הכול קורה אצלכם במחשב. שום דבר לא נשלח לשום מקום, אף פעם: אין רשת, אין חשבון, אין שרת.</span>
     <span class="en">The dashboard is one file named <code>dashboard.html</code> sitting in your records folder. It is not a website, not an app to install, not a service: you open it in a browser, it shows what is in the records and applies updates from the conversation — only after you approve. Everything happens on your machine. Nothing is ever sent anywhere: no network, no account, no server.</span></p>
     <p class="notice"><span class="he">חשוב לומר כבר עכשיו: <b>הלוח הוא נוחות, לא חובה.</b> הכול עובד גם בשיחה בלבד. אם משהו כאן מרגיש מסובך, אפשר פשוט להמשיך לדבר עם העוזר והוא ילווה כל שמירה, קובץ אחד בכל פעם.</span>
     <span class="en">Worth saying up front: <b>the dashboard is a convenience, not a requirement.</b> Everything also works in conversation alone. If any of this feels complicated, just keep talking to the assistant and it will walk every save with you, one file at a time.</span></p>
 
     <h3><span class="he">איך זה בנוי</span><span class="en">How it is built</span></h3>
-    <p><span class="he">הרשומות שלך הן קבצי טקסט פשוטים בתיקייה אחת: תרופות, ציר זמן, יומן תסמינים, שאלות פתוחות ועוד. אפשר לפתוח כל אחד מהם בכל עורך טקסט, בלי שום תוכנה מיוחדת, והם קריאים לבני אדם. השיחה עם העוזר היא המוח: שם מספרים מה קרה, שואלים שאלות, מכינים דוחות. הלוח הוא החלון והידיים: מראה מה כתוב, ומכניס את מה שהשיחה הציעה.</span>
+    <p><span class="he">הרשומות שלכם הן קבצי טקסט פשוטים בתיקייה אחת: תרופות, ציר זמן, יומן תסמינים, שאלות פתוחות ועוד. אפשר לפתוח כל אחד מהם בכל עורך טקסט, בלי שום תוכנה מיוחדת, והם קריאים לבני אדם. השיחה עם העוזר היא המוח: שם מספרים מה קרה, שואלים שאלות, מכינים דוחות. הלוח הוא החלון והידיים: מראה מה כתוב, ומכניס את מה שהשיחה הציעה.</span>
     <span class="en">Your records are plain text files in one folder: medications, timeline, symptom log, open questions, and more. Any text editor opens them, no special software, and they read as human documents. The conversation is the brain: there you tell what happened, ask questions, prepare reports. The dashboard is the window and the hands: it shows what is written, and applies what the conversation proposed.</span></p>
-    <p><span class="he">החלוקה הזאת מכוונת. השיחה אף פעם לא נוגעת בקבצים שלך בעצמה; היא מציעה, ואת או אתה מחליטים. שום דבר לא נכנס לרשומות בלי לחיצת אישור שלך.</span>
+    <p><span class="he">החלוקה הזאת מכוונת. השיחה אף פעם לא נוגעת בקבצים שלכם בעצמה; היא מציעה, ואת או אתה מחליטים. שום דבר לא נכנס לרשומות בלי לחיצת אישור שלכם.</span>
     <span class="en">That split is deliberate. The conversation never touches your files itself; it proposes, and you decide. Nothing enters the records without your approving click.</span></p>
 
     <h3><span class="he">החיבור הראשון, צעד אחר צעד</span><span class="en">The first connection, step by step</span></h3>
@@ -127,7 +127,7 @@
       <span class="en"><b>Make sure the file sits in the records folder.</b> If the package came as a zip, extract it first: right-click ← "Extract All" (Windows) or double-click (Mac). If <code>dashboard.html</code> shows inside an archive-tool window — it is still inside the zip and will not work from there. After extraction there is a normal folder with the file in it.</span></li>
       <li><span class="he"><b>פתחו את הקובץ בדפדפן שתומך בגישה לתיקיות</b> — כרום, למשל. לרוב מספיקה לחיצה כפולה. אם נפתחה תוכנה אחרת: לחיצה ימנית ← «פתח באמצעות» ← הדפדפן.</span>
       <span class="en"><b>Open the file in a folder-capable browser</b> — Chrome, for instance. A double-click usually does it. If another program opened: right-click ← "Open with" ← the browser.</span></li>
-      <li><span class="he"><b>לחצו «בחירת התיקייה»</b> ובחרו את התיקייה שבה יושב הקובץ — היא תיקיית הרשומות. הדפדפן ישאל אם לאשר גישה; זה האישור היחיד שהלוח צריך, והוא נשאר בתוך המחשב שלך. אפשר גם פשוט לגרור את התיקייה אל החלון.</span>
+      <li><span class="he"><b>לחצו «בחירת התיקייה»</b> ובחרו את התיקייה שבה יושב הקובץ — היא תיקיית הרשומות. הדפדפן ישאל אם לאשר גישה; זה האישור היחיד שהלוח צריך, והוא נשאר בתוך המחשב שלכם. אפשר גם פשוט לגרור את התיקייה אל החלון.</span>
       <span class="en"><b>Click "choose the folder"</b> and pick the folder the file sits in — that is the records folder. The browser asks to approve access; that is the only approval the dashboard needs, and it stays inside your machine. Dragging the folder onto the window works too.</span></li>
       <li><span class="he"><b>זהו.</b> שבעת קובצי הרשומות נוצרים אם הם עוד לא קיימים, ונקראים אם הם כבר שם. מהרגע הזה הלוח מציג את מה שבאמת כתוב בקבצים.</span>
       <span class="en"><b>That is it.</b> The seven record files are created if they do not exist yet, and read if they do. From that moment the dashboard shows what is really written in the files.</span></li>
@@ -166,7 +166,7 @@
     <h3><span class="he">שני כלי הפרטיות</span><span class="en">The two privacy tools</span></h3>
     <p><span class="he"><b>צנזור חזותי</b> — לתמונות של מסמכים, לפני שהן מגיעות לשיחה. טוענים צילום, משחירים באצבע או בעכבר את מה שלא צריך לצאת (שם, ת״ז, מספר תיק), נותנים שם חדש ומורידים עותק נקי. ההשחרה נצרבת בפיקסלים של העותק — אי אפשר להסיר אותה. המקור לא משתנה, ואותו לא מעלים. קובצי PDF לא נתמכים בגרסה הזאת — מצלמים את העמוד או עושים צילום מסך, וזה עובד מצוין. הכלי זמין גם <a href="censor.html">כאן באתר</a>, בלי החבילה.</span>
     <span class="en"><b>Visual censor</b> — for document photos, before they reach a conversation. Load a photo, black out what must not leave (name, ID, file number) by finger or mouse, rename, download a clean copy. The redaction is burned into the copy's pixels — it cannot be removed. The original is untouched, and it is the copy you upload. PDFs are not supported in this version — photograph or screenshot the page instead, which works fine. The tool is also available <a href="censor.html">here on the site</a>, package or not.</span></p>
-    <p><span class="he"><b>ניקוי טקסט</b> — לטקסט שעומד לצאת החוצה: סיכום לשיתוף, שאלה לפורום. הכלי מסמן לבדיקה את המזהים של מי שהרשומה עליו: תעודת זהות (עם בדיקת ספרת ביקורת), שם, כתובת מדויקת, מספרי תיק, טלפון ודוא״ל. כשהרשומה מנוהלת עבור מישהו אחר, המזהים המסומנים הם קודם כול שלו. סימון מיותר מבטלים בלחיצה; «העתקת העותק הנקי» מחליפה כל סימון פעיל בסוגריים, למשל [שם]. שמות רופאים ומוסדות נשארים בכוונה: מקור הטיפול הוא לא זהות המטופל או המטופלת. הבדיקה שלך היא הקובעת — הכלי עוזר לעיניים, לא מחליף אותן.</span>
+    <p><span class="he"><b>ניקוי טקסט</b> — לטקסט שעומד לצאת החוצה: סיכום לשיתוף, שאלה לפורום. הכלי מסמן לבדיקה את המזהים של מי שהרשומה עליו: תעודת זהות (עם בדיקת ספרת ביקורת), שם, כתובת מדויקת, מספרי תיק, טלפון ודוא״ל. כשהרשומה מנוהלת עבור מישהו אחר, המזהים המסומנים הם קודם כול שלו. סימון מיותר מבטלים בלחיצה; «העתקת העותק הנקי» מחליפה כל סימון פעיל בסוגריים, למשל [שם]. שמות רופאים ומוסדות נשארים בכוונה: מקור הטיפול הוא לא זהות המטופל או המטופלת. הבדיקה שלכם היא הקובעת — הכלי עוזר לעיניים, לא מחליף אותן.</span>
     <span class="en"><b>Text scrub</b> — for text about to go out: a summary to share, a forum question. It marks, for your review, the record subject's identifiers: ID number (checksum-verified), name, exact address, file numbers, phone, email. When the record is kept for someone else, the marked identifiers are first of all theirs. Click an unneeded mark to clear it; "copy the clean version" replaces each active mark with brackets, e.g. [name]. Clinician names and institutions stay by design: the provenance of care is not the patient's identity. Your review decides — the tool helps the eyes, it does not replace them.</span></p>
 
     <h3><span class="he">גיבוי ושחזור</span><span class="en">Backup and restore</span></h3>
@@ -185,27 +185,27 @@
       <li><span class="he"><b>פתחתם והכול ריק</b> — כנראה נבחרה תיקייה אחרת. מתחברים שוב לתיקייה שבה יושב <code dir="ltr">dashboard.html</code>.</span><span class="en"><b>Opened and everything is empty</b> — probably a different folder was picked. Reconnect to the folder <code>dashboard.html</code> sits in.</span></li>
       <li><span class="he"><b>משהו מוזר אחר</b> — הקבצים עצמם תמיד פתוחים: הציצו בהם בכל עורך טקסט. והשיחה תמיד יודעת לעזור — מספרים לה מה קרה.</span><span class="en"><b>Anything else odd</b> — the files themselves are always open: peek at them in any text editor. And the conversation always knows how to help — tell it what happened.</span></li>
     </ul>
-    <p class="notice"><span class="he"><b>מה הלוח לא עושה:</b> לא ניגש לרשת. לא שולח כלום לאף אחד. לא מוחק דבר לבד. לא מחליט במקומך. לא דורש ממך כלום כדי שהרשומות ימשיכו להיות שלך — הן קבצים פשוטים בתיקייה שלך, עם הלוח ובלעדיו.</span>
+    <p class="notice"><span class="he"><b>מה הלוח לא עושה:</b> לא ניגש לרשת. לא שולח כלום לאף אחד. לא מוחק דבר לבד. לא מחליט במקומך. לא דורש ממך כלום כדי שהרשומות ימשיכו להיות שלכם — הן קבצים פשוטים בתיקייה שלכם, עם הלוח ובלעדיו.</span>
     <span class="en"><b>What the dashboard never does:</b> touch the network. Send anything to anyone. Delete anything on its own. Decide for you. Require anything for the records to stay yours — they are plain files in your folder, dashboard or not.</span></p>
   </section>
 
   <!-- ════════════════ PRIVACY WALKTHROUGHS ════════════════ -->
   <section class="guide" id="privacy">
     <h2><span class="he">הליכי הפרטיות, פלטפורמה־פלטפורמה</span><span class="en">The privacy walkthroughs, platform by platform</span></h2>
-    <p><span class="he">ההצעה לעבור על זה מגיעה כבר בהתקנה, וחוזרת פעם אחת לפני הייצוא הראשון. שתי דקות, פעם אחת. חשוב ביושר: המסכים משתנים מדי פעם, וההליך מנחה ולא מבטיח — הקובע הוא מה שמופיע אצלך בחשבון.</span>
+    <p><span class="he">ההצעה לעבור על זה מגיעה כבר בהתקנה, וחוזרת פעם אחת לפני הייצוא הראשון. שתי דקות, פעם אחת. חשוב ביושר: המסכים משתנים מדי פעם, וההליך מנחה ולא מבטיח — הקובע הוא מה שמופיע אצלכם בחשבון.</span>
     <span class="en">The offer to go over this arrives right at install, and repeats once before the first export. Two minutes, once. Said honestly: screens change now and then, and this walkthrough guides rather than guarantees — what appears in your account is what counts.</span></p>
 
     <h3><span class="he">בחשבון Claude</span><span class="en">In a Claude account</span></h3>
     <ol>
       <li><span class="he">נכנסים להגדרות החשבון (Settings) ← מחפשים את אזור הפרטיות או Data.</span><span class="en">Open account Settings ← find the privacy or Data area.</span></li>
-      <li><span class="he"><b>שימוש בשיחות לאימון המודל:</b> אם מופיעה בחשבון שלך אפשרות כזו — מחליטים בה במודע. מי שמעדיף שהשיחות לא ישמשו לאימון, מכבה אותה. בחלק מסוגי החשבונות ברירת המחדל שונה; אם ההגדרה לא במקום המתואר — מחפשים «privacy» או «data» בהגדרות.</span><span class="en"><b>Using conversations for model training:</b> if such an option appears on your account — decide it consciously. Prefer your conversations not used for training? Turn it off. Defaults differ across account types; if the setting is not where described — search "privacy" or "data" in Settings.</span></li>
+      <li><span class="he"><b>שימוש בשיחות לאימון המודל:</b> אם מופיעה בחשבון שלכם אפשרות כזו — מחליטים בה במודע. מי שמעדיף שהשיחות לא ישמשו לאימון, מכבה אותה. בחלק מסוגי החשבונות ברירת המחדל שונה; אם ההגדרה לא במקום המתואר — מחפשים «privacy» או «data» בהגדרות.</span><span class="en"><b>Using conversations for model training:</b> if such an option appears on your account — decide it consciously. Prefer your conversations not used for training? Turn it off. Defaults differ across account types; if the setting is not where described — search "privacy" or "data" in Settings.</span></li>
       <li><span class="he">שווה להכיר גם את משך שמירת השיחות ואת אפשרות המחיקה, כפי שמוצגים בחשבון.</span><span class="en">Worth knowing the conversation-retention and deletion options too, as shown in the account.</span></li>
     </ol>
 
     <h3><span class="he">בחשבון ChatGPT</span><span class="en">In a ChatGPT account</span></h3>
     <ol>
       <li><span class="he">תמונת הפרופיל ← <b>Settings</b> ← <b>Data Controls</b>.</span><span class="en">Profile picture ← <b>Settings</b> ← <b>Data Controls</b>.</span></li>
-      <li><span class="he"><b>«Improve the model for everyone»:</b> אם ההגדרה מופיעה בחשבון שלך — מחליטים בה במודע; מי שמעדיף שהשיחות לא ישמשו לאימון, מכבה. לא מוצאים? מחפשים «data» בהגדרות.</span><span class="en"><b>"Improve the model for everyone":</b> if it appears on your account — decide it consciously; prefer not to feed training, turn it off. Not finding it? Search "data" in Settings.</span></li>
+      <li><span class="he"><b>«Improve the model for everyone»:</b> אם ההגדרה מופיעה בחשבון שלכם — מחליטים בה במודע; מי שמעדיף שהשיחות לא ישמשו לאימון, מכבה. לא מוצאים? מחפשים «data» בהגדרות.</span><span class="en"><b>"Improve the model for everyone":</b> if it appears on your account — decide it consciously; prefer not to feed training, turn it off. Not finding it? Search "data" in Settings.</span></li>
       <li><span class="he">שווה להכיר שם גם את ייצוא הנתונים ומחיקת שיחות.</span><span class="en">Worth knowing the data-export and chat-deletion options there too.</span></li>
     </ol>
     <p class="muted"><span class="he">ובכל מקרה, בלי קשר להגדרות: הכלי לא מבקש מזהים, וכל ייצוא עובר קודם את רשימת הבדיקה — מה בפנים, מה מסירים, לאן זה הולך.</span>
@@ -250,7 +250,7 @@
     </table></div>
   </section>
 
-  <p><a class="btn ghost" href="index.html"><span class="he">← חזרה לדף הבית</span><span class="en">← Back home</span></a></p>
+  <p><a class="btn line" href="index.html"><span class="he">← חזרה לדף הבית</span><span class="en">← Back home</span></a></p>
 </main>
 
 <footer>

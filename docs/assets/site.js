@@ -1,43 +1,38 @@
-/* CareHub Open — shared site behavior: language toggle (he RTL default / en LTR),
-   explicit theme toggle (light default, never OS-auto — ruled), copy buttons.
-   No network requests, no storage beyond localStorage for the two toggles. */
+/* Advolog — shared site behavior: language toggle (he RTL default / en LTR),
+   the "Aa" larger-text toggle (landing-notes accessibility item), copy buttons.
+   No theme toggle: the design brief's dark sections are locked, one look for everyone.
+   No network requests; localStorage only for the two toggles. */
 (function(){
-  // ---- Launch wiring (single place to flip at publish; see boundary notes) ----
-  // REPO_URL: set to the public GitHub repository URL at Phase 6 launch (null = pre-launch).
-  // CONTACT_EMAIL: the no-GitHub bug-report route. Flagged for Heela's confirmation.
-  window.CHO = {
-    REPO_URL: null,
-    CONTACT_EMAIL: "heelago@gmail.com",
-    COFFEE_URL: null  // quiet footer support link; null hides it until confirmed
-  };
+  // ---- Launch wiring (single place to flip at publish) ----
+  // REPO_URL: the public GitHub repository URL, set at Phase 6 launch (null = pre-launch).
+  // CONTACT_EMAIL: the dedicated bug-report address — Heela supplies it before launch
+  //   (deliberately null now; her personal address does not ship). While null, email
+  //   links render as an honest "address arrives at launch" tag.
+  // COFFEE_URL: quiet footer support link; null keeps the line hidden until confirmed.
+  window.ADV = { REPO_URL: null, CONTACT_EMAIL: null, COFFEE_URL: null };
 
   var doc = document.documentElement;
 
-  // Language: he (RTL) default; persisted; ?lang=en supported.
   var qs = new URLSearchParams(location.search);
   var lang = qs.get("lang") || null;
-  try { lang = lang || localStorage.getItem("cho-lang"); } catch(e){}
+  try { lang = lang || localStorage.getItem("adv-lang"); } catch(e){}
   if (lang !== "en") lang = "he";
   setLang(lang);
 
-  // Theme: light default for everyone; dark only by explicit toggle (persisted).
-  var theme = null;
-  try { theme = localStorage.getItem("cho-theme"); } catch(e){}
-  if (theme === "dark") doc.setAttribute("data-theme","dark");
+  var scale = null;
+  try { scale = localStorage.getItem("adv-scale"); } catch(e){}
+  if (scale === "big") doc.setAttribute("data-scale","big");
 
   function setLang(l){
     doc.setAttribute("data-lang", l);
     doc.setAttribute("lang", l);
     doc.setAttribute("dir", l === "he" ? "rtl" : "ltr");
-    try { localStorage.setItem("cho-lang", l); } catch(e){}
+    try { localStorage.setItem("adv-lang", l); } catch(e){}
     var b = document.getElementById("langBtn");
     if (b){
       b.textContent = l === "he" ? "English" : "עברית";
       b.setAttribute("aria-label", l === "he" ? "Switch to English" : "מעבר לעברית");
     }
-    document.querySelectorAll("[data-title-he]").forEach(function(el){
-      el.textContent = l === "he" ? el.getAttribute("data-title-he") : el.getAttribute("data-title-en");
-    });
     if (document.body) syncTitle(l);
   }
   function syncTitle(l){
@@ -54,24 +49,22 @@
       setLang(doc.getAttribute("data-lang") === "he" ? "en" : "he");
     });
 
-    var tb = document.getElementById("themeBtn");
-    if (tb){
-      syncThemeBtn();
-      tb.addEventListener("click", function(){
-        var dark = doc.getAttribute("data-theme") === "dark";
-        if (dark) doc.removeAttribute("data-theme"); else doc.setAttribute("data-theme","dark");
-        try { localStorage.setItem("cho-theme", dark ? "light" : "dark"); } catch(e){}
-        syncThemeBtn();
+    var sb = document.getElementById("scaleBtn");
+    if (sb){
+      syncScale();
+      sb.addEventListener("click", function(){
+        var big = doc.getAttribute("data-scale") === "big";
+        if (big) doc.removeAttribute("data-scale"); else doc.setAttribute("data-scale","big");
+        try { localStorage.setItem("adv-scale", big ? "normal" : "big"); } catch(e){}
+        syncScale();
       });
     }
-    function syncThemeBtn(){
-      var dark = doc.getAttribute("data-theme") === "dark";
-      tb.setAttribute("aria-pressed", dark ? "true" : "false");
-      tb.querySelector(".he").textContent = dark ? "מצב בהיר" : "מצב כהה";
-      tb.querySelector(".en").textContent = dark ? "Light mode" : "Dark mode";
+    function syncScale(){
+      var big = doc.getAttribute("data-scale") === "big";
+      sb.setAttribute("aria-pressed", big ? "true" : "false");
+      sb.title = big ? "טקסט רגיל · Regular text" : "טקסט גדול יותר · Larger text";
     }
 
-    // Copy buttons: [data-copy="#selector"] copies that element's textContent.
     document.querySelectorAll("[data-copy]").forEach(function(btn){
       btn.addEventListener("click", function(){
         var src = document.querySelector(btn.getAttribute("data-copy"));
@@ -81,23 +74,31 @@
       });
     });
 
-    // Email routes
+    // Email routes: real mailto once ADV.CONTACT_EMAIL is set; honest pending tag until then.
+    function pendingize(a, heNote, enNote){
+      var wrap = document.createElement("span");
+      var label = document.createElement("span");
+      while (a.firstChild) label.appendChild(a.firstChild);
+      var s = document.createElement("span");
+      s.className = "tag";
+      s.style.marginInlineStart = "6px";
+      s.innerHTML = '<span class="he">'+heNote+'</span><span class="en">'+enNote+'</span>';
+      wrap.appendChild(label); wrap.appendChild(s);
+      a.replaceWith(wrap);
+    }
     document.querySelectorAll("[data-mailto]").forEach(function(a){
-      a.href = "mailto:" + window.CHO.CONTACT_EMAIL + "?subject=" + encodeURIComponent(a.getAttribute("data-mailto"));
+      if (window.ADV.CONTACT_EMAIL){
+        a.href = "mailto:" + window.ADV.CONTACT_EMAIL + "?subject=" + encodeURIComponent(a.getAttribute("data-mailto"));
+      } else pendingize(a, "הכתובת מתפרסמת עם ההשקה", "address arrives at launch");
     });
-    // GitHub links: pre-launch, replaced by a plain "soon" chip.
+    // GitHub links: pre-launch tag until ADV.REPO_URL is set.
     document.querySelectorAll("[data-repo]").forEach(function(a){
-      if (window.CHO.REPO_URL){ a.href = window.CHO.REPO_URL + (a.getAttribute("data-repo") || ""); }
-      else {
-        var s = document.createElement("span");
-        s.className = "chip";
-        s.innerHTML = '<span class="he">יעלה עם פתיחת המאגר</span><span class="en">arrives when the repo opens</span>';
-        a.replaceWith(s);
-      }
+      if (window.ADV.REPO_URL){ a.href = window.ADV.REPO_URL + (a.getAttribute("data-repo") || ""); }
+      else pendingize(a, "עולה עם פתיחת המאגר", "arrives when the repo opens");
     });
     // Coffee link: hidden until confirmed.
     document.querySelectorAll("[data-coffee]").forEach(function(a){
-      if (window.CHO.COFFEE_URL) a.href = window.CHO.COFFEE_URL;
+      if (window.ADV.COFFEE_URL) a.href = window.ADV.COFFEE_URL;
       else (a.closest("p") || a).style.display = "none";
     });
   });
@@ -108,7 +109,7 @@
       if (btn){
         var prev = btn.innerHTML;
         btn.innerHTML = ok
-          ? '<span class="he">הועתק ✓</span><span class="en">Copied ✓</span>'
+          ? '<span class="he">הועתק</span><span class="en">Copied</span>'
           : '<span class="he">סמנו והעתיקו ידנית</span><span class="en">Select and copy manually</span>';
         setTimeout(function(){ btn.innerHTML = prev; }, 2200);
       }
@@ -126,7 +127,7 @@
       done(ok);
     }
   }
-  window.choCopy = copyText;
+  window.advCopy = copyText;
 
   var toastTimer;
   function toast(ok){
