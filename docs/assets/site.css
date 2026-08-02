@@ -243,3 +243,17 @@ footer .links{display:flex; gap:4px 18px; flex-wrap:wrap; margin-top:10px;}
 .crisisline a, #wont .crisis a, .crisis-a a{ color:inherit; text-decoration-color:currentColor; text-underline-offset:2px; }
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none !important; animation:none !important} }
 @media(max-width:760px){ :root{--pad:64px} .hero .inner{padding:64px 20px 56px} .wrap{padding:0 20px} }
+
+/* ── §04 flow figure + §07 prep figure — figure treatment (design pass) ── */
+.flowfig{margin:44px 0 6px; overflow-x:auto;}
+.flowfig svg{width:100%; min-width:760px; display:block;}
+
+.prepfig{max-width:472px; margin-inline:auto; margin-top:34px; padding:0;}
+.prepfig img{width:100%; display:block; border:0; margin:0;}
+.prepfig figcaption{border-top:1px solid var(--hair); padding:11px 14px; margin:0;}
+
+/* screenshots: one frame, caption below the rule (guides.html figures) */
+.shot.screen{padding:0;}
+.shot.screen img{width:100%; border:0; margin:0;}
+.shot.screen figcaption{border-top:1px solid var(--hair); padding:11px 14px; margin:0;}
+.shot.screen.detail{max-width:62%; margin-inline-start:0;}

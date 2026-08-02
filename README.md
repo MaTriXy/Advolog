@@ -42,7 +42,7 @@
 
 ## דיווח על תקלה
 
-תבניות דיווח מוכנות ב־`.github/ISSUE_TEMPLATE/` (יופעלו עם פתיחת המאגר). בלי חשבון GitHub — דוא"ל, הכתובת באתר. בכל דיווח: בלי פרטים אישיים ובלי תוכן רפואי אמיתי — תיאור התקלה מספיק.
+תבניות דיווח פעילות ב־`.github/ISSUE_TEMPLATE/`. בלי חשבון GitHub — דוא"ל, הכתובת באתר. בכל דיווח: בלי פרטים אישיים ובלי תוכן רפואי אמיתי — תיאור התקלה מספיק.
 
 ## רישיון
 
@@ -96,7 +96,7 @@ The full, dated support matrix: [`package/setup/support-matrix.md`](package/setu
 
 ## Reporting a problem
 
-Issue templates are ready in `.github/ISSUE_TEMPLATE/` (activated when the repository opens). Without a GitHub account — email; the address is on the site. Either way: no personal details and no real medical content — describing the problem is enough.
+Issue templates are live in `.github/ISSUE_TEMPLATE/`. Without a GitHub account — email; the address is on the site. Either way: no personal details and no real medical content — describing the problem is enough.
 
 ## License
 
