@@ -12,7 +12,7 @@
   //   before Pages goes live — if delivery breaks, set back to null so the
   //   honest placeholder tag returns.
   // COFFEE_URL: quiet footer support link; null keeps the line hidden until confirmed.
-  window.ADV = { REPO_URL: "https://github.com/heelago/Advolog", CONTACT_EMAIL: "advolog@h2eapps.com", COFFEE_URL: null };
+  window.ADV = { REPO_URL: "https://github.com/heelago/Advolog", CONTACT_EMAIL: "advolog@h2eapps.com", COFFEE_URL: "https://buymeacoffee.com/h2eapps" };
 
   var doc = document.documentElement;
 
@@ -101,7 +101,7 @@
     });
     // Coffee link: hidden until confirmed.
     document.querySelectorAll("[data-coffee]").forEach(function(a){
-      if (window.ADV.COFFEE_URL) a.href = window.ADV.COFFEE_URL;
+      if (window.ADV.COFFEE_URL){ a.href = window.ADV.COFFEE_URL; a.target = "_blank"; a.rel = "noopener"; }
       else (a.closest("p") || a).style.display = "none";
     });
   });

@@ -333,11 +333,20 @@ async function write(name,text,silent){ var h=await dir.getFileHandle(name,{crea
 async function loadAll(){ for(var i=0;i<RECORDS.length;i++){ await ensure(RECORDS[i]); } render(); }
 
 /* @anchor: render — simple honest views: entry-looking lines from each file */
-function entryLines(name){ var tx=files[name]||''; return tx.split('\n').filter(function(l){
-  l=l.trim(); if(!l||l[0]==='#') return false;
-  if(/^עודכן לאחרונה/.test(l)) return false;
-  if((TEMPLATES[name]||'').indexOf(l)>-1) return false;
-  return true; }); }
+/* record files are plain text; each opens with the shared envelope (architecture §3.2):
+   title, one line saying what the file is, one line saying both ways to fill it, then the
+   `עודכן לאחרונה` line — entries follow. Key off that structure instead of matching the
+   inline template constant (which is abbreviated and drifts from the canonical envelope):
+   real entries are the lines AFTER `עודכן לאחרונה`. stripMd handles any **bold** the
+   canonical strings carry so nothing ever renders as literal asterisks. */
+function stripMd(s){ return s.replace(/\*\*(.+?)\*\*/g,'$1').replace(/\*(.+?)\*/g,'$1'); }
+function entryLines(name){ var lines=(files[name]||'').split('\n');
+  var u=lines.findIndex(function(l){ return /^עודכן לאחרונה/.test(l.trim()); });
+  var body = u>=0 ? lines.slice(u+1) : lines;
+  return body.filter(function(l){ l=l.trim();
+    if(!l||l[0]==='#') return false;              // blank lines and section headers
+    if(/^[-–—\s]*$/.test(l)) return false;        // empty-section placeholders («—»)
+    return true; }); }
 /* teaching empty states — each panel says what will appear here and how it arrives (P-47) */
 var EMPTIES={
  'open-questions.md':'עדיין אין שאלות. הן ייוולדו בשיחה — כשמשהו שווה לשאול, הוא נכנס לכאן עם הנימוק שלו.',
@@ -349,7 +358,7 @@ function fill(panelId, chipId, name, max){ var ls=entryLines(name), p=$(panelId)
   if(chipId) $(chipId).textContent=ls.length;
   if(!ls.length){ var e=document.createElement('div'); e.className='empty';
     e.textContent=EMPTIES[name]||'עדיין ריק — וזה בסדר גמור.'; p.appendChild(e); return; }
-  ls.slice(0,max||6).forEach(function(l){ var d=document.createElement('div'); d.className='item'; d.textContent=l; p.appendChild(d); }); }
+  ls.slice(0,max||6).forEach(function(l){ var d=document.createElement('div'); d.className='item'; d.textContent=stripMd(l); p.appendChild(d); }); }
 async function render(){
   fill('p-q','c-q','open-questions.md',5);
   fill('p-sy','c-sy','symptoms.md',5);
