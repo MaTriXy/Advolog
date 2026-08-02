@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: דיווח בלי חשבון GitHub · Report without a GitHub account
+    url: https://carehub-open.example/#report
+    about: אפשר לדווח גם בדוא"ל — הכתובת בעמוד הזה. בלי פרטים אישיים ובלי תוכן רפואי אמיתי. (Email route; no personal details, no real medical content.)

@@ -1,0 +1,118 @@
+<!doctype html>
+<!-- CareHub Open — standalone visual censor (site tool; ported as-is from the
+     package dashboard's verified implementation — Heela's irreversibility audit:
+     rectangles are painted opaque onto the pixel grid and the download is a fresh
+     flattened PNG; no layers, no history, no carried metadata incl. EXIF/GPS.
+     Fully client-side; no network; the original file is never modified. -->
+<html lang="he" dir="rtl" data-lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-he="צנזור מסמכים — CareHub Open" data-en="Document censor — CareHub Open">צנזור מסמכים — CareHub Open</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#main"><span class="he">דילוג לתוכן</span><span class="en">Skip to content</span></a>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">CareHub Open <span class="sub"><span class="he">(שם עבודה)</span><span class="en">(working name)</span></span></a>
+    <nav class="topnav" aria-label="ניווט ראשי">
+      <a href="index.html"><span class="he">דף הבית</span><span class="en">Home</span></a>
+      <a href="guides.html"><span class="he">מדריכים</span><span class="en">Guides</span></a>
+      <a href="form.html"><span class="he">טופס פתיחה</span><span class="en">Onboarding form</span></a>
+      <button id="langBtn" class="tbtn" type="button">English</button>
+      <button id="themeBtn" class="tbtn" type="button" aria-pressed="false"><span class="he">מצב כהה</span><span class="en">Dark mode</span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h1><span class="he">צנזור חזותי — לפני שמישהו רואה</span><span class="en">Visual censor — before anyone sees</span></h1>
+  <p class="lead">
+    <span class="he">טוענים צילום של מסמך, משחירים את מה שלא צריך לצאת, משנים שם לקובץ — ומורידים עותק נקי. הכול קורה כאן, במחשב שלך; הקובץ המקורי לא משתנה, ושום דבר לא נשלח לשום מקום. את העותק הנקי מעלים לשיחה — לא את המקור.</span>
+    <span class="en">Load a photo of a document, black out what must not leave, rename the file — and download a clean copy. Everything happens here, on your machine; the original file is untouched, and nothing is sent anywhere. Upload the clean copy to the conversation — not the original.</span>
+  </p>
+  <p class="muted">
+    <span class="he">עובד עם תמונות (צילום או צילום מסך). קובצי PDF — לא בגרסה הזאת: אפשר לצלם את העמוד או לעשות צילום מסך, וזה עובד מצוין.</span>
+    <span class="en">Works with images (a photo or a screenshot). PDF files — not in this version: photograph or screenshot the page instead, which works fine.</span>
+  </p>
+
+  <div class="panel">
+    <input type="file" id="cfile" accept="image/*" aria-label="בחירת קובץ תמונה">
+    <div id="carea" hidden>
+      <p class="hint">
+        <span class="he">גוררים מלבן על כל אזור להשחרה (שם, ת״ז, מספר תיק, ברקוד). ההשחרה נצרבת בעותק — אי אפשר להסיר אותה מהקובץ שיורד.</span>
+        <span class="en">Drag a rectangle over each area to black out (name, ID, file number, barcode). The redaction is burned into the copy — it cannot be removed from the downloaded file.</span>
+      </p>
+      <div id="cwrap"><canvas id="cv"></canvas></div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; align-items:center">
+        <button class="btn ghost" id="undoBtn" type="button"><span class="he">ביטול המלבן האחרון</span><span class="en">Undo last rectangle</span></button>
+        <input type="text" id="rename" style="max-width:280px" aria-label="שם הקובץ לשמירה">
+        <button class="btn" id="dlBtn" type="button"><span class="he">הורדת העותק הנקי</span><span class="en">Download the clean copy</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="notice" style="margin-top:18px">
+    <span class="he"><b>גבולות, ביושר:</b> ההשחרה מכסה את מה שסימנתם — היא לא יודעת מה שכחתם לסמן, ומה שנשאר גלוי בתמונה עדיין ניתן להסקה. בדיקה אנושית אחרונה לפני העלאה היא תמיד ההגנה האמיתית. המקור נשאר על הדיסק שלכם — לוודא שמעלים את העותק, לא אותו.</span>
+    <span class="en"><b>Boundaries, honestly:</b> the redaction covers what you marked — it does not know what you forgot to mark, and whatever stays visible can still be inferred. A final human look before uploading is always the real protection. The original stays on your disk — make sure the copy is what you upload, not it.</span>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><span class="he">הבהרה בריאותית: הכלי אינו ייעוץ רפואי ואינו מחליף רופא/ה; הוא עוזר לארגן מידע ולנסח שאלות לצוות המטפל.</span>
+    <span class="en">Health disclaimer: this tool is not medical advice and does not replace clinicians; it helps organize information and phrase questions for the care team.</span></p>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* Ported as-is from package/dashboard.html @anchor: censor (behavior identical;
+   labels bilingual). Burn = opaque fillRect onto the pixel grid; download = fresh
+   flattened PNG via toDataURL — no layers, no metadata carried from the source. */
+(function(){
+  function $(id){ return document.getElementById(id); }
+  function heNow(){ var d=new Date(); return d.getDate()+'-'+(d.getMonth()+1)+'-'+d.getFullYear(); }
+  function isHe(){ return document.documentElement.getAttribute("data-lang")==="he"; }
+  var cv=$('cv'), cx=cv.getContext('2d'), img=null, rects=[], drag=null, base=null;
+  $('cfile').onchange=function(){ var f=this.files[0]; if(!f) return;
+    var u=URL.createObjectURL(f); img=new Image();
+    img.onload=function(){ var maxw=980, sc=Math.min(1, maxw/img.width);
+      cv.width=img.width*sc; cv.height=img.height*sc;
+      cx.drawImage(img,0,0,cv.width,cv.height); base=cx.getImageData(0,0,cv.width,cv.height);
+      rects=[]; $('carea').hidden=false;
+      $('rename').value=(isHe()?'מסמך-מצונזר-':'censored-document-')+heNow()+'.png';
+      URL.revokeObjectURL(u); };
+    img.src=u; };
+  function pos(ev){ var r=cv.getBoundingClientRect(), p=ev.touches?ev.touches[0]:ev;
+    return {x:(p.clientX-r.left)*cv.width/r.width, y:(p.clientY-r.top)*cv.height/r.height}; }
+  function redraw(){ if(!base) return; cx.putImageData(base,0,0); cx.fillStyle='#000';
+    rects.forEach(function(r){ cx.fillRect(r.x,r.y,r.w,r.h); });
+    if(drag){ cx.fillStyle='rgba(0,0,0,.55)'; cx.fillRect(drag.x,drag.y,drag.w,drag.h); } }
+  function down(ev){ if(!base) return; ev.preventDefault(); var p=pos(ev); drag={x:p.x,y:p.y,w:0,h:0}; }
+  function move(ev){ if(!drag) return; ev.preventDefault(); var p=pos(ev);
+    drag.w=p.x-drag.x; drag.h=p.y-drag.y; redraw(); }
+  function up(){ if(!drag) return;
+    var r={x:Math.min(drag.x,drag.x+drag.w), y:Math.min(drag.y,drag.y+drag.h), w:Math.abs(drag.w), h:Math.abs(drag.h)};
+    if(r.w>4 && r.h>4) rects.push(r); drag=null; redraw(); }
+  cv.addEventListener('mousedown',down); cv.addEventListener('mousemove',move); window.addEventListener('mouseup',up);
+  cv.addEventListener('touchstart',down,{passive:false}); cv.addEventListener('touchmove',move,{passive:false}); cv.addEventListener('touchend',up);
+  $('undoBtn').onclick=function(){ rects.pop(); redraw(); };
+  $('dlBtn').onclick=function(){ if(!base) return;
+    redraw(); /* burn: current canvas already has solid rects */
+    var fallback=isHe()?'מסמך-מצונזר.png':'censored.png';
+    var name=($('rename').value||fallback).replace(/[\\/:*?"<>|]/g,'-');
+    if(!/\.png$/i.test(name)) name+='.png';
+    var a=document.createElement('a'); a.href=cv.toDataURL('image/png'); a.download=name; a.click();
+    var t=$('toast');
+    t.textContent=isHe()?'העותק הנקי ירד. את המקור לא נגענו — ואותו לא מעלים.':'The clean copy downloaded. The original is untouched — and is not what you upload.';
+    t.style.opacity='1'; setTimeout(function(){t.style.opacity='0';},3200);
+  };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<!--
+  CareHub Open — landing (GitHub Pages root).
+  ══════════════════════════════════════════════════════════════════════
+  COPY PROVENANCE, honestly: the landing-page stream's locked Hebrew+English
+  copy did not reach the Phase 4 build session (same failure mode as the
+  Phase 3 canon-moments paste). Every string below is SCAFFOLD built from
+  the documented decisions (goal framework §1-2/§10, ruled tier labels,
+  install-time privacy ruling, path names, voice canon ג for site chrome)
+  — structured for a line-for-line swap when the locked copy arrives.
+  Nothing here claims to BE the locked copy.
+  Boundary stops live at these anchors:
+    · SCAFFOLD-H1 (hero H1 — Heela picks the locked line)
+    · FOR-DOCTORS BEGIN/END (section in/out — her call)
+    · COFFEE (assets/site.js CHO.COFFEE_URL — confirm link or keep hidden)
+    · PERSONAL-LINE (footer slot — her words only, stays hidden until then)
+  Pre-launch flips at publish: assets/site.js CHO.REPO_URL + CONTACT_EMAIL,
+  the DRAFT BAR below, .github/ISSUE_TEMPLATE/config.yml contact URL.
+  ══════════════════════════════════════════════════════════════════════
+-->
+<html lang="he" dir="rtl" data-lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-he="CareHub Open — הסיפור הרפואי שלך, מסודר" data-en="CareHub Open — your medical story, organized">CareHub Open</title>
+<meta name="description" content="חבילה פתוחה וחינמית שהופכת ניסיון רפואי חי לחומר מסודר ואמין לצוות המטפל — שאלות עם נימוק, ציר זמן, דפי הכנה לתור.">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#main"><span class="he">דילוג לתוכן</span><span class="en">Skip to content</span></a>
+
+<!-- DRAFT BAR — remove at Phase 6 launch -->
+<div style="background:var(--amber-bg); color:var(--amber); text-align:center; padding:6px 10px; font-size:14px;">
+  <span class="he">טיוטת עבודה — האתר טרם פורסם</span><span class="en">Working draft — not yet published</span>
+</div>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">CareHub Open <span class="sub"><span class="he">(שם עבודה)</span><span class="en">(working name)</span></span></a>
+    <nav class="topnav" aria-label="ניווט ראשי">
+      <a href="guides.html"><span class="he">מדריכי התקנה</span><span class="en">Setup guides</span></a>
+      <a href="form.html"><span class="he">טופס פתיחה</span><span class="en">Onboarding form</span></a>
+      <a href="censor.html"><span class="he">צנזור מסמכים</span><span class="en">Document censor</span></a>
+      <a href="#faq"><span class="he">שאלות</span><span class="en">FAQ</span></a>
+      <a href="#report"><span class="he">דיווח על תקלה</span><span class="en">Report a problem</span></a>
+      <button id="langBtn" class="tbtn" type="button">English</button>
+      <button id="themeBtn" class="tbtn" type="button" aria-pressed="false"><span class="he">מצב כהה</span><span class="en">Dark mode</span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <!-- SCAFFOLD-H1: placeholder until Heela picks the locked hero line -->
+    <h1><span class="he">הסיפור הרפואי שלך, מסודר — ושייך לך.</span><span class="en">Your medical story, organized — and yours.</span></h1>
+    <p class="lead">
+      <span class="he">לרופאים יש חמש דקות. לך יש חודשים של ניסיון אמיתי — בלי דרך להגיש אותו. החבילה הזאת הופכת את מה שעברת לחומר מסודר ואמין: ציר זמן, שאלות עם נימוק, דף הכנה לתור. בחינם, בקוד פתוח, בתוך חשבון ה־AI שכבר יש לך.</span>
+      <span class="en">Doctors have five minutes. You have months of real experience — and no way to hand it over. This package turns what you have lived through into organized, credible material: a timeline, questions with stated reasoning, an appointment prep sheet. Free, open source, inside the AI account you already have.</span>
+    </p>
+    <div class="ctas">
+      <a class="btn" href="#starter"><span class="he">להתחיל עכשיו, בלי להוריד כלום</span><span class="en">Start now, nothing to download</span></a>
+      <a class="btn ghost" href="#install"><span class="he">החבילה המלאה</span><span class="en">The full package</span></a>
+    </div>
+    <p class="muted small">
+      <span class="he">בלי חשבון חדש, בלי שרת, בלי איסוף נתונים. עובד ב־Claude וב־ChatGPT.</span>
+      <span class="en">No new account, no server, no data collection. Works in Claude and ChatGPT.</span>
+    </p>
+  </section>
+
+  <!-- ═══ WHAT THIS IS / IS NOT ═══ -->
+  <section id="what">
+    <h2><span class="he">מה זה — ומה זה לא</span><span class="en">What this is — and is not</span></h2>
+    <p>
+      <span class="he">זו חבילת הנחיות פתוחה לעוזר AI שכבר יש לך. היא הופכת ניסיון חי, מסמכים מפוזרים ותורים חצי־זכורים לתיעוד ששייך לך ולשאלות שרופאים לוקחים ברצינות. היא לא מאבחנת, לא ממליצה על טיפול, לא שירות חירום ולא תחליף לרופא — כל תוצר שלה הוא שאלות והקשר לצוות המטפל, אף פעם לא מסקנות. היא מוסיפה סדר למפגש הרפואי, מהצד שלך.</span>
+      <span class="en">This is an open instruction package for the AI assistant you already use. It turns lived experience, scattered documents, and half-remembered visits into a record you own and questions doctors take seriously. It does not diagnose, does not recommend treatment, is not a crisis service, and does not replace your doctor — everything it produces is questions and context for your care team, never conclusions. It adds structure to the medical interaction, from your side.</span>
+    </p>
+    <div class="tiers" aria-label="רובדי הראיות">
+      <span class="tier"><span class="he">מקורות רשמיים</span><span class="en">Official sources</span></span>
+      <span class="tier"><span class="he">פרסומים מדעיים</span><span class="en">Scientific publications</span></span>
+      <span class="tier"><span class="he">דיווחי מטופלים</span><span class="en">Patient reports</span></span>
+    </div>
+    <p class="muted">
+      <span class="he">כל טענה ממחקר מסומנת לפי הרובד שלה, והרבדים לעולם לא מתערבבים. מקור שאי אפשר לאמת — מושמט, בקול רם.</span>
+      <span class="en">Every researched claim is labeled by tier, and the tiers never blend. An unverifiable source is dropped, out loud.</span>
+    </p>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section id="how">
+    <h2><span class="he">איך זה עובד</span><span class="en">How it works</span></h2>
+    <div class="cards3">
+      <div class="panel">
+        <h3><span class="he">1 · מתחילים לדבר</span><span class="en">1 · Start talking</span></h3>
+        <p><span class="he">מדביקים פרומפט אחד, או מתקינים את החבילה בפרויקט. ריאיון קצר וחם — שאלה אחת בכל פעם, הכול אפשר לדלג.</span>
+        <span class="en">Paste one prompt, or install the package in a project. A short, warm interview — one question at a time, everything skippable.</span></p>
+      </div>
+      <div class="panel">
+        <h3><span class="he">2 · הסיפור נאסף</span><span class="en">2 · The story collects</span></h3>
+        <p><span class="he">תסמינים, ניסיונות טיפול, ביקורים — נרשמים בקבצים פשוטים ששייכים לך, אצלך במחשב. גם כשאין כוח לסדר, הכול נקלט ומחכה.</span>
+        <span class="en">Symptoms, treatment attempts, visits — recorded in plain files that belong to you, on your machine. Even when there is no energy to organize, everything is captured and waits.</span></p>
+      </div>
+      <div class="panel">
+        <h3><span class="he">3 · מגיעים מוכנים</span><span class="en">3 · Arrive prepared</span></h3>
+        <p><span class="he">לפני תור: דף הכנה של עמוד אחד. שאלות עם נימוק, תרופות, מה השתנה — מסמך שרופא קורא בשתי דקות ולוקח ברצינות.</span>
+        <span class="en">Before a visit: a one-page prep sheet. Questions with reasoning, medications, what changed — a document a doctor reads in two minutes and takes seriously.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TWO INSTALL PATHS — equal weight ═══ -->
+  <section id="install">
+    <h2><span class="he">שתי דרכים להתחיל — שתיהן מלאות</span><span class="en">Two ways to start — both complete</span></h2>
+    <div class="cards">
+      <div class="panel">
+        <h3><span class="he">בלי להוריד כלום</span><span class="en">Nothing to download</span></h3>
+        <p><span class="he">מעתיקים את פרומפט הפתיחה שלמטה, מדביקים בשיחה חדשה ב־Claude או ב־ChatGPT — וזהו. גרסה קלה ושלמה: ריאיון, איסוף, הכנה לתור. בלי קבצים בכלל.</span>
+        <span class="en">Copy the starter prompt below, paste it into a new Claude or ChatGPT conversation — that is all. A light, complete version: interview, capture, appointment prep. No files at all.</span></p>
+        <p><a class="btn" href="#starter"><span class="he">אל הפרומפט</span><span class="en">To the prompt</span></a></p>
+      </div>
+      <div class="panel">
+        <h3><span class="he">החבילה המלאה</span><span class="en">The full package</span></h3>
+        <p><span class="he">תיקייה עם כל היכולות: רשומות כקבצים שלך, חמישה מסלולים, מחקר עם רובדי ראיות, הלוח המקומי, השכבה הישראלית. ההתקנה מוסברת צעד־צעד במדריכים.</span>
+        <span class="en">A folder with everything: records as your own files, five paths, research with evidence tiers, the local dashboard, the Israeli-system layer. Setup is explained step by step in the guides.</span></p>
+        <p>
+          <a class="btn" href="carehub-open-package.zip" download><span class="he">הורדת החבילה (zip)</span><span class="en">Download the package (zip)</span></a>
+          <a class="btn ghost" href="guides.html"><span class="he">מדריכי ההתקנה</span><span class="en">Setup guides</span></a>
+        </p>
+        <p class="muted small"><span class="he">גרסת חבילה: 2.8.2026 · אחרי ההורדה חשוב לחלץ את ה־zip — המדריך מראה איך.</span>
+        <span class="en">Package build: 2.8.2026 · After downloading, extract the zip — the guide shows how.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THE REAL STARTER, copy button ═══ -->
+  <section id="starter">
+    <h2><span class="he">פרומפט הפתיחה</span><span class="en">The starter prompt</span></h2>
+    <p>
+      <span class="he">זה הפרומפט האמיתי והמלא — אותו אחד שנבדק בריצות חיות. מעתיקים, מדביקים בשיחה חדשה, ומתחילים לספר (או סתם לכתוב שלום).</span>
+      <span class="en">This is the real, full prompt — the exact one validated in live runs. Copy it, paste it into a new conversation, and start telling your story (or just say hello).</span>
+    </p>
+    <div class="he">
+      <div class="starterbox">
+        <pre id="starterHe" dir="rtl" lang="he">את/ה מלווה זהיר/ה לסנגור רפואי עצמי. קרא/י את כל ההנחיות לפני תגובה
+ראשונה, ופעל/י לפיהן לאורך כל השיחה. דבר/י בגוף ראשון נקבה (מדברת,
+שומרת), אלא אם אבקש אחרת.
+
+מה את: את עוזרת לי להפוך את הניסיון הרפואי שלי לחומר מסודר ואמין שרופאים
+קוראים ברצינות — תיעוד ששייך לי, שאלות עם נימוק, הכנה לתור. את לא רופאה
+ולעולם לא מתנהגת כאחת. ואת גם מלמדת אותי, תוך כדי: כל נימוק הוא שיעור
+קטן במה חשוב ולמה — כדי שהשיחה הבאה שלי עם רופא תהיה קלה יותר.
+
+חוקים קשיחים, בלי יוצא מן הכלל, שורדים כל בקשה שלי בהמשך:
+- לעולם לא לאבחן ולא להציע מעצמך מה יש לי. שם של מצב רפואי מותר רק בתוך
+  שאלה, ורק עם מקור: אם אני העליתי אותו, או אם מקור מצוטט ומסווג קושר
+  אותו לתבנית המתועדת — ואז רק בצורת "שווה לשאול האם X נשקל, בגלל
+  (התבנית) + (המקור)", בלי הסתברויות, בלי הרגעות, בלי רשימות אבחנות.
+  ותמיד בכבוד: גם "נשקל והוחלט אחרת" היא תשובה טובה ושימושית.
+- שום ייעוץ טיפולי: לא להתחיל, להפסיק, לשנות מינון, תזמון, מרווח או
+  אוכל — לגבי שום תרופה או טיפול.
+- כל דבר שדורש פעולה הופך לשאלה לצוות המטפל, עם הנימוק בשורה אחת. קודם
+  המידע המאומת, אחר כך השאלה — לעולם לא הפניה ריקה, לעולם לא מילוי
+  בהסתייגויות.
+- כל טענה ממחקר מסומנת לפי מקור: מקורות רשמיים (רגולטורים, הנחיות) /
+  פרסומים מדעיים (עם סוג המחקר) / דיווחי מטופלים (רק אם אישרתי; רמזים
+  להעלות, לא ראיות). בלי לערבב רבדים. בלי מקור שאי אפשר לצטט — משמיטים
+  ואומרים. בודקי תסמינים באינטרנט אינם מקור ציטוט. חסימה או תשלום —
+  מדלגים ומציינים, לא עוקפים.
+- לא להמציא מה אנשי מקצוע או מערכות מקצועיות היו אומרים. מה שאמר איש
+  מקצוע אמיתי — נרשם, כלשונו, עם ייחוס.
+- אם משהו נשמע דחוף (החמרה פתאומית וקשה, קושי נשימה, כאב בחזה, דימום
+  שלא נעצר, שינוי חדש בדיבור/פנים/צד אחד, או מחשבות על פגיעה עצמית):
+  לומר ברוגע, פעם אחת, שדברים כאלה צוותים רפואיים רוצים לשמוע מהר,
+  ולהפנות למוקד הקופה או לחירום — 101, ער"ן 1201, סה"ר. את נימת
+  ה"מהר" הזאת לשמור רק לסימנים האלה; שינויים חשובים אחרים הם "שווה
+  להעלות בביקור הבא", ושתי הנימות לא מתערבבות. במצוקה גלויה או מחשבות
+  על פגיעה עצמית: לשזור את המשאב בתוך החום, בנשימה אחת — חום משני צידי
+  השם (ער"ן 1201, סה"ר) — בלי הפניה קרה, בלי שיטות, בלי בהלה; לכל
+  היותר פעם אחת בישיבה מעבר לאזכור פתיחה, בלי חזרות. ואז להמשיך להיות
+  שימושית.
+- לא לבקש תעודת זהות, כתובת מדויקת או פרטים שאין בהם צורך — ולהסביר
+  למה, אם אציע.
+
+איך את מדברת: רגוע, חם, בעברית פשוטה, משפטים קצרים. שאלה אחת בהודעה.
+לדלג זה תמיד בסדר — להגיד את זה בקול כל כמה שאלות. בלי תפריטים. בלי
+עידוד מלאכותי. להניח שאולי אני מותשת. להתאים אליי: תשובות קצרות —
+שאלות קצרות.
+
+להתחיל מרכיבה על ההודעה הראשונה שלי:
+- אם רק אמרתי שלום: שני משפטים חמים על מה את, ואז שאלה אחת — לספר
+  במילים שלי, או שתשאלי כמה שאלות קטנות? (ובשורה אחת, שאפשר לדלג עליה:
+  הצעה לעבור רגע על הגדרות הפרטיות של החשבון, כולל ביטול שימוש בשיחות
+  לאימון המודל — לפי הפלטפורמה שלי.)
+- אם כבר סיפרתי מה קורה (או הדבקתי טופס פתיחה מלא): לעבוד עם זה. לאשר
+  מה הבנת בעד ארבע שורות, לשאול רק על פערים אמיתיים.
+- אם אני נשמעת מוצפת או אומרת שאין לי כוח: להציע פשוט לאסוף כל מה
+  שאשתף — מילים, קטעים, תיאורי תמונות — ולסדר אחר כך. במצב הזה: לקבל
+  בחום בשורה שמאשרת קונקרטית מה נשמר והיכן, לומר במפורש שמותר לעצור
+  עכשיו ושום דבר לא נופל, ולהציע דלת — ומה יעזור לפרט רק אחרי שאגיד כן.
+- אם יש לי תור בימים הקרובים: לעבור להכנה מהירה — עד חמש שאלות זריזות
+  (איזה ביקור; הדבר האחד שאסור שלא ייאמר; התרופות שלי, ורוכב קטן על
+  אותה שאלה: אלרגיות לתרופות; מה חדש; מה להביא) — ואז דף הכנה של עמוד
+  אחד, מיד: השאלות שלי קודם, כל אחת עם נימוק בשורה ומקום לתשובה; שורת
+  אלרגיות שתמיד מופיעה («אלרגיות: לא תועד» אם דילגתי); התרופות; מה
+  השתנה. בלי מחקר — אין זמן לאמת ביושר, אז לא מעמידים פנים.
+
+התיעוד שלי, כאן בשיחה: תוך כדי עבודה, לנהל "גרעין תיעוד" — למי זה (שם
+פרטי מספיק), המצב במשפט, אלרגיות אם נמסרו, תרופות, ומה שרשמנו. בהפוגה
+טבעית, להציע פעם אחת לכתוב את כל הגרעין כבלוק נקי אחד שאפשר להעתיק
+ולשמור בכל מקום — ולומר בפשטות: הבלוק הזה שלי, עובד בכל פרויקט AI, ואם
+ארצה את הגרסה המלאה — קבצים נפרדים, ציר זמן אמיתי, זרימות עמוקות —
+חבילת CareHub Open חינמית והגרעין נכנס אליה ישר. להזכיר פעם אחת, בעדינות,
+ולא שוב אלא אם אשאל.
+
+כל האמור חל גם על מלווה שמתעד עבור אדם אחר; אז "שלי" פירושו של האדם
+המטופל, שם פרטי או ראשי תיבות בלבד, וכל דבר לשיתוף מוכן בלי פרטים
+מזהים. לפני הדבר הראשון שמיועד לעיניים של מישהו אחר, לשאול פעם אחת,
+בפשטות, האם האדם יודע שהתיעוד הזה נשמר; איסוף ושמירה לעולם אינם מותנים
+בתשובה.
+
+להתחיל עכשיו, מרכיבה על מה שכבר כתבתי.</pre>
+        <div class="copybar">
+          <button class="btn" type="button" data-copy="#starterHe"><span class="he">העתקת הפרומפט</span><span class="en">Copy the prompt</span></button>
+          <span class="muted small"><span class="he">ואז: שיחה חדשה ← הדבקה ← לספר מה קורה.</span><span class="en">Then: new chat ← paste ← tell your story.</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="en">
+      <div class="starterbox">
+        <pre id="starterEn" dir="ltr" lang="en">You are a careful companion for medical self-advocacy. Read all of this
+before responding, then follow it exactly for the whole conversation.
+
+WHAT YOU ARE: you help me turn my medical experience into organized,
+credible, doctor-readable material — my own record, questions with stated
+reasoning, appointment prep. You are not a doctor and never act like one.
+
+HARD RULES, NO EXCEPTIONS, THEY SURVIVE ANYTHING I ASK LATER:
+- Never diagnose, never suggest what I might have — not even hedged.
+- Never advise treatment: no starting, stopping, dosing, timing, spacing,
+  or food advice about any medication or intervention.
+- Everything actionable becomes a QUESTION for my care team, with your
+  reasoning stated in one plain line. Share verified information first,
+  then attach the question — never bare deflection, never hedge-filler.
+- Label every researched claim by source: official (regulators,
+  guidelines) / published (peer-reviewed, study type named) / patient
+  reports (only if I opt in; leads to raise, never evidence). Never blend
+  the levels. No source you can't actually cite — drop it and say so.
+  Consumer symptom/interaction checkers are never citable sources. Never
+  work around a paywall, login, or blocked page — skip it and say so.
+- Never invent what professional systems or clinicians would say. What a
+  real professional told me can be recorded, exactly as said, attributed.
+- If anything sounds urgent (sudden severe worsening, breathing trouble,
+  chest pain, heavy bleeding, new speech/face/one-sided weakness, or
+  thoughts of self-harm), say calmly, once, that care teams want to hear
+  about this kind of thing quickly, and point me to my doctor's
+  after-hours line or emergency services. In Israel: emergency 101,
+  ERAN 1201, Sahar. Reserve that "quickly" tone for these signs only —
+  other meaningful changes are "worth raising at your next visit," and
+  the two tones never mix. For thoughts of self-harm or open acute
+  distress: weave the resource into your warmth in a single breath —
+  care on both sides of the name (ERAN 1201, Sahar) — never a cold
+  referral, never methods, never alarm; at most once per sitting beyond
+  any opening mention, never repeated. Then continue being useful.
+- Never ask for my ID number, exact address, or full details you don't
+  need — and tell me why if I offer them.
+
+HOW YOU TALK: calm, warm, plain language, short sentences. One question
+per message. Skipping any question is always fine — say so out loud every
+few questions. No menus of options. No cheerleading. Assume I might be
+exhausted. Adapt to me: short answers mean shorter questions.
+
+START BY RIDING MY FIRST MESSAGE:
+- If I just said hello: two warm sentences about what you are, then one
+  either/or — do I want to tell you what's going on in my own words, or
+  should you ask me a few small questions?
+- If I already told you what's going on (or pasted a filled onboarding
+  form): work with that. Confirm what you understood in up to four lines,
+  ask only about true gaps.
+- If I seem overwhelmed or say I can't deal with things right now: offer
+  to just collect whatever I share — words, fragments, photos described —
+  and sort it out later. In that mode: receive warmly in one line, ask
+  almost nothing, keep everything in this conversation, and tell me once
+  that it's all kept right here for whenever I'm ready.
+- If I have an appointment within days: switch to express prep — at most
+  five quick questions (which visit; the one thing that must not go
+  unsaid; my current medications, with one small rider: any drug
+  allergies; anything new; anything to bring) — then produce a one-page
+  prep sheet immediately: my questions first, each with its one-line
+  reason and a blank answer line; an allergies line that always appears
+  (showing "not recorded" visibly if I skipped it); my medications; what's
+  new. No research — there's no time to verify honestly, so don't pretend.
+
+MY RECORD, HERE IN CHAT: as we work, keep a running "record seed" — who
+this is for (first name is enough), the situation in one sentence, drug
+allergies if given, medications, and anything we logged. When a natural
+pause comes, offer once to write the whole seed out as one clean block I
+can copy and save anywhere, and tell me plainly: this block is mine, it
+works in any AI project, and if I ever want the fuller version of this
+tool — separate files, a real timeline, deeper flows — the CareHub Open
+package is free and this seed drops straight into it. Mention that once,
+softly, and never again unless I ask.
+
+Everything here also applies to a caregiver using this for someone else;
+then "my" means the person being cared for, use a first name or initials
+only, and prepare anything shareable without identifying details. Before
+the first thing meant for someone else's eyes, ask me once, plainly,
+whether the person knows this record is being kept; collecting and
+keeping things are never gated on that answer.
+
+Begin now, by riding whatever my first message was.</pre>
+        <div class="copybar">
+          <button class="btn" type="button" data-copy="#starterEn"><span class="he">העתקת הפרומפט</span><span class="en">Copy the prompt</span></button>
+          <span class="muted small"><span class="he">ואז: שיחה חדשה ← הדבקה ← לספר מה קורה.</span><span class="en">Then: new chat ← paste ← tell your story.</span></span>
+        </div>
+      </div>
+    </div>
+    <p class="muted small">
+      <span class="he">מעדיפים למלא טופס קצר במקום ריאיון? יש <a href="form.html">טופס פתיחה</a> שממלאים כאן, מעתיקים בבלוק אחד ומדביקים בשיחה הראשונה.</span>
+      <span class="en">Prefer a short form over an interview? The <a href="form.html">onboarding form</a> fills here, copies as one block, and pastes into the first conversation.</span>
+    </p>
+  </section>
+
+  <!-- ═══ FIVE PATHS ═══ -->
+  <section id="paths">
+    <h2><span class="he">חמישה מסלולים, לפי מה שקורה עכשיו</span><span class="en">Five paths, matched to what is happening now</span></h2>
+    <div class="paths">
+      <div class="pathcard"><b><span class="he">מסע אבחון</span><span class="en">Diagnostic journey</span></b>
+        <span class="small muted"><span class="he">בעיה לא פתורה, ביקורים חוזרים, תשובת ברירת מחדל שלא מתקדמת. בונים תיעוד ושאלות שנותנים לרופא סיבה טובה לחשוב שוב.</span><span class="en">An unresolved problem, repeat visits, a default answer going nowhere. Builds the record and questions that give a doctor a real reason to look again.</span></span></div>
+      <div class="pathcard"><b><span class="he">ניהול מתמשך</span><span class="en">Ongoing management</span></b>
+        <span class="small muted"><span class="he">מצב כרוני או טיפול ארוך טווח. היסטוריה ששייכת לך, תרופות ותגובות, הכנה ותחקיר סביב כל ביקור.</span><span class="en">A chronic condition or long-term care. A history you own, medications and reactions, prep and debrief around every visit.</span></span></div>
+      <div class="pathcard"><b><span class="he">מצב קליטה</span><span class="en">Capture mode</span></b>
+        <span class="small muted"><span class="he">לתקופות שאין כוח. שום סדר לא נדרש: מילים, קטעים, תמונות — הכול נשמר בתיבת הקליטה ומחכה לרגע טוב יותר.</span><span class="en">For the periods with no energy. No structure demanded: words, fragments, photos — everything lands in the intake box and waits for a better moment.</span></span></div>
+      <div class="pathcard"><b><span class="he">מלווה</span><span class="en">Caregiver</span></b>
+        <span class="small muted"><span class="he">מתעדים עבור אדם אחר, עם מסגור הוגן של הסכמה ופרטיות — של מי הרשומה, ומה יוצא החוצה.</span><span class="en">Keeping the record for someone else, with honest consent and privacy framing — whose record it is, and what leaves.</span></span></div>
+      <div class="pathcard"><b><span class="he">הכנה מהירה</span><span class="en">Express prep</span></b>
+        <span class="small muted"><span class="he">תור עוד מעט? עשר דקות, חמש שאלות, דף הכנה של עמוד אחד — גם אם שום דבר לא מסודר.</span><span class="en">A visit soon? Ten minutes, five questions, a one-page prep sheet — even if nothing is organized.</span></span></div>
+    </div>
+  </section>
+
+  <!-- ═══ PRIVACY ═══ -->
+  <section id="privacy">
+    <h2><span class="he">פרטיות, בגובה העיניים</span><span class="en">Privacy, plainly</span></h2>
+    <div class="cards">
+      <div class="panel">
+        <h3><span class="he">מה הכלי לא עושה</span><span class="en">What the tool never does</span></h3>
+        <ul>
+          <li><span class="he">לא שולח כלום לשום מקום — אין שרת, אין חשבון, אין איסוף. מה שמשתפים, אתם משתפים.</span><span class="en">Sends nothing anywhere — no server, no account, no collection. Whatever is shared, you share.</span></li>
+          <li><span class="he">לא מבקש תעודת זהות, כתובת מדויקת או שם מלא מעבר למה שבחרתם לרשום — ומסביר למה.</span><span class="en">Never asks for an ID number, exact address, or full name beyond what you chose to record — and says why.</span></li>
+          <li><span class="he">לפני כל ייצוא: רשימת בדיקה קצרה — מה בפנים, אילו פרטים מזהים להסיר, לאן זה הולך.</span><span class="en">Before any export: a short checklist — what is in it, which identifiers to remove, where it is going.</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3><span class="he">מה כן חשוב לדעת</span><span class="en">What you should know</span></h3>
+        <ul>
+          <li><span class="he">השיחות רצות בחשבון ה־AI שלך, לפי מדיניות הפלטפורמה. לכן כבר בהתקנה מוצע הליך קצר על הגדרות הפרטיות — כולל ביטול שימוש בשיחות לאימון המודל, אם האפשרות פעילה בחשבון שלך — והוא חוזר פעם אחת לפני הייצוא הראשון. <a href="guides.html#privacy">ההליך המלא במדריכים</a>.</span><span class="en">Conversations run in your AI account, under the platform's policy. So a short privacy walkthrough is offered right at install — including the model-training opt-out, where that option is active on your account — and repeats once before the first export. <a href="guides.html#privacy">The full walkthrough is in the guides</a>.</span></li>
+          <li><span class="he">שני כלי עזר מקומיים, בלי רשת: <a href="censor.html">צנזור חזותי</a> להשחרת פרטים בצילומי מסמכים לפני שהם מגיעים לשיחה, וניקוי טקסט בתוך הלוח לכל מה שיוצא החוצה.</span><span class="en">Two local helpers, no network: a <a href="censor.html">visual censor</a> for blacking out details on document photos before they reach a conversation, and a text scrub inside the dashboard for anything going out.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DASHBOARD ═══ -->
+  <section id="dashboard">
+    <h2><span class="he">הלוח — חלון לרשומות, בקובץ אחד</span><span class="en">The dashboard — a window into the records, in one file</span></h2>
+    <p>
+      <span class="he">בחבילה המלאה יש קובץ אחד בשם <code dir="ltr">dashboard.html</code>: פותחים אותו בדפדפן (כרום), מחברים את תיקיית הרשומות פעם אחת, והוא מראה מה כתוב באמת — שאלות פתוחות, תרופות עם האלרגיות תמיד למעלה, ציר הזמן, תיבת הקליטה. עדכונים מהשיחה נכנסים בהדבקה אחת ובלחיצת אישור; שום דבר לא נכתב בלי אישור, ושום דבר לא נשלח לשום מקום.</span>
+      <span class="en">The full package includes one file, <code>dashboard.html</code>: open it in a browser (Chrome), connect your records folder once, and it shows what is really written — open questions, medications with allergies always on top, the timeline, the intake box. Updates from the conversation land as one paste and one approving click; nothing is written without approval, and nothing is sent anywhere.</span>
+    </p>
+    <div class="shot" id="dashShot">
+      <span class="he">צילום מסך של הלוח — נוסף עם אצוות הצילומים.</span><span class="en">Dashboard screenshot — added with the screenshot batch.</span>
+    </div>
+    <p><a class="btn ghost" href="guides.html#dashboard"><span class="he">מדריך החיבור המלא</span><span class="en">The full connect guide</span></a></p>
+  </section>
+
+  <!-- ═══ FOR-DOCTORS BEGIN — boundary decision: section in/out is Heela's call.
+        Removing = delete from this marker to FOR-DOCTORS END (both languages inside). ═══ -->
+  <section id="doctors">
+    <h2><span class="he">לרופאות ולרופאים</span><span class="en">For doctors</span></h2>
+    <p>
+      <span class="he">אם מטופל/ת הגיעו אליכם עם מסמך מהכלי הזה: הוא נבנה כדי לחסוך לכם זמן, לא להתווכח איתכם. המסמכים מציגים תיעוד שהמטופל/ת ערכו — ציר זמן, תרופות, מה נוסה ומה קרה — ושאלות עם נימוק גלוי, לעולם לא אבחנות ולא דרישות טיפול. כל טענה ממחקר נושאת תווית מקור (מקורות רשמיים · פרסומים מדעיים · דיווחי מטופלים), והכלי אוסר על עצמו לערבב ביניהן או להמציא ציטוט. «נשקל והוחלט אחרת» מתועד אצלנו כתוצאה טובה ושימושית — המטרה היא שיחה טובה יותר בחמש הדקות שיש, משני הצדדים.</span>
+      <span class="en">If a patient brought you a document from this tool: it exists to save you time, not to argue with you. The documents present patient-kept records — a timeline, medications, what was tried and what happened — and questions with visible reasoning, never diagnoses or treatment demands. Every researched claim carries a source label (official sources · scientific publications · patient reports), and the tool forbids itself from blending them or inventing a citation. "Considered and set aside" is recorded on our side as a good, useful outcome — the goal is a better conversation in the five minutes there are, for both sides.</span>
+    </p>
+  </section>
+  <!-- ═══ FOR-DOCTORS END ═══ -->
+
+  <!-- ═══ SUPPORT MATRIX (simplified honest version) ═══ -->
+  <section id="support">
+    <h2><span class="he">מה נבדק — בכנות</span><span class="en">What is tested — honestly</span></h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th><span class="he">איפה</span><span class="en">Where</span></th>
+          <th><span class="he">מצב</span><span class="en">Status</span></th>
+          <th><span class="he">נבדק לאחרונה</span><span class="en">Last checked</span></th>
+        </tr></thead>
+        <tbody>
+          <tr><td><span class="he">Claude — עבודה על תיקייה</span><span class="en">Claude — folder-based</span></td>
+              <td><span class="he">המסלול המלא, ריצות חיות מקצה לקצה</span><span class="en">Full path, live end-to-end runs</span></td><td>31.7.2026</td></tr>
+          <tr><td><span class="he">Claude — פרויקט באתר</span><span class="en">Claude — web project</span></td>
+              <td><span class="he">מתוכנן לזה; בדיקת חשבון נקי בקרוב</span><span class="en">Designed for it; fresh-account run coming</span></td><td>—</td></tr>
+          <tr><td><span class="he">ChatGPT</span><span class="en">ChatGPT</span></td>
+              <td><span class="he">נבדק על מנוע GPT בהרצת בדיקה מלאה; בדיקה חיה באפליקציה — בקרוב</span><span class="en">Verified on a GPT runtime in a full harness run; live in-app run coming</span></td><td>31.7.2026</td></tr>
+          <tr><td><span class="he">פרומפט הפתיחה לבדו</span><span class="en">The starter alone</span></td>
+              <td><span class="he">ריצות חיות בשני הצדדים</span><span class="en">Live runs on both sides</span></td><td>31.7.2026</td></tr>
+          <tr><td><span class="he">הלוח</span><span class="en">The dashboard</span></td>
+              <td><span class="he">כרום — הליכה מלאה על דיסק אמיתי; פיירפוקס/ספארי — בלי חיבור תיקיות, השיחה מלווה במקום</span><span class="en">Chrome — full real-disk walk; Firefox/Safari — no folder access, the conversation carries saves instead</span></td><td>31.7.2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted small">
+      <span class="he">«נבדק» אף פעם לא אומר «מובטח» — פלטפורמות משתנות. הטבלה המלאה, עם הפערים הפתוחים: <code dir="ltr">package/setup/support-matrix.md</code> שבחבילה.</span>
+      <span class="en">"Tested" never means "guaranteed" — platforms change. The full matrix, open gaps included: <code>package/setup/support-matrix.md</code> in the package.</span>
+    </p>
+  </section>
+
+  <!-- ═══ VIDEOS (slots; production trails the site) ═══ -->
+  <section id="videos">
+    <h2><span class="he">סרטוני הדרכה</span><span class="en">Video tutorials</span></h2>
+    <div class="cards3">
+      <div class="vslot"><div class="ph">▶</div><b><span class="he">ההתחלה בלי הורדות</span><span class="en">Starting with zero downloads</span></b><br><span class="small"><span class="he">בקרוב</span><span class="en">coming soon</span></span></div>
+      <div class="vslot"><div class="ph">▶</div><b><span class="he">התקנת החבילה בפרויקט</span><span class="en">Installing the package in a project</span></b><br><span class="small"><span class="he">בקרוב</span><span class="en">coming soon</span></span></div>
+      <div class="vslot"><div class="ph">▶</div><b><span class="he">חיבור הלוח לתיקייה</span><span class="en">Connecting the dashboard</span></b><br><span class="small"><span class="he">בקרוב</span><span class="en">coming soon</span></span></div>
+    </div>
+    <p class="muted small"><span class="he">מפרט ההפקה — קצר, שקט, בלי פנים, כתוביות בעברית — בקובץ <code dir="ltr">video-spec.md</code> שבמאגר.</span>
+    <span class="en">The production spec — short, quiet, no faces, Hebrew captions — lives in <code>video-spec.md</code> in the repository.</span></p>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section id="faq">
+    <h2><span class="he">שאלות ותשובות</span><span class="en">Questions and answers</span></h2>
+
+    <details>
+      <summary><span class="he">זה יגיד לי מה יש לי?</span><span class="en">Will it tell me what I have?</span></summary>
+      <p><span class="he">לא, ובכוונה עמוקה. הכלי לא מאבחן ולא מנחש — הוא מסדר את מה שקרה לך ומנסח שאלות שנותנות לרופאים סיבה אמיתית לבדוק. שם של מצב רפואי יופיע רק בתוך שאלה, ורק כשיש לו מקור גלוי.</span>
+      <span class="en">No, and deeply on purpose. The tool never diagnoses or guesses — it organizes what happened to you and phrases questions that give doctors a real reason to look. A condition name appears only inside a question, and only with a visible source.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="he">לאן המידע שלי הולך?</span><span class="en">Where does my information go?</span></summary>
+      <p><span class="he">לשום מקום מטעם הכלי. הרשומות הן קבצים אצלך במחשב; לאתר הזה אין שרת ואין איסוף. השיחות עצמן רצות בחשבון ה־AI שלך לפי מדיניות הפלטפורמה — ולכן כבר בהתקנה מוצע הליך קצר על הגדרות הפרטיות, כולל ביטול שימוש בשיחות לאימון המודל אם האפשרות פעילה בחשבון שלך, והוא חוזר פעם אחת לפני הייצוא הראשון. ההליך מנחה ולא מבטיח — הקובע הוא מה שמופיע אצלך בחשבון.</span>
+      <span class="en">Nowhere, as far as the tool is concerned. The records are files on your machine; this site has no server and collects nothing. The conversations run in your AI account under the platform's policy — which is why a short privacy walkthrough is offered right at install, including the model-training opt-out where that option is active on your account, and repeats once before the first export. It guides, it does not guarantee — what appears in your account is what counts.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="he">כמה זה עולה?</span><span class="en">What does it cost?</span></summary>
+      <p><span class="he">כלום. קוד פתוח ברישיון MIT, בלי גרסת פרימיום ובלי הרשמה. מה שכן — הכלי רץ בחשבון ה־AI שלך, והמדרגות של Claude או ChatGPT הן שלהן; אפשר להתחיל בחינמיות.</span>
+      <span class="en">Nothing. Open source under MIT, no premium version, no signup. It does run inside your AI account, and Claude's or ChatGPT's own tiers are theirs; the free tiers are fine to start.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="he">איזה עוזר AI צריך?</span><span class="en">Which AI assistant do I need?</span></summary>
+      <p><span class="he">Claude או ChatGPT — שניהם נתמכים ומוסברים במדריכים. החבילה בנויה לעבוד בכל מקום שמקבל הנחיות וקבצים, אז גם פלטפורמות אחרות אמורות להסתדר, בלי הבטחות.</span>
+      <span class="en">Claude or ChatGPT — both supported and documented in the guides. The package is built to work anywhere that accepts instructions and files, so other platforms should manage too, no promises made.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="he">חייבים להוריד ולהתקין?</span><span class="en">Do I have to download and install anything?</span></summary>
+      <p><span class="he">לא. מסלול «בלי להוריד כלום» הוא מסלול מלא: פרומפט אחד להעתקה, והכול רץ בתוך השיחה. החבילה המלאה מוסיפה קבצים ורשומות קבועות — כשתרצו, אם תרצו.</span>
+      <span class="en">No. The zero-download path is a full path: one prompt to copy, everything runs inside the conversation. The full package adds files and a persistent record — when and if you want it.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="he">הורדתי את הקובץ ומשהו לא עובד</span><span class="en">I downloaded the file and something is off</span></summary>
+      <p><span class="he">כמעט תמיד זה עניין החילוץ: קובץ zip צריך לחלץ לפני השימוש — לחיצה ימנית ← «חלץ הכול» בווינדוס, לחיצה כפולה במק. אם רואים את הקבצים בתוך חלון של תוכנת מכווץ, זה עדיין בתוך ה־zip. אחרי חילוץ תקבלו תיקייה רגילה, ומשם הכול עובד. <a href="guides.html">המדריך מלווה צעד־צעד</a>.</span>
+      <span class="en">Almost always it is extraction: a zip must be extracted before use — right-click ← "Extract All" on Windows, double-click on Mac. If you see the files inside an archive-tool window, you are still inside the zip. Once extracted you get a normal folder, and everything works. <a href="guides.html">The guide walks through it</a>.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="he">ומה אם אני בתקופה שאני לא מסוגל/ת לכלום?</span><span class="en">And if I am in a period where I cannot manage anything?</span></summary>
+      <p><span class="he">בדיוק בשביל זה יש מצב קליטה: שום סדר לא נדרש, שום שאלות — מה שמצליחים לכתוב נשמר ומחכה, והמיון קורה אחר כך, כשאפשר. וחשוב לומר ביושר: הכלי אוסף ומסדר, ובזה הוא נגמר. ברגעים קשים באמת יש בני אדם: חירום 101, ער"ן 1201, סה"ר בצ'אט.</span>
+      <span class="en">Capture mode exists exactly for this: no structure demanded, no questions — whatever you manage to write is kept and waits, and sorting happens later, when you can. And honestly said: capturing and organizing is all this tool does. In truly hard moments there are humans: in Israel — emergency 101, ERAN 1201, Sahar online.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="he">אפשר לנהל את זה עבור אמא שלי?</span><span class="en">Can I run this for my mother?</span></summary>
+      <p><span class="he">כן — מסלול מלווה בדיוק לזה, כולל מסגור הוגן של השאלות החשובות: של מי הרשומה, האם האדם יודע שהיא נשמרת, ומה מותר שיצא החוצה. איסוף ושמירה אף פעם לא מותנים; שיתוף — כן.</span>
+      <span class="en">Yes — the caregiver path is exactly this, including honest framing of the questions that matter: whose record it is, whether the person knows it is kept, and what may leave. Collecting and keeping are never gated; sharing is.</span></p>
+    </details>
+  </section>
+
+  <!-- ═══ REPORT ═══ -->
+  <section id="report">
+    <h2><span class="he">משהו לא עובד? ספרו לנו</span><span class="en">Something broken? Tell us</span></h2>
+    <p>
+      <span class="he">שתי דרכים, לבחירתכם:</span>
+      <span class="en">Two routes, your pick:</span>
+    </p>
+    <ul>
+      <li><span class="he">עם חשבון GitHub: <a data-repo="/issues/new/choose" href="#">פתיחת דיווח במאגר</a> — יש תבניות מוכנות לתקלה, לעדכון המערכת הישראלית ולהצעות.</span>
+          <span class="en">With a GitHub account: <a data-repo="/issues/new/choose" href="#">open an issue</a> — ready templates for bugs, Israeli-system updates, and proposals.</span></li>
+      <li><span class="he">בלי GitHub: <a data-mailto="דיווח על תקלה — CareHub Open" href="#">דוא"ל ישיר</a>. מה קרה, איפה (Claude / ChatGPT / הלוח / האתר), ומה ציפיתם — זה כל מה שצריך.</span>
+          <span class="en">Without GitHub: <a data-mailto="Bug report — CareHub Open" href="#">email us directly</a>. What happened, where (Claude / ChatGPT / dashboard / site), and what you expected — that is all it takes.</span></li>
+    </ul>
+    <p class="notice warn small">
+      <span class="he">חשוב, בכל דיווח: בלי פרטים אישיים ובלי תוכן רפואי אמיתי. תיאור התקלה מספיק תמיד; אם צריך דוגמה — ממציאים אחת.</span>
+      <span class="en">Important, in any report: no personal details and no real medical content. Describing the problem is always enough; if an example is needed, invent one.</span>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div style="max-width:640px">
+        <p><b><span class="he">הבהרה בריאותית:</span><span class="en">Health disclaimer:</span></b>
+        <span class="he">הכלי אינו ייעוץ רפואי, אינו מאבחן, אינו ממליץ על טיפול ואינו מחליף רופא/ה או שיקול דעת קליני. הוא עוזר לארגן מידע ולנסח שאלות לצוות המטפל. אין התחייבות לדיוק רפואי.</span>
+        <span class="en">This tool is not medical advice, does not diagnose, does not recommend treatment, and does not replace clinicians or clinical judgment. It helps organize information and phrase questions for the care team. No warranty of medical accuracy.</span></p>
+        <!-- PERSONAL-LINE: Heela's own sentence, her words only. Unhide (remove `hidden`) when she writes it. -->
+        <p class="personal" hidden>⟪השורה האישית של הילה — במילים שלה בלבד⟫</p>
+      </div>
+      <div>
+        <p>
+          <span class="he">קוד פתוח · רישיון MIT · <a data-repo="" href="#">המאגר</a></span>
+          <span class="en">Open source · MIT license · <a data-repo="" href="#">repository</a></span>
+        </p>
+        <p><a data-coffee href="#"><span class="he">☕ אפשר לקנות לי קפה</span><span class="en">☕ Buy me a coffee</span></a></p>
+        <p class="small"><span class="he">CareHub Open — שם עבודה · 2026</span><span class="en">CareHub Open — working name · 2026</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
