@@ -5,11 +5,12 @@
 (function(){
   // ---- Launch wiring (single place to flip at publish) ----
   // REPO_URL: the public GitHub repository URL, set at Phase 6 launch (null = pre-launch).
-  // CONTACT_EMAIL: the dedicated bug-report address — Heela supplies it before launch
-  //   (deliberately null now; her personal address does not ship). While null, email
-  //   links render as an honest "address arrives at launch" tag.
+  // CONTACT_EMAIL: the dedicated bug-report address (Heela's ruling addendum,
+  //   2026-08-02): a NEW alias on her h2eapps.com domain. LAUNCH HARD GATE:
+  //   verify it actually receives and forwards before Pages goes live — if not
+  //   live at launch, set back to null so the honest placeholder tag returns.
   // COFFEE_URL: quiet footer support link; null keeps the line hidden until confirmed.
-  window.ADV = { REPO_URL: null, CONTACT_EMAIL: null, COFFEE_URL: null };
+  window.ADV = { REPO_URL: null, CONTACT_EMAIL: "advolog@h2eapps.com", COFFEE_URL: null };
 
   var doc = document.documentElement;
 

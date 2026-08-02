@@ -1,7 +1,7 @@
 /* Advolog — site design system, conforming to the locked design brief.
    Palette: ink / bone / brass; red reserved exclusively for crisis content.
-   Type: Fraunces (display) + Inter (text) for EN; Hebrew display = interim
-   candidate pending Heela's ruling (see type-he.html), Heebo for Hebrew text.
+   Type: Fraunces (display) + Inter (text) for EN; Hebrew display = Frank Ruhl
+   Libre (RULED by Heela, 2026-08-02), Heebo for Hebrew text.
    Sharp corners everywhere. Hairline rules as the structural device. No filled
    cards. Dark sections (hero, "what it won't do", footer) are locked to ink.
    All fonts self-hosted (assets/fonts/) — the page makes zero external requests. */
@@ -17,7 +17,7 @@
   --maxw:1120px; --pad:104px; --labelcol:260px;
   --fs-body:16.5px;
   --display-en:'Fraunces', Georgia, serif;
-  --display-he:'Frank Ruhl Libre', 'David Libre', serif;  /* interim — Heela rules */
+  --display-he:'Frank Ruhl Libre', serif;  /* FINAL — Heela's ruling, 2026-08-02 */
   --text-en:'Inter', -apple-system, "Segoe UI", Arial, sans-serif;
   --text-he:'Heebo', -apple-system, "Segoe UI", "Arial Hebrew", Arial, sans-serif;
   --mono:ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
