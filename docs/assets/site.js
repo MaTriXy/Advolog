@@ -12,7 +12,7 @@
   //   before Pages goes live — if delivery breaks, set back to null so the
   //   honest placeholder tag returns.
   // COFFEE_URL: quiet footer support link; null keeps the line hidden until confirmed.
-  window.ADV = { REPO_URL: null, CONTACT_EMAIL: "advolog@h2eapps.com", COFFEE_URL: null };
+  window.ADV = { REPO_URL: "https://github.com/heelago/Advolog", CONTACT_EMAIL: "advolog@h2eapps.com", COFFEE_URL: null };
 
   var doc = document.documentElement;
 
