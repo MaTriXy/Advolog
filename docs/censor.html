@@ -36,12 +36,12 @@
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="index.html">Advolog<span class="sub"><span class="he">חינמי · פתוח · פרטי</span><span class="en">free · open · private</span></span></a>
-    <nav class="topnav" aria-label="ניווט ראשי">
+    <nav class="topnav" aria-label="ניווט ראשי" data-aria-he="ניווט ראשי" data-aria-en="Main navigation">
       <a href="index.html"><span class="he">דף הבית</span><span class="en">Home</span></a>
       <a href="guides.html"><span class="he">מדריכים</span><span class="en">Guides</span></a>
       <a href="form.html"><span class="he">טופס פתיחה</span><span class="en">Onboarding form</span></a>
       <button id="langBtn" class="tbtn" type="button">English</button>
-      <button id="scaleBtn" class="tbtn" type="button" aria-pressed="false" aria-label="טקסט גדול יותר">Aa</button>
+      <button id="scaleBtn" class="tbtn" type="button" aria-pressed="false" aria-label="טקסט גדול יותר" data-aria-he="טקסט גדול יותר" data-aria-en="Larger text">Aa</button>
     </nav>
   </div>
 </header>
@@ -58,7 +58,7 @@
   </p>
 
   <div class="panel">
-    <input type="file" id="cfile" accept="image/*" aria-label="בחירת קובץ תמונה">
+    <input type="file" id="cfile" accept="image/*" aria-label="בחירת קובץ תמונה" data-aria-he="בחירת קובץ תמונה" data-aria-en="Choose an image file">
     <div id="carea" hidden>
       <p class="hint">
         <span class="he">גוררים מלבן על כל אזור להשחרה (שם, ת״ז, מספר תיק, ברקוד). ההשחרה נצרבת בעותק — אי אפשר להסיר אותה מהקובץ שיורד.</span>
@@ -67,7 +67,7 @@
       <div id="cwrap"><canvas id="cv"></canvas></div>
       <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; align-items:center">
         <button class="btn line" id="undoBtn" type="button"><span class="he">ביטול המלבן האחרון</span><span class="en">Undo last rectangle</span></button>
-        <input type="text" id="rename" style="max-width:280px" aria-label="שם הקובץ לשמירה">
+        <input type="text" id="rename" style="max-width:280px" aria-label="שם הקובץ לשמירה" data-aria-he="שם הקובץ לשמירה" data-aria-en="File name to save">
         <button class="btn" id="dlBtn" type="button"><span class="he">הורדת העותק הנקי</span><span class="en">Download the clean copy</span></button>
       </div>
     </div>

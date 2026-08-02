@@ -239,5 +239,7 @@ footer .links{display:flex; gap:4px 18px; flex-wrap:wrap; margin-top:10px;}
 #cv{max-width:100%; display:block; margin:0 auto; cursor:crosshair;}
 
 @media print{.topbar,.ctas,#toast,.copybar{display:none}}
+/* crisis-resource links keep the crisis color (never brass) — tap-to-call / open */
+.crisisline a, #wont .crisis a, .crisis-a a{ color:inherit; text-decoration-color:currentColor; text-underline-offset:2px; }
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none !important; animation:none !important} }
 @media(max-width:760px){ :root{--pad:64px} .hero .inner{padding:64px 20px 56px} .wrap{padding:0 20px} }

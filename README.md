@@ -13,7 +13,18 @@
 
 ## חמשת המסלולים
 
-מסע אבחון · ניהול מתמשך · מצב קליטה · מלווה · הכנה מהירה. ריאיון הפתיחה מנתב, בעדינות, שאלה אחת בכל פעם — ואפשר להחזיק יותר ממסלול אחד.
+מסע אבחון · ניהול מתמשך · מצב קליטה · מלווה · הכנה מהירה. אלו **מצבי ניתוב**, לא יחידות נפרדות: הריאיון מנתב בעדינות, שאלה אחת בכל פעם, ואפשר להחזיק יותר ממסלול אחד. **מלווה** הוא מסלול חוצה — עוטף כל אחד מהאחרים כשמתעדים עבור מישהו אחר, עם מסגור הסכמה ופרטיות.
+
+## חמש־עשרה היחידות
+
+כל יחידה נכנסת לפעולה מעצמה ברגע המתאים; אין שמות לזכור. מקובצות לפי מה שהן עושות:
+
+- **להתחיל / לחזור / לעבוד גם כשאין כוח:** ריאיון · קליטה · שחזור · התעדכנות
+- **לשמור על התיעוד חי:** צ׳ק־אין · רישום אירוע · סיכום תקופה · טבלת תרופות (בבקשה מפורשת)
+- **סביב ביקור:** שאלות · דף הכנה · הכנה מהירה · תחקיר
+- **בירור והקשר מקצועי:** מחקר (בבקשה מפורשת) · ניירת · גשר
+
+הטבלה המלאה עם טריגר ופלט לכל יחידה נמצאת באתר, במדור «מה בערכה».
 
 ## העקרונות שלא מתגמשים
 
@@ -56,7 +67,18 @@ Per-platform setup guides, including the privacy walkthroughs, live on the site 
 
 ## The five paths
 
-Diagnostic journey · Ongoing management · Capture mode · Caregiver · Express prep. The onboarding interview routes gently, one question at a time — and more than one path can be active.
+Diagnostic journey · Ongoing management · Capture mode · Caregiver · Express prep. These are **routing modes**, not separate units: the onboarding interview routes gently, one question at a time, and more than one path can be active. **Caregiver** is cross-cutting — it wraps whichever path fits when you keep the record for someone else, with consent and privacy framing.
+
+## The fifteen units
+
+Each unit steps in on its own at the right moment; there are no names to remember. Grouped by what they do:
+
+- **Start / recover / work while overwhelmed:** interview · capture · reconstruction · catch-up
+- **Keep the record current:** check-in · event-logger · interval-summary · regimen-chart (explicit request)
+- **Around a visit:** questions · prep-sheet · express-prep · debrief
+- **Investigate & professional context:** research (explicit request) · paperwork · bridge
+
+The full table, with a trigger and output for each unit, is on the site under "What's included."
 
 ## The principles that do not bend
 

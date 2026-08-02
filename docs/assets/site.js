@@ -36,6 +36,10 @@
       b.textContent = l === "he" ? "English" : "עברית";
       b.setAttribute("aria-label", l === "he" ? "Switch to English" : "מעבר לעברית");
     }
+    // translate control aria-labels (nav, text-size, file inputs) on language change
+    document.querySelectorAll("[data-aria-he]").forEach(function(el){
+      el.setAttribute("aria-label", l === "he" ? el.getAttribute("data-aria-he") : el.getAttribute("data-aria-en"));
+    });
     if (document.body) syncTitle(l);
   }
   function syncTitle(l){

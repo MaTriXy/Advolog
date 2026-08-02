@@ -55,7 +55,7 @@
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="index.html">Advolog<span class="sub"><span class="he">חינמי · פתוח · פרטי</span><span class="en">free · open · private</span></span></a>
-    <nav class="topnav" aria-label="ניווט ראשי">
+    <nav class="topnav" aria-label="ניווט ראשי" data-aria-he="ניווט ראשי" data-aria-en="Main navigation">
       <a href="#does"><span class="he">מה זה עושה</span><span class="en">What it does</span></a>
       <a href="#wont"><span class="he">מה זה לא יעשה</span><span class="en">What it won't do</span></a>
       <a href="#how"><span class="he">איך זה עובד</span><span class="en">How it works</span></a>
@@ -63,7 +63,7 @@
       <a href="#faq"><span class="he">שאלות</span><span class="en">Questions</span></a>
       <a href="#get"><span class="he">להורדה</span><span class="en">Get it</span></a>
       <button id="langBtn" class="tbtn" type="button">English</button>
-      <button id="scaleBtn" class="tbtn" type="button" aria-pressed="false" aria-label="טקסט גדול יותר">Aa</button>
+      <button id="scaleBtn" class="tbtn" type="button" aria-pressed="false" aria-label="טקסט גדול יותר" data-aria-he="טקסט גדול יותר" data-aria-en="Larger text">Aa</button>
     </nav>
   </div>
 </header>
@@ -230,14 +230,14 @@
         <div class="row"><span class="numlabel">ה</span><h3>הוא לא יעמיד פני מערכת קלינית.</h3><p class="muted">הוא לעולם לא מדמה מה מאגרים מקצועיים ״היו אומרים״. ממצאים של קלינאי אמיתי נרשמים בדיוק ככאלה: שלו, עם שם ותאריך.</p></div>
         <div class="row"><span class="numlabel">ו</span><h3>הפרטיות היא לא קסם.</h3><p class="muted">אין כאן שרת, חשבון או ניתוח נתונים, והתיעוד נשאר אצלכם. אבל ה־AI שהוא רץ בו כפוף להגדרות המידע של הספק שלכם. הערכה מלווה אתכם בבדיקת ההגדרות האלה, ומריצה רשימת בדיקה לפני כל שיתוף או ייצוא.</p></div>
         <div class="row"><span class="numlabel">ז</span><h3>הוא יטעה לפעמים.</h3><p class="muted">עוזרי AI טועים. זו עובדה על הטכנולוגיה וגם עיקרון תכנון כאן: בגלל זה כל פלט הוא שאלות והקשר לצוות המטפל, אף פעם לא מסקנות לפעול לפיהן.</p></div>
-        <div class="row crisis"><span class="numlabel" style="color:var(--crisis-dark)">ח</span><h3>הוא לא שירות חירום.</h3><p class="muted">אם אתם או מישהו לידכם בסכנה מיידית, חייגו <strong>101</strong>. אם אתם צריכים מישהו לדבר איתו עכשיו: <strong>ער״ן — 1201</strong>, או <strong>סה״ר</strong> (אונליין). מצב קליטה יכול לשמור את המידע שלכם גם בתקופה קשה, אבל כלי הוא לא מה שהרגעים האלה צריכים.</p></div>
+        <div class="row crisis"><span class="numlabel" style="color:var(--crisis-dark)">ח</span><h3>הוא לא שירות חירום.</h3><p class="muted">אם אתם או מישהו לידכם בסכנה מיידית, חייגו <strong><a href="tel:101">101</a></strong>. אם אתם צריכים מישהו לדבר איתו עכשיו: <strong>ער״ן — <a href="tel:1201">1201</a></strong>, או <strong><a href="https://sahar.org.il" target="_blank" rel="noopener">סה״ר</a></strong> (אונליין). מצב קליטה יכול לשמור את המידע שלכם גם בתקופה קשה, אבל כלי הוא לא מה שהרגעים האלה צריכים.</p></div>
       </div>
 
       <!-- English rows, the English file's own order (crisis third) -->
       <div class="rows en">
         <div class="row"><span class="numlabel">A</span><h3>It will not tell you what you have.</h3><p class="muted">It's built to produce questions, not diagnoses. A diagnosis needs an examination, tests, and a license. If it ever seems to be diagnosing, that's a bug — report it and we'll fix it.</p></div>
         <div class="row"><span class="numlabel">B</span><h3>It will not recommend treatment.</h3><p class="muted">It never suggests starting, stopping, switching, or re-dosing anything. Those calls belong to a clinician who can see your whole picture.</p></div>
-        <div class="row crisis"><span class="numlabel" style="color:var(--crisis-dark)">C</span><h3>It is not a crisis service.</h3><p class="muted">If you or someone near you is in immediate danger, call <strong>101</strong>. If you need someone to talk to: <strong>ERAN — 1201</strong>, or <strong>Sahar</strong> (online). Capture mode can hold your information through a bad period, but a tool is not what those moments call for.</p></div>
+        <div class="row crisis"><span class="numlabel" style="color:var(--crisis-dark)">C</span><h3>It is not a crisis service.</h3><p class="muted">If you or someone near you is in immediate danger, call <strong><a href="tel:101">101</a></strong>. If you need someone to talk to: <strong>ERAN — <a href="tel:1201">1201</a></strong>, or <strong><a href="https://sahar.org.il" target="_blank" rel="noopener">Sahar</a></strong> (online). Capture mode can hold your information through a bad period, but a tool is not what those moments call for.</p></div>
         <div class="row"><span class="numlabel">D</span><h3>It cannot verify medical truth.</h3><p class="muted">When it cites a source, that proves where a claim came from, not that the claim is right. Every source is labeled one of three tiers — official sources, scientific publications, or patient reports — and the tiers are never blended or dressed up.</p></div>
         <div class="row"><span class="numlabel">E</span><h3>It cannot make a doctor listen.</h3><p class="muted">It raises the odds that your five minutes are spent on the right things. It cannot guarantee the outcome, and this page won't pretend otherwise.</p></div>
         <div class="row"><span class="numlabel">F</span><h3>It will not pretend to be a clinical system.</h3><p class="muted">Professional drug-interaction databases and clinician tools require a license for a reason. This toolkit never simulates what they "would say." If a real clinician checks something for you, their findings are recorded as exactly that — theirs, attributed and dated.</p></div>
@@ -591,10 +591,39 @@ Begin now, by riding whatever my first message was.</pre>
           </div>
         </div>
       </div>
-      <p style="margin-top:26px; max-width:76ch"><b><span class="he">עוד בערכה המלאה:</span><span class="en">Also in the full package:</span></b>
-        <span class="he">הכנה לתור · סיכום אחרי ביקור · בניית ציר זמן · בניית רשימת שאלות עם תיוג מקורות · עוזר מחקר · שיחת שחזור · הדרכת פרטיות להגדרות חשבון ה־AI · מדור גישה קלינית, מנוסח אחרת אם יש לכם איש מקצוע מורשה שאתם סומכים עליו ואם אין.</span>
-        <span class="en">appointment prep · post-visit debrief · timeline builder · question-set builder with tier labeling · research assistant · reconstruction session (for capture mode) · privacy walkthrough for your AI account's settings · a clinician-access section, framed one way if a licensed professional you trust can run things in their own tools, another way if not.</span>
-      </p>
+      <h3 style="margin-top:34px" id="whats-in"><span class="he">מה יש בערכה המלאה — חמש־עשרה יחידות</span><span class="en">What's in the full package — fifteen units</span></h3>
+      <p class="muted" style="max-width:76ch"><span class="he">כל יחידה נכנסת לפעולה מעצמה ברגע המתאים — לא צריך לזכור שמות. הן מקובצות כאן לפי מה שהן עושות.</span>
+      <span class="en">Each unit steps in on its own at the right moment — no names to remember. Grouped here by what they do.</span></p>
+      <div class="tblwrap"><table>
+        <thead><tr>
+          <th><span class="he">יחידה</span><span class="en">Unit</span></th>
+          <th><span class="he">מתי</span><span class="en">When</span></th>
+          <th><span class="he">מה יוצא</span><span class="en">What you get</span></th>
+        </tr></thead>
+        <tbody>
+          <tr><td colspan="3" class="mono" style="color:var(--brass-text)"><span class="he">להתחיל, לחזור, ולעבוד גם כשאין כוח</span><span class="en">Start, recover, work while overwhelmed</span></td></tr>
+          <tr><td><span class="he">ריאיון</span><span class="en">Interview</span></td><td><span class="he">בהתחלה, או בכל בקשה</span><span class="en">at the start, or on request</span></td><td><span class="he">ניתוב עדין, שאלה אחת בכל פעם, ופרופיל ראשוני</span><span class="en">gentle routing, one question at a time, a first profile</span></td></tr>
+          <tr><td><span class="he">קליטה</span><span class="en">Capture</span></td><td><span class="he">«אין לי כוח», רגע עמוס</span><span class="en">"I can't right now," a heavy moment</span></td><td><span class="he">נקלט בלי שום מבנה, שום דבר לא נופל</span><span class="en">taken in with zero structure, nothing lost</span></td></tr>
+          <tr><td><span class="he">שחזור</span><span class="en">Reconstruction</span></td><td><span class="he">כשחוזר הכוח לסדר</span><span class="en">when there's energy to sort</span></td><td><span class="he">החומר הגולמי הופך לרשומות מסודרות</span><span class="en">raw capture becomes an organized record</span></td></tr>
+          <tr><td><span class="he">התעדכנות</span><span class="en">Catch-up</span></td><td><span class="he">«תתעדכני», חזרה אחרי הפסקה</span><span class="en">"catch up," returning after a gap</span></td><td><span class="he">תמונת מצב קצרה, ממשיכים מאיפה שעצרתם</span><span class="en">a short snapshot; pick up where you left off</span></td></tr>
+          <tr><td colspan="3" class="mono" style="color:var(--brass-text)"><span class="he">לשמור על התיעוד חי</span><span class="en">Keep the record current</span></td></tr>
+          <tr><td><span class="he">צ׳ק־אין</span><span class="en">Check-in</span></td><td><span class="he">«מה נשמע» יומיומי</span><span class="en">a routine "how's it going"</span></td><td><span class="he">רישום מהיר, בלי מחקר</span><span class="en">a fast log entry, no research</span></td></tr>
+          <tr><td><span class="he">רישום אירוע</span><span class="en">Event logger</span></td><td><span class="he">«קרה משהו»</span><span class="en">"something happened"</span></td><td><span class="he">משפט אחד נכנס, שורה מסודרת יוצאת</span><span class="en">one sentence in, one clean entry out</span></td></tr>
+          <tr><td><span class="he">סיכום תקופה</span><span class="en">Interval summary</span></td><td><span class="he">«מה השתנה לאחרונה»</span><span class="en">"what changed lately"</span></td><td><span class="he">סיכום מקובץ לפי תבנית, בלי מחקר</span><span class="en">a pattern-grouped summary, no research</span></td></tr>
+          <tr><td><span class="he">טבלת תרופות</span><span class="en">Regimen chart</span></td><td><span class="he">בבקשה מפורשת בלבד</span><span class="en">on explicit request only</span></td><td><span class="he">פריסת המשטר לאישור הרוקח, בלי להמציא</span><span class="en">the regimen laid out for pharmacist check, nothing invented</span></td></tr>
+          <tr><td colspan="3" class="mono" style="color:var(--brass-text)"><span class="he">להתכונן לביקור ולסגור אותו</span><span class="en">Prepare for and close a visit</span></td></tr>
+          <tr><td><span class="he">שאלות</span><span class="en">Questions</span></td><td><span class="he">בונים סט שאלות</span><span class="en">building a question set</span></td><td><span class="he">שאלות עם נימוק שרופא לוקח ברצינות</span><span class="en">questions with reasoning a doctor takes seriously</span></td></tr>
+          <tr><td><span class="he">דף הכנה</span><span class="en">Prep sheet</span></td><td><span class="he">יש ביקור מתוכנן</span><span class="en">a visit is coming</span></td><td><span class="he">עמוד אחד, השאלות קודם</span><span class="en">one page, questions first</span></td></tr>
+          <tr><td><span class="he">הכנה מהירה</span><span class="en">Express prep</span></td><td><span class="he">תור עוד מעט, עד עשר דקות</span><span class="en">a visit within days, ≤10 min</span></td><td><span class="he">דף שמיש מתוך מה שיש, גם אם מעט</span><span class="en">a usable sheet from whatever exists</span></td></tr>
+          <tr><td><span class="he">תחקיר</span><span class="en">Debrief</span></td><td><span class="he">אחרי ביקור</span><span class="en">after a visit</span></td><td><span class="he">מה נאמר והוחלט נקלט לתיק</span><span class="en">what was said and decided, captured</span></td></tr>
+          <tr><td colspan="3" class="mono" style="color:var(--brass-text)"><span class="he">לברר ולהביא הקשר מקצועי</span><span class="en">Investigate &amp; bring in professional context</span></td></tr>
+          <tr><td><span class="he">מחקר</span><span class="en">Research</span></td><td><span class="he">בבקשה מפורשת בלבד</span><span class="en">on explicit request only</span></td><td><span class="he">ממצאים עם רובדי ראיות מסומנים, בלי אבחנה</span><span class="en">findings with labeled evidence tiers, no diagnosis</span></td></tr>
+          <tr><td><span class="he">ניירת</span><span class="en">Paperwork</span></td><td><span class="he">מסמך לא ברור</span><span class="en">a document you can't parse</span></td><td><span class="he">הסבר שפה ומבנה — לא פרשנות רפואית</span><span class="en">plain-word vocabulary and structure — not a medical reading</span></td></tr>
+          <tr><td><span class="he">גשר</span><span class="en">Bridge</span></td><td><span class="he">איש מקצוע יסתכל, או ענה</span><span class="en">a professional will look, or answered</span></td><td><span class="he">סיכום מזוער החוצה; ממצאים מיוחסים פנימה</span><span class="en">a minimized summary out; attributed findings in</span></td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted small" style="max-width:76ch"><span class="he">חמשת המסלולים (מסע אבחון · ניהול מתמשך · מצב קליטה · מלווה · הכנה מהירה) הם <b>מצבי ניתוב</b>, לא יחידות נפרדות — הם קובעים לאילו יחידות פונים. <b>מלווה</b> הוא מסלול חוצה: הוא עוטף כל אחד מהמסלולים כשמתעדים עבור מישהו אחר, עם מסגור הסכמה ופרטיות.</span>
+      <span class="en">The five paths (diagnostic journey · ongoing management · capture mode · caregiver · express prep) are <b>routing modes</b>, not separate units — they decide which units you reach. <b>Caregiver</b> is cross-cutting: it wraps whichever path fits when you keep the record for someone else, with consent and privacy framing.</span></p>
     </div>
   </section>
 
@@ -639,8 +668,8 @@ Begin now, by riding whatever my first message was.</pre>
           <span class="he">כי זה בנוי לאיך שרופאים קוראים: עמוד אחד, החשוב קודם, שאלות ולא מסקנות, נימוק גלוי, מקורות מתויגים לפי רמה. זה ההפך מערימת תדפיסים מפורומים — וזו בדיוק הנקודה.</span>
           <span class="en">Because it's built for how they read: one page, most important first, questions rather than conclusions, reasoning stated, sources labeled by tier. It's the opposite of a stack of forum printouts — that's the point.</span></div></details>
         <details><summary><span class="he">ומה אם אני במשבר עכשיו?</span><span class="en">What if I'm in crisis right now?</span></summary><div class="crisis-a">
-          <span class="he">אז הכלי הזה הוא לא הדבר הנכון. חירום: 101. מישהו לדבר איתו עכשיו: ער״ן 1201, או סה״ר אונליין. מצב קליטה קיים כדי שתקופה קשה לא תמחק את התיעוד — אבל אנשים קודמים לתיעוד, תמיד.</span>
-          <span class="en">Then this tool is not the right thing. Emergency: 101. To talk to someone now: ERAN 1201, or Sahar online. The capture path exists so that a bad period doesn't erase your record — but people come before records, every time.</span></div></details>
+          <span class="he">אז הכלי הזה הוא לא הדבר הנכון. חירום: <a href="tel:101">101</a>. מישהו לדבר איתו עכשיו: ער״ן <a href="tel:1201">1201</a>, או <a href="https://sahar.org.il" target="_blank" rel="noopener">סה״ר</a> אונליין. מצב קליטה קיים כדי שתקופה קשה לא תמחק את התיעוד — אבל אנשים קודמים לתיעוד, תמיד.</span>
+          <span class="en">Then this tool is not the right thing. Emergency: <a href="tel:101">101</a>. To talk to someone now: ERAN <a href="tel:1201">1201</a>, or <a href="https://sahar.org.il" target="_blank" rel="noopener">Sahar</a> online. The capture path exists so that a bad period doesn't erase your record — but people come before records, every time.</span></div></details>
         <details><summary><span class="he">אפשר להשתמש בזה בשביל מישהו אחר?</span><span class="en">Can I use it for someone else?</span></summary><div>
           <span class="he">כן — מסלול המלווה בנוי בדיוק לזה, כולל שאלות ההסכמה ושל מי המידע.</span>
           <span class="en">Yes — the caregiver path is built for exactly that, including the questions of consent and whose information is being handled.</span></div></details>
@@ -681,7 +710,7 @@ Begin now, by riding whatever my first message was.</pre>
         <span class="en">This toolkit does not provide medical advice. It is not a substitute for professional medical care, and it will tell you the same thing itself.</span></p>
         <!-- PERSONAL-LINE: Heela's own sentence, her words only. Unhide (remove `hidden`) when she writes it. -->
         <p class="personal" hidden>⟪השורה האישית — במילים של הילה בלבד⟫</p>
-        <p class="crisisline"><span class="he">קווי סיוע: 101 (חירום) · ער״ן 1201 · סה״ר (אונליין)</span><span class="en">Crisis lines: 101 (emergency) · ERAN 1201 · Sahar (online)</span></p>
+        <p class="crisisline"><span class="he">קווי סיוע: <a href="tel:101">101</a> (חירום) · ער״ן <a href="tel:1201">1201</a> · <a href="https://sahar.org.il" target="_blank" rel="noopener">סה״ר</a> (אונליין)</span><span class="en">Crisis lines: <a href="tel:101">101</a> (emergency) · ERAN <a href="tel:1201">1201</a> · <a href="https://sahar.org.il" target="_blank" rel="noopener">Sahar</a> (online)</span></p>
       </div>
       <div>
         <p class="mono muted" style="margin-bottom:2px"><span class="he">רישיון: MIT</span><span class="en">License: MIT</span></p>
