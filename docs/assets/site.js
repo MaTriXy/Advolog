@@ -6,9 +6,11 @@
   // ---- Launch wiring (single place to flip at publish) ----
   // REPO_URL: the public GitHub repository URL, set at Phase 6 launch (null = pre-launch).
   // CONTACT_EMAIL: the dedicated bug-report address (Heela's ruling addendum,
-  //   2026-08-02): a NEW alias on her h2eapps.com domain. LAUNCH HARD GATE:
-  //   verify it actually receives and forwards before Pages goes live — if not
-  //   live at launch, set back to null so the honest placeholder tag returns.
+  //   2026-08-02): a LIVE Zoho alias on the h2eapps.com contact mailbox; the
+  //   mailbox's forward is code-verified and enabled, Zoho keeps a copy.
+  //   LAUNCH GATE (narrowed): confirm the one end-to-end test mail landed
+  //   before Pages goes live — if delivery breaks, set back to null so the
+  //   honest placeholder tag returns.
   // COFFEE_URL: quiet footer support link; null keeps the line hidden until confirmed.
   window.ADV = { REPO_URL: null, CONTACT_EMAIL: "advolog@h2eapps.com", COFFEE_URL: null };
 
