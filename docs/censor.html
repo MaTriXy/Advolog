@@ -81,8 +81,10 @@
   var cv=$('cv'), cx=cv.getContext('2d'), img=null, rects=[], drag=null, base=null;
   $('cfile').onchange=function(){ var f=this.files[0]; if(!f) return;
     var u=URL.createObjectURL(f); img=new Image();
-    img.onload=function(){ var maxw=980, sc=Math.min(1, maxw/img.width);
-      cv.width=img.width*sc; cv.height=img.height*sc;
+    img.onload=function(){ /* full resolution preserved in the canvas and the exported PNG;
+      CSS (#cv{max-width:100%}) constrains only the on-screen size, and pos() maps clicks back
+      through the display ratio — so redactions stay pixel-accurate on documents of any size. */
+      cv.width=img.width; cv.height=img.height;
       cx.drawImage(img,0,0,cv.width,cv.height); base=cx.getImageData(0,0,cv.width,cv.height);
       rects=[]; $('carea').hidden=false;
       $('rename').value=(isHe()?'מסמך-מצונזר-':'censored-document-')+heNow()+'.png';

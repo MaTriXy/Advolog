@@ -8,6 +8,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Defense-in-depth: this file never talks to the network. The CSP blocks any external
+     fetch/script/frame/beacon, so even if crafted text slipped past the textContent rendering
+     it could not exfiltrate the record folder. Inline script/style are self-contained here;
+     data:/blob: images are the censor tool's own local pixels. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
 <title>Advolog · הלוח</title>
 <style>
   :root{
@@ -392,7 +397,12 @@ $('parseBtn').onclick=function(){
   $('syncNote').textContent= pending.length? 'שום דבר עוד לא נכתב — כל פריט מחכה להחלה.' : '';
   $('applyAllBtn').hidden=!pending.length;
   pending.forEach(function(p,i){ var d=document.createElement('div'); d.className='pend';
-    d.innerHTML='<span>'+p.label+': '+p.entry+'</span>'; var b=document.createElement('button');
+    /* SECURITY: p.label/p.entry are AI-produced, user-pasted text — render as text, never
+       as markup (textContent, not innerHTML), so a crafted delta line cannot inject active
+       HTML into a page that holds read/write handles to the record folder. */
+    var sp=document.createElement('span'); sp.textContent=p.label+': '+p.entry; d.appendChild(sp);
+    d._pending=p;  /* bind the card to its own pending object so Apply-all never pairs by index */
+    var b=document.createElement('button');
     b.className='btn sm'; b.textContent='החלה'; b.onclick=function(){ applyOne(p,d); }; d.appendChild(b); $('pends').appendChild(d); });
   /* lossless, said aloud: delta-looking lines with an unrecognized target never vanish silently */
   orphans.forEach(function(l){ var d=document.createElement('div'); d.className='pend err';
@@ -431,8 +441,13 @@ async function applyOne(p,card){
     card.remove(); toast('הוחל אל '+p.label); render();
   }catch(e){ card.classList.add('err'); card.firstChild.textContent='נכשל — נשאר ממתין: '+p.entry; }
 }
-$('applyAllBtn').onclick=async function(){ var cards=[].slice.call(document.querySelectorAll('#pends .pend'));
-  for(var i=0;i<pending.length;i++){ if(cards[i] && cards[i].isConnected) await applyOne(pending[i],cards[i]); } this.hidden=true; };
+$('applyAllBtn').onclick=async function(){
+  /* iterate the cards themselves, each carrying its own bound pending object (_pending), and
+     only those still connected and not yet applied — never pair the original pending[] array
+     with the current DOM by index (a prior manual apply removes a card, shifting the rest). */
+  var cards=[].slice.call(document.querySelectorAll('#pends .pend')).filter(function(c){ return c._pending; });
+  for(var i=0;i<cards.length;i++){ if(cards[i].isConnected) await applyOne(cards[i]._pending, cards[i]); }
+  this.hidden=true; };
 
 /* @anchor: context-out — the reverse motion */
 $('ctxBtn').onclick=function(){
@@ -449,7 +464,7 @@ $('exportBtn').onclick=async function(){
   for(var i=0;i<RECORDS.length;i++){ out.files[RECORDS[i]]=files[RECORDS[i]]||''; }
   var a=document.createElement('a');
   a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(out,null,1));
-  a.download='carehub-backup-'+today().replace(/\./g,'-')+'.json'; a.click(); toast('הגיבוי ירד. לשמור אותו במקום נוסף.');
+  a.download='advolog-backup-'+today().replace(/\./g,'-')+'.json'; a.click(); toast('הגיבוי ירד. לשמור אותו במקום נוסף.');
 };
 
 /* @anchor: scrub — the text scrub (architecture §3.8): highlights the RECORD SUBJECT's identifiers
@@ -466,7 +481,7 @@ function validIsraeliID(s){ s=s.replace(/\D/g,''); if(s.length<5||s.length>9) re
 function subjectNames(){
   var tx=files['profile.md']||'', out=[];
   tx.split('\n').forEach(function(l){
-    var m=l.match(/^\s*[-*]?\s*(?:שם(?:\s*(?:מלא|תצוגה))?|מי כאן|עבור מי(?:\s*הרשומה)?|הרשומה של|של מי הרשומה|מתוחזק(?:ת)?\s*בידי|about|name|maintained[- ]?by)\s*[:：]\s*(.+)$/i);
+    var m=l.match(/^\s*[-*]?\s*(?:שם(?:\s*(?:מלא|תצוגה|להצגה))?|מי כאן|עבור מי(?:\s*הרשומה)?|הרשומה של|של מי הרשומה|מתוחזק(?:ת)?\s*בידי|about|name|maintained[- ]?by)\s*[:：]\s*(.+)$/i);
     if(m){ m[1].split(/[,·]/).forEach(function(n){ n=n.trim().replace(/["«»]/g,'');
       if(n && n!=='—' && !/לא תועד|טרם/.test(n)) out.push(n); }); }});
   return out;
@@ -545,8 +560,10 @@ $('scrubCopyBtn').onclick=function(){
 var cv=$('cv'), cx=cv.getContext('2d'), img=null, rects=[], drag=null, base=null;
 $('cfile').onchange=function(){ var f=this.files[0]; if(!f) return;
   var u=URL.createObjectURL(f); img=new Image();
-  img.onload=function(){ var maxw=980, sc=Math.min(1, maxw/img.width);
-    cv.width=img.width*sc; cv.height=img.height*sc;
+  img.onload=function(){ /* full resolution preserved in the canvas (and the exported PNG);
+    the on-screen size is constrained by CSS (#cv{max-width:100%}) and pos() maps clicks back
+    through the display ratio, so redactions stay pixel-accurate on documents of any size. */
+    cv.width=img.width; cv.height=img.height;
     cx.drawImage(img,0,0,cv.width,cv.height); base=cx.getImageData(0,0,cv.width,cv.height);
     rects=[]; $('carea').hidden=false;
     $('rename').value='מסמך-מצונזר-'+today().replace(/\./g,'-')+'.png';
