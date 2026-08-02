@@ -45,6 +45,9 @@
   }
 
   window.addEventListener("DOMContentLoaded", function(){
+    // re-run setLang now that the DOM exists, so the toggle button gets its
+    // label/aria-label (the initial call ran in <head>, before the button existed)
+    setLang(doc.getAttribute("data-lang"));
     syncTitle(doc.getAttribute("data-lang"));
 
     var lb = document.getElementById("langBtn");
