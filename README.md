@@ -4,10 +4,10 @@
 
 **מה זה לא:** לא כלי אבחון, לא יועץ טיפולי, לא שירות חירום, ולא תחליף לשיקול דעת קליני. כל תוצר מנוסח כשאלות והקשר לצוות המטפל — אף פעם לא כמסקנות. בלי חשבונות, בלי שרת, בלי איסוף נתונים: הכול רץ בחשבון ה־AI של המשתמש/ת ובמחשב שלו/ה.
 
-## שני מסלולי התקנה, שווי מעמד
+## שתי דרכים להתחיל
 
 1. **החבילה המלאה** — תיקיית `package/`: מפת הנחיות אחת, חמש־עשרה יחידות מיומנות, שכבה עברית־ישראלית, ולוח מקומי (`dashboard.html`) שמציג את הרשומות ומכניס עדכונים רק באישור. מתאימה לפרויקט ב־Claude או ב־ChatGPT.
-2. **מסלול אפס־הורדות** — פרומפט פתיחה אחד, מוכן להעתקה, שמריץ את הריאיון ומקים גרסה קלה בלי אף קובץ: `package/starter/starter-prompt.md`. מי שלא רוצה להוריד כלום — זה מסלול מלא, לא פשרה.
+2. **מסלול אפס־הורדות** — פרומפט פתיחה אחד, מוכן להעתקה, שמריץ את הריאיון ומקים גרסה קלה בלי אף קובץ: `package/starter/starter-prompt.md`. מי שלא רוצה להוריד כלום — ליבה קלה, בטוחה ושלמה בפני עצמה (ריאיון, קליטה, הכנה מהירה), לא הערכה המלאה על חמש־עשרה היחידות.
 
 מדריכי התקנה לכל פלטפורמה, כולל הליכי הפרטיות, באתר וב־`package/setup/`.
 
@@ -47,10 +47,10 @@ An open, free package that helps patients and caregivers advocate for themselves
 
 **What it is not:** not a diagnostic tool, not a treatment advisor, not a crisis service, not a replacement for clinical judgment. Every output is questions and context for the care team, never conclusions. No accounts, no server, no analytics: everything runs in the user's own AI account and on their own machine.
 
-## Two install paths, equal standing
+## Two ways to start
 
 1. **The full package** — the `package/` folder: one instruction map, fifteen skill units, a Hebrew-Israeli layer, and a local dashboard (`dashboard.html`) that shows the records and applies updates only on approval. Fits a Claude or ChatGPT project.
-2. **The zero-download path** — a single copy-paste starter prompt that runs the interview and bootstraps a light version with no files at all: `package/starter/starter-prompt.md`. A full path, not a fallback.
+2. **The zero-download path** — a single copy-paste starter prompt that runs the interview and bootstraps a light version with no files at all: `package/starter/starter-prompt.md`. A light, safe, self-contained core (interview, capture, express prep) — not the full fifteen-unit kit.
 
 Per-platform setup guides, including the privacy walkthroughs, live on the site and in `package/setup/`.
 
