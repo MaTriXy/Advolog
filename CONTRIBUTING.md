@@ -20,7 +20,7 @@
 
 ## כללי עבודה על התוכן
 
-- **המפה מנצחת.** בכל סתירה בין `prompts/core-map.md` ליחידת מיומנות — המפה קובעת. שינוי התנהגות מתחיל במפה.
+- **המפה מנצחת.** בכל סתירה בין `package/prompts/core-map.md` ליחידת מיומנות — המפה קובעת. שינוי התנהגות מתחיל במפה.
 - **סכימות מתפתחות בהוספה בלבד.** שום שינוי שדורש לשכתב רשומות קיימות של משתמשים.
 - **מחרוזות עברית קבועות הן מילה־במילה.** תוויות הרובד, שורות המסגור ושלדי התבניות ב־`package/he/report-templates.md` אינם מנוסחים מחדש.
 - **דוגמאות — מומצאות בלבד.** שום תוכן שמתאר אדם אמיתי, גם לא בעילום שם. אם זה קרה למישהו — זה לא נכנס כדוגמה.
@@ -66,7 +66,7 @@ A PR that weakens any of these will be declined, even if it improves everything 
 
 ## Working rules for the content
 
-- **The map wins.** On any conflict between `prompts/core-map.md` and a skill unit, the map rules. Behavior changes start at the map.
+- **The map wins.** On any conflict between `package/prompts/core-map.md` and a skill unit, the map rules. Behavior changes start at the map.
 - **Schemas evolve additively only.** Nothing may require rewriting users' existing records.
 - **Fixed Hebrew strings are verbatim.** Tier labels, framing lines, and template skeletons in `package/he/report-templates.md` are never re-generated.
 - **Examples are invented only.** Nothing that describes a real person, even anonymized.
